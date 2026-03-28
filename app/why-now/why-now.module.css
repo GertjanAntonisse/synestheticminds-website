@@ -1,0 +1,156 @@
+.gapViz {
+  margin: 32px 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 32px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.gapRow {
+  display: grid;
+  grid-template-columns: 160px 1fr 100px;
+  align-items: center;
+  gap: 16px;
+}
+
+.gapLabel {
+  font-size: 0.85rem;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.gapBar {
+  height: 10px;
+  background: var(--line);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.gapFill {
+  height: 100%;
+  border-radius: 5px;
+  transition: width 0.3s ease;
+}
+
+.gapFillAccent {
+  background: var(--accent);
+}
+
+.gapFillAmber {
+  background: var(--amber);
+}
+
+.gapFillMuted {
+  background: var(--muted);
+}
+
+.gapValue {
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-weight: 500;
+  text-align: right;
+}
+
+/* ---- Timeline ---- */
+.timeline {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 55px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--line);
+}
+
+.timelineItem {
+  display: flex;
+  gap: 24px;
+  padding: 24px 0;
+  position: relative;
+}
+
+.timelineMarker {
+  flex-shrink: 0;
+  width: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+  z-index: 1;
+}
+
+.timelineMarker::after {
+  content: '';
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  margin-top: 4px;
+}
+
+.timelineMarkerAmber::after {
+  background: var(--amber);
+}
+
+.timelineMarkerRed::after {
+  background: var(--red);
+}
+
+.timelineWeek {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.timelineContent {
+  padding-top: 2px;
+  padding-bottom: 8px;
+}
+
+.timelineContent h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--ink);
+}
+
+.timelineContent p {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+/* ---- CTA ---- */
+.ctaButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 600px) {
+  .gapRow {
+    grid-template-columns: 120px 1fr 80px;
+    gap: 10px;
+  }
+
+  .timeline::before {
+    left: 40px;
+  }
+}

@@ -1,0 +1,247 @@
+.valueChain {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 28px 0 20px;
+  padding: 24px 28px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.chainItem {
+  background: var(--accent-bg);
+  border-radius: 8px;
+  padding: 8px 14px;
+}
+
+.chainLabel {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.chainArrow {
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.chainNote {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+/* ---- Rings ---- */
+.ringsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.ring {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  border-left-width: 3px;
+}
+
+.ringGreen {
+  border-left-color: var(--accent);
+  background: var(--accent-bg);
+}
+
+.ringBlue {
+  border-left-color: var(--blue);
+  background: var(--blue-bg);
+}
+
+.ringAmber {
+  border-left-color: var(--amber);
+  background: var(--amber-bg);
+}
+
+.ringPlum {
+  border-left-color: var(--plum);
+  background: rgba(124, 58, 237, 0.06);
+}
+
+.ringHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.ringBadge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.ringAction {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  background: var(--ink);
+  color: #fff;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.ring h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+
+.ring p {
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* ---- Steps row ---- */
+.stepsRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.stepCard {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px 20px;
+  box-shadow: var(--shadow);
+}
+
+.stepNum {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.stepCard h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+
+.stepCard p {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* ---- Projects ---- */
+.projectGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 24px 0 20px;
+}
+
+.projectTag {
+  padding: 8px 18px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.projectNote {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+/* ---- Proof card ---- */
+.proofCard {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 40px 36px;
+}
+
+.proofStats {
+  display: flex;
+  gap: 40px;
+  margin: 28px 0 24px;
+  flex-wrap: wrap;
+}
+
+.proofStat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.statNum {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 0.82rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.proofDesc {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+/* ---- CTA buttons ---- */
+.ctaButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 780px) {
+  .ringsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .stepsRow {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .valueChain {
+    gap: 6px;
+  }
+}
+
+@media (max-width: 500px) {
+  .stepsRow {
+    grid-template-columns: 1fr;
+  }
+}

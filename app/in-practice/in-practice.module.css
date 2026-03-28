@@ -1,0 +1,280 @@
+.sourcesGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 28px;
+}
+
+.sourceCard {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  box-shadow: var(--shadow);
+}
+
+.sourceLabel {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.sourceCard h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--ink);
+  line-height: 1.35;
+}
+
+.sourceCard p {
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.sourceCard p + p {
+  margin-top: 10px;
+}
+
+/* ---- Cycle steps ---- */
+.cycleSteps {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.cycleStep {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 20px 28px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  width: 100%;
+}
+
+.cycleArrow {
+  font-size: 1.2rem;
+  color: var(--line);
+  margin-left: 44px;
+  line-height: 1;
+  padding: 4px 0;
+}
+
+.cycleNum {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.cycleContent h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--ink);
+}
+
+.cycleContent p {
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+/* ---- CI card ---- */
+.ciCard {
+  background: #1a1b1e;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  margin-top: 28px;
+  margin-bottom: 24px;
+}
+
+.ciHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  background: #111113;
+  border-bottom: 1px solid #2d2d30;
+}
+
+.ciTitle {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #e1e1e3;
+  font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+}
+
+.ciBranch {
+  font-size: 0.75rem;
+  color: #71717a;
+  font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+  background: #2d2d30;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.ciRuns {
+  padding: 8px 0;
+}
+
+.ciRun {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 20px;
+  border-bottom: 1px solid #2d2d30;
+}
+
+.ciRun:last-child {
+  border-bottom: none;
+}
+
+.ciRunFail {
+  background: rgba(220, 38, 38, 0.08);
+}
+
+.ciPass {
+  font-size: 0.88rem;
+  color: #22c55e;
+  font-weight: 700;
+  flex-shrink: 0;
+  width: 16px;
+}
+
+.ciFail {
+  font-size: 0.88rem;
+  color: #ef4444;
+  font-weight: 700;
+  flex-shrink: 0;
+  width: 16px;
+}
+
+.ciName {
+  flex: 1;
+  font-size: 0.82rem;
+  color: #e1e1e3;
+  font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+}
+
+.ciDuration {
+  font-size: 0.75rem;
+  color: #71717a;
+  font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+}
+
+.ciFooter {
+  padding: 10px 20px;
+  background: rgba(220, 38, 38, 0.12);
+  border-top: 1px solid rgba(220, 38, 38, 0.3);
+}
+
+.ciStatus {
+  font-size: 0.8rem;
+  color: #ef4444;
+  font-weight: 600;
+  font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+}
+
+/* ---- Before / after ---- */
+.beforeAfter {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 28px;
+}
+
+.beforeCard {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  box-shadow: var(--shadow);
+  opacity: 0.8;
+}
+
+.afterCard {
+  background: var(--accent-bg);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  box-shadow: var(--shadow);
+}
+
+.beforeAfterLabel {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+.afterCard .beforeAfterLabel {
+  color: var(--accent);
+}
+
+.contrastList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contrastList li {
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.5;
+  padding-left: 16px;
+  position: relative;
+}
+
+.contrastList li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: var(--line);
+}
+
+.afterCard .contrastList li {
+  color: var(--ink);
+}
+
+.afterCard .contrastList li::before {
+  content: '✓';
+  color: var(--accent);
+}
+
+/* ---- CTA ---- */
+.ctaButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 680px) {
+  .sourcesGrid,
+  .beforeAfter {
+    grid-template-columns: 1fr;
+  }
+}

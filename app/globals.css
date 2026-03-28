@@ -1,0 +1,267 @@
+/* ============================================================
+   Synesthetic Minds — Design System
+   ============================================================ */
+
+:root {
+  --bg: #f6f3ec;
+  --paper: #fffdf8;
+  --ink: #1f2937;
+  --muted: #667085;
+  --line: #ddd5c7;
+  --accent: #0f766e;
+  --accent-bg: rgba(15, 118, 110, 0.06);
+  --blue: #1d4ed8;
+  --blue-bg: rgba(29, 78, 216, 0.06);
+  --amber: #b45309;
+  --amber-bg: rgba(180, 83, 9, 0.06);
+  --red: #dc2626;
+  --plum: #7c3aed;
+  --shadow: 0 18px 44px rgba(31, 41, 55, 0.07);
+  --radius: 16px;
+}
+
+/* ---- Reset ---- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---- Base ---- */
+html {
+  height: 100%;
+}
+
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: rgba(15, 118, 110, 0.15);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ---- Typography ---- */
+h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 0.3em;
+  color: var(--ink);
+}
+
+h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.35;
+  margin-bottom: 0.6em;
+  color: var(--ink);
+}
+
+h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+  margin-bottom: 0.5em;
+  color: var(--ink);
+}
+
+p {
+  font-size: 1.05rem;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+p + p {
+  margin-top: 1.1em;
+}
+
+/* ---- Layout utilities ---- */
+.container {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+.container-wide {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+section {
+  padding: 80px 0;
+}
+
+section + section {
+  border-top: 1px solid var(--line);
+}
+
+/* ---- Label ---- */
+.label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+/* ---- Callouts ---- */
+.callout {
+  margin-top: 1.8em;
+  padding: 24px 28px;
+  background: var(--accent-bg);
+  border-radius: 12px;
+  border-left: 3px solid var(--accent);
+}
+
+.callout p {
+  color: var(--ink);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.callout-amber {
+  margin-top: 1.8em;
+  padding: 24px 28px;
+  background: var(--amber-bg);
+  border-radius: 12px;
+  border-left: 3px solid var(--amber);
+}
+
+.callout-amber p {
+  color: var(--ink);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+/* ---- CTA Buttons ---- */
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+  padding: 14px 32px;
+  background: var(--ink);
+  color: #fff;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.cta-button:hover {
+  background: #374151;
+  transform: translateY(-1px);
+}
+
+.cta-button-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+  padding: 13px 30px;
+  background: transparent;
+  color: var(--ink);
+  border: 1.5px solid var(--line);
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: border-color 0.2s, background 0.2s, transform 0.15s;
+}
+
+.cta-button-outline:hover {
+  border-color: var(--ink);
+  background: rgba(31, 41, 55, 0.04);
+  transform: translateY(-1px);
+}
+
+/* ---- Hero sections ---- */
+.hero {
+  padding: 120px 0 80px;
+  text-align: center;
+}
+
+.hero .container,
+.hero .container-wide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero p {
+  text-align: center;
+}
+
+.hero .tagline {
+  font-size: 1.2rem;
+  color: var(--ink);
+  font-weight: 400;
+  max-width: 540px;
+  line-height: 1.75;
+  margin-top: 0.5em;
+}
+
+/* ---- CTA section ---- */
+.cta-section {
+  text-align: center;
+}
+
+.cta-section .container,
+.cta-section .container-wide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cta-section p {
+  text-align: center;
+}
+
+/* ---- Prose ---- */
+.prose p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 700px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  section {
+    padding: 60px 0;
+  }
+
+  .hero {
+    padding: 80px 0 60px;
+  }
+}
