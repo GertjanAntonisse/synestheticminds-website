@@ -1,12 +1,16 @@
 import styles from './footer.module.css';
 
-export default function Footer() {
+interface FooterDict {
+  copyright: string;
+  linkedinGertjan: string;
+  linkedinRene: string;
+}
+
+export default function Footer({ dict }: { dict: FooterDict }) {
   return (
     <footer className={styles.footer}>
       <div className={styles.inner}>
-        <p className={styles.copy}>
-          &copy; 2026 Synesthetic Minds &middot; Gertjan Antonisse &middot; René Luijk
-        </p>
+        <p className={styles.copy}>{dict.copyright}</p>
         <div className={styles.links}>
           <a
             href="https://www.linkedin.com/in/gertjan-antonisse/"
@@ -14,7 +18,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             className={styles.footerLink}
           >
-            LinkedIn Gertjan
+            {dict.linkedinGertjan}
           </a>
           <span className={styles.sep}>&middot;</span>
           <a
@@ -23,7 +27,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             className={styles.footerLink}
           >
-            LinkedIn René
+            {dict.linkedinRene}
           </a>
         </div>
       </div>

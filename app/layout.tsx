@@ -1,7 +1,5 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import Nav from './components/Nav';
-import Footer from './components/Footer';
 
 export const metadata: Metadata = {
   title: 'Synesthetic Minds — Build trust in your systems',
@@ -15,12 +13,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>
-        <Nav />
-        {children}
-        <Footer />
-      </body>
+    <html suppressHydrationWarning>
+      <body>{children}</body>
     </html>
   );
 }
