@@ -131,32 +131,7 @@ export default async function InvariantDesignPage({ params }: { params: Promise<
         </div>
       </section>
 
-      {/* ---- Stats card ---- */}
-      <section>
-        <div className="container">
-          <div className={styles.proofCard}>
-            <div className="label">{t.numbersLabel}</div>
-            <h2>{t.numbersTitle}</h2>
-            <div className={styles.proofStats}>
-              <div className={styles.proofStat}>
-                <span className={styles.statNum}>{t.stat1Num}</span>
-                <span className={styles.statLabel}>{t.stat1Label}</span>
-              </div>
-              <div className={styles.proofStat}>
-                <span className={styles.statNum}>{t.stat2Num}</span>
-                <span className={styles.statLabel}>{t.stat2Label}</span>
-              </div>
-              <div className={styles.proofStat}>
-                <span className={styles.statNum}>{t.stat3Num}</span>
-                <span className={styles.statLabel}>{t.stat3Label}</span>
-              </div>
-            </div>
-            <p className={styles.proofDesc}>{t.numbersDesc}</p>
-          </div>
-        </div>
-      </section>
-
-      {/* ---- CTA ---- */}
+{/* ---- CTA ---- */}
       <section className="cta-section">
         <div className="container">
           <h2>{t.ctaTitle}</h2>
