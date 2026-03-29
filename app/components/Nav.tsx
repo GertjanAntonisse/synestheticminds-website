@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import styles from './nav.module.css';
 import type { Locale } from '../../lib/i18n';
@@ -36,7 +37,14 @@ export default function Nav({ locale, dict }: NavProps) {
     <nav className={styles.nav}>
       <div className={styles.inner}>
         <Link href={`/${locale}`} className={styles.logo}>
-          Synesthetic Minds
+          <Image
+            src="/logo.jpg"
+            alt="Synesthetic Minds"
+            width={40}
+            height={40}
+            className={styles.logoImg}
+            priority
+          />
         </Link>
         <ul className={styles.links}>
           <li>
