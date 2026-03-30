@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
@@ -20,6 +21,7 @@ interface NavProps {
 
 export default function Nav({ locale, dict }: NavProps) {
   const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
 
   // pathname is e.g. /nl/for-companies — strip the locale prefix for active matching
   const pathWithoutLocale = pathname.replace(/^\/(nl|en)/, '') || '/';
@@ -36,7 +38,7 @@ export default function Nav({ locale, dict }: NavProps) {
   return (
     <nav className={styles.nav}>
       <div className={styles.inner}>
-        <Link href={`/${locale}`} className={styles.logo}>
+        <Link href={`/${locale}`} className={styles.logo} onClick={() => setIsOpen(false)}>
           <Image
             src="/logo.jpg"
             alt="Synesthetic Minds"
@@ -46,11 +48,33 @@ export default function Nav({ locale, dict }: NavProps) {
             priority
           />
         </Link>
-        <ul className={styles.links}>
+
+        <div className={styles.navRight}>
+          {/* Language switcher — always visible */}
+          <Link href={switchHref} className={`${styles.link} ${styles.langSwitch}`}>
+            {dict.switchTo}
+          </Link>
+
+          {/* Hamburger button — mobile only */}
+          <button
+            className={`${styles.hamburger} ${isOpen ? styles.hamburgerOpen : ''}`}
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Menu"
+            aria-expanded={isOpen}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+        </div>
+
+        {/* Nav links — desktop: horizontal, mobile: dropdown */}
+        <ul className={`${styles.links} ${isOpen ? styles.linksOpen : ''}`}>
           <li>
             <Link
               href={`/${locale}/for-companies`}
               className={`${styles.link} ${isActive('/for-companies') ? styles.linkActive : ''}`}
+              onClick={() => setIsOpen(false)}
             >
               {dict.forCompanies}
             </Link>
@@ -59,6 +83,7 @@ export default function Nav({ locale, dict }: NavProps) {
             <Link
               href={`/${locale}/invariant-design`}
               className={`${styles.link} ${isActive('/invariant-design') ? styles.linkActive : ''}`}
+              onClick={() => setIsOpen(false)}
             >
               {dict.invariantDesign}
             </Link>
@@ -67,13 +92,9 @@ export default function Nav({ locale, dict }: NavProps) {
             <Link
               href={`/${locale}/contact`}
               className={`${styles.link} ${isActive('/contact') ? styles.linkActive : ''}`}
+              onClick={() => setIsOpen(false)}
             >
               {dict.contact}
-            </Link>
-          </li>
-          <li>
-            <Link href={switchHref} className={`${styles.link} ${styles.langSwitch}`}>
-              {dict.switchTo}
             </Link>
           </li>
         </ul>
