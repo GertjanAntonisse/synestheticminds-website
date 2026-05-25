@@ -302,5 +302,24 @@
     "ctaP": "Learn how Invariant Design gives you proof at every run.",
     "ctaButton": "See Invariant Design →",
     "ctaSecondary": "What analytics doesn't tell you →"
+  },
+  "kloptHetNog": {
+    "metaTitle": "Klopt het nog? — Synesthetic Minds",
+    "metaDesc": "A Dutch-language note on AI in practice and current events, sent every two weeks.",
+    "heroLabel": "Read along",
+    "heroTitle": "Before AI solves anything, it must be clear what is really happening.",
+    "heroTagline": "We make it visible, and we keep it visible.",
+    "aboutLabel": "What this is",
+    "aboutTitle": "Klopt het nog? is a fortnightly note, in Dutch.",
+    "aboutP1": "Observations from practice and from current events around AI, written by Gertjan Antonisse and René Luijk. Drawn from what we see in organisations working with AI, and what that means for those who are responsible.",
+    "aboutP2": "Once every two weeks. No brochure, no pitch. Our honest read of what we see in the market.",
+    "formLabel": "Subscribe",
+    "formTitle": "Sign up.",
+    "emailLabel": "Email address",
+    "emailPlaceholder": "name@company.com",
+    "submitButton": "Read along",
+    "formNote": "Once every two weeks. Unsubscribe at any time via the link in the email.",
+    "placeholderBanner": "The signup will be wired to a mail service shortly. In the meantime, this button opens an email — send it as is and you'll receive the first edition when it's ready.",
+    "mailtoSubject": "Subscription Klopt het nog?"
   }
 }
