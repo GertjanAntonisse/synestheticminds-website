@@ -40,9 +40,9 @@ export default function Nav({ locale, dict }: NavProps) {
       <div className={styles.inner}>
         <Link href={`/${locale}`} className={styles.logo} onClick={() => setIsOpen(false)}>
           <Image
-            src="/logo.jpg"
+            src="/sm-logo.avif"
             alt="Synesthetic Minds"
-            width={40}
+            width={265}
             height={40}
             className={styles.logoImg}
             priority

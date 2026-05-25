@@ -27,10 +27,15 @@
 
 .logoImg {
   display: block;
-  width: 40px;
   height: 40px;
-  border-radius: 6px;
+  width: auto;
   transition: opacity 0.15s;
+}
+
+@media (max-width: 480px) {
+  .logoImg {
+    height: 32px;
+  }
 }
 
 .logo:hover .logoImg {
