@@ -318,8 +318,13 @@
     "emailLabel": "E-mailadres",
     "emailPlaceholder": "naam@bedrijf.nl",
     "submitButton": "Lees mee",
+    "submittingButton": "Bezig...",
     "formNote": "Tweewekelijks. Uitschrijven kan op elk moment via de link in de mail.",
-    "placeholderBanner": "De aanmelding wordt binnenkort op een mailservice aangesloten. Tot die tijd opent deze knop een mail; stuur hem zoals hij staat, dan ontvang je de eerste editie zodra hij klaar is.",
+    "successTitle": "Aangemeld.",
+    "successBody": "Je ontvangt de eerstvolgende editie van Klopt het nog? in je inbox. Tot dan.",
+    "errorInvalid": "Dit e-mailadres lijkt niet te kloppen. Controleer hem en probeer opnieuw.",
+    "errorGeneric": "Er ging iets mis bij het aanmelden. Probeer het opnieuw, of stuur een mail naar info@synestheticminds.nl.",
+    "placeholderBanner": "De mailservice is nog niet aangesloten. We hebben een mail voor je geopend met je e-mailadres erin; stuur hem zoals hij staat, dan ontvang je de eerste editie zodra hij klaar is.",
     "mailtoSubject": "Aanmelding Klopt het nog?"
   }
 }

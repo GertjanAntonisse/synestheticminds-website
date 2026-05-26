@@ -318,8 +318,13 @@
     "emailLabel": "Email address",
     "emailPlaceholder": "name@company.com",
     "submitButton": "Read along",
+    "submittingButton": "Submitting...",
     "formNote": "Once every two weeks. Unsubscribe at any time via the link in the email.",
-    "placeholderBanner": "The signup will be wired to a mail service shortly. In the meantime, this button opens an email — send it as is and you'll receive the first edition when it's ready.",
+    "successTitle": "Signed up.",
+    "successBody": "You'll receive the next edition of Klopt het nog? in your inbox. Until then.",
+    "errorInvalid": "That email address doesn't look right. Please check and try again.",
+    "errorGeneric": "Something went wrong with the signup. Please try again, or email info@synestheticminds.nl.",
+    "placeholderBanner": "The mail service isn't connected yet. We opened an email for you with your address pre-filled — send it as is and you'll receive the first edition when it's ready.",
     "mailtoSubject": "Subscription Klopt het nog?"
   }
 }

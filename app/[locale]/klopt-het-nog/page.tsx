@@ -1,6 +1,6 @@
 import { getDictionary } from '../../../lib/i18n';
 import type { Locale } from '../../../lib/i18n';
-import styles from '../../klopt-het-nog/klopt-het-nog.module.css';
+import SubscribeForm from './SubscribeForm';
 
 export default async function KloptHetNogPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -33,32 +33,21 @@ export default async function KloptHetNogPage({ params }: { params: Promise<{ lo
         <div className="container">
           <div className="label">{t.formLabel}</div>
           <h2>{t.formTitle}</h2>
-          <div className={styles.formCard}>
-            <form
-              action={`mailto:info@synestheticminds.nl?subject=${encodeURIComponent(t.mailtoSubject)}`}
-              method="post"
-              encType="text/plain"
-            >
-              <label className={styles.formLabel} htmlFor="email">
-                {t.emailLabel}
-              </label>
-              <div className={styles.formRow}>
-                <input
-                  id="email"
-                  type="email"
-                  name="email"
-                  required
-                  placeholder={t.emailPlaceholder}
-                  className={styles.emailInput}
-                />
-                <button type="submit" className={styles.submitButton}>
-                  {t.submitButton}
-                </button>
-              </div>
-              <p className={styles.formNote}>{t.formNote}</p>
-            </form>
-            <div className={styles.placeholderBanner}>{t.placeholderBanner}</div>
-          </div>
+          <SubscribeForm
+            texts={{
+              emailLabel: t.emailLabel,
+              emailPlaceholder: t.emailPlaceholder,
+              submitButton: t.submitButton,
+              submittingButton: t.submittingButton,
+              formNote: t.formNote,
+              successTitle: t.successTitle,
+              successBody: t.successBody,
+              errorInvalid: t.errorInvalid,
+              errorGeneric: t.errorGeneric,
+              placeholderBanner: t.placeholderBanner,
+              mailtoSubject: t.mailtoSubject,
+            }}
+          />
         </div>
       </section>
     </>
