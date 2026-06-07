@@ -359,7 +359,12 @@
     "arc3Status": "Planned",
     "authorLabel": "About the author",
     "authorName": "Gertjan Antonisse",
-    "authorBio": "Gertjan Antonisse is a systems thinker and writer. He studies what is really happening in organisations, before they start steering, and what technology does to work we do not understand.",
+    "authorBio": [
+      "Gertjan Antonisse has over 35 years of experience in logistics, technology, and process improvement. He started on the shop floor and later worked on the automation of logistics operations, helping organizations build systems that support how people actually work, rather than forcing people to adapt to the system.",
+      "That combination of hands-on experience, systems thinking, and technological insight shapes his core belief: real improvement doesn’t start with more control, but with better observation. Not just looking at numbers, but at rhythm, patterns, and what happens between people in everyday work.",
+      "In The Logic of Life in Logistics, Gertjan shows how organizations get stuck when they optimize on paper, and how progress becomes possible when they learn to listen to the system itself. His work invites a different conversation about logistics, leadership, and the relationship between people, processes, and technology.",
+      "Alongside his work in logistics, he explores the role of AI, not as a replacement for human intelligence, but as a way to strengthen human insight."
+    ],
     "authorPortraitAlt": "Portrait of Gertjan Antonisse",
     "ctaLabel": "Read",
     "ctaTitle": "Begin with the pause.",

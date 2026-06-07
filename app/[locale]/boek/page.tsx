@@ -141,7 +141,11 @@ export default async function BoekPage({ params }: { params: Promise<{ locale: s
             </div>
             <div>
               <h3 className={styles.authorName}>{t.authorName}</h3>
-              <p className={styles.authorBio}>{t.authorBio}</p>
+              {t.authorBio.map((paragraph, i) => (
+                <p key={i} className={styles.authorBio}>
+                  {paragraph}
+                </p>
+              ))}
             </div>
           </div>
         </div>

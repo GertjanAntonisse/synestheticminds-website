@@ -359,7 +359,12 @@
     "arc3Status": "Gepland",
     "authorLabel": "Over de auteur",
     "authorName": "Gertjan Antonisse",
-    "authorBio": "Gertjan Antonisse is systeemdenker en schrijver. Hij onderzoekt wat er werkelijk gebeurt in organisaties, voordat er gestuurd wordt, en wat techniek doet met werk dat we niet doorzien.",
+    "authorBio": [
+      "Gertjan Antonisse heeft ruim 35 jaar ervaring in logistiek, technologie en procesverbetering. Hij begon op de werkvloer en werkte later aan de automatisering van logistieke operaties, waarbij hij organisaties hielp systemen te bouwen die aansluiten op hoe mensen werkelijk werken, in plaats van mensen te dwingen zich aan het systeem aan te passen.",
+      "Die combinatie van praktijkervaring, systeemdenken en technologisch inzicht vormt zijn kernovertuiging: echte verbetering begint niet met meer controle, maar met beter waarnemen. Niet alleen kijken naar cijfers, maar naar ritme, patronen en wat er tussen mensen gebeurt in het dagelijkse werk.",
+      "In De logica van het leven in de logistiek laat Gertjan zien hoe organisaties vastlopen wanneer ze op papier optimaliseren, en hoe vooruitgang ontstaat zodra ze leren luisteren naar het systeem zelf. Zijn werk nodigt uit tot een ander gesprek over logistiek, leiderschap en de verhouding tussen mensen, processen en technologie.",
+      "Naast zijn werk in de logistiek verkent hij de rol van AI, niet als vervanging van menselijke intelligentie, maar als manier om het menselijk inzicht te versterken."
+    ],
     "authorPortraitAlt": "Portret van Gertjan Antonisse",
     "ctaLabel": "Lezen",
     "ctaTitle": "Begin bij de pauze.",
