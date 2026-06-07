@@ -1,0 +1,257 @@
+/* ============================================================
+   Boek 1 — landingspagina
+   Kalm, in SM-handschrift. Spiegel, geen etalage.
+   ============================================================ */
+
+/* ---- Hero met cover ---- */
+.bookHero {
+  padding-top: 120px;
+}
+
+.bookHeroInner {
+  display: flex;
+  gap: 52px;
+  align-items: center;
+}
+
+.coverWrap {
+  flex-shrink: 0;
+}
+
+.cover {
+  display: block;
+  width: 280px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+.heroText {
+  min-width: 0;
+}
+
+.heroTagline {
+  font-size: 1.3rem;
+  color: var(--ink);
+  font-weight: 400;
+  line-height: 1.6;
+  max-width: 460px;
+  margin-top: 0.7em;
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+}
+
+/* Boeknaam onder de titel (PAUZE) */
+.bookName {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 10px;
+}
+
+/* ---- De kernvraag: rustpunt in de pagina ---- */
+.questionSection {
+  text-align: center;
+  background: var(--accent-bg);
+}
+
+/* ---- Reeks-markering: De logica van werk: ----
+   Het spiraal-teken is het herkenningsmerk van de reeks. */
+.seriesSpiral {
+  display: block;
+}
+
+.seriesMark {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 14px;
+  font-size: 0.98rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--accent);
+}
+
+.series {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-top: 0.5em;
+}
+
+.seriesName {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.seriesNote {
+  margin-top: 0.8em;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.question {
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.questionSub {
+  margin-top: 1em;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+/* ---- De trilogie-boog ---- */
+.arc {
+  list-style: none;
+  margin-top: 1.8em;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.arcItem {
+  padding: 20px 24px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--paper);
+}
+
+.arcItemCurrent {
+  border-color: var(--accent);
+  background: var(--accent-bg);
+}
+
+.arcHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.arcName {
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.arcStatus {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.arcText {
+  margin-top: 6px;
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+/* ---- Over de auteur ---- */
+.author {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  margin-top: 1.4em;
+}
+
+.portraitWrap {
+  position: relative;
+  flex-shrink: 0;
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+
+.portrait {
+  object-fit: cover;
+}
+
+.authorName {
+  margin-bottom: 0.3em;
+}
+
+.authorBio {
+  font-size: 1rem;
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* ---- Subtiele onthulling bij scroll ----
+   Alleen waar de browser scroll-gedreven animaties ondersteunt,
+   zodat de inhoud overal anders gewoon zichtbaar blijft. */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .question,
+    .questionSub,
+    .arcItem {
+      opacity: 0;
+      animation: smRise linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 38%;
+    }
+  }
+}
+
+@keyframes smRise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 760px) {
+  .bookHeroInner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 32px;
+  }
+
+  .heroText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .heroTagline {
+    text-align: center;
+  }
+
+  .author {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 18px;
+  }
+}
+
+@media (max-width: 700px) {
+  .question {
+    font-size: 1.4rem;
+  }
+}

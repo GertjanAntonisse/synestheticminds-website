@@ -4,6 +4,20 @@ import { locales, getLocaleFromCountry } from './lib/i18n';
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
+  // Localized slug for the book page: /nl/boek (NL) and /en/book (EN) are the
+  // canonical URLs. The page physically lives at /[locale]/boek, so the EN
+  // path is rewritten internally, and the off-language variants redirect.
+  if (pathname === '/en/boek' || pathname === '/nl/book') {
+    const url = request.nextUrl.clone();
+    url.pathname = pathname === '/en/boek' ? '/en/book' : '/nl/boek';
+    return NextResponse.redirect(url);
+  }
+  if (pathname === '/en/book') {
+    const url = request.nextUrl.clone();
+    url.pathname = '/en/boek';
+    return NextResponse.rewrite(url);
+  }
+
   // Already locale-prefixed — let through
   if (locales.some((loc) => pathname === `/${loc}` || pathname.startsWith(`/${loc}/`))) {
     return NextResponse.next();

@@ -11,6 +11,7 @@ interface NavDict {
   forCompanies: string;
   invariantDesign: string;
   contact: string;
+  boek: string;
   switchTo: string;
 }
 
@@ -34,6 +35,9 @@ export default function Nav({ locale, dict }: NavProps) {
   // Build the switch-locale href: swap /nl → /en or vice versa
   const otherLocale: Locale = locale === 'nl' ? 'en' : 'nl';
   const switchHref = pathname.replace(`/${locale}`, `/${otherLocale}`);
+
+  // Localized slug for the book page: /nl/boek vs /en/book
+  const boekSlug = locale === 'en' ? 'book' : 'boek';
 
   return (
     <nav className={styles.nav}>
@@ -86,6 +90,15 @@ export default function Nav({ locale, dict }: NavProps) {
               onClick={() => setIsOpen(false)}
             >
               {dict.invariantDesign}
+            </Link>
+          </li>
+          <li>
+            <Link
+              href={`/${locale}/${boekSlug}`}
+              className={`${styles.link} ${isActive(`/${boekSlug}`) ? styles.linkActive : ''}`}
+              onClick={() => setIsOpen(false)}
+            >
+              {dict.boek}
             </Link>
           </li>
           <li>
