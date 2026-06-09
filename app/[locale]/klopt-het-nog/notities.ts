@@ -39,8 +39,7 @@ export const notities: Record<string, Notitie> = {
       'De belofte “het volgende model lost het op” houdt geen stand waar het telt. Voor je op iets groters wacht: kijk eerst of de laag eronder weet wat het juiste antwoord hoort te zijn.',
     bronnenHtml:
       'Anthropic, <em>Paving the Way for Agents in Biology</em> (2026). Bij een identieke vraag naar een ebolavirus gaf hetzelfde model over drie runs 106, 15 en 5 sequenties, waar 266 het juiste aantal was. Op de VirBench-test (120 zoekvragen, 40 ziekteverwekkers, NCBI Virus) liep de nauwkeurigheid uiteen van 16,9% tot 91,3%; met een voorspelbare ophaallaag (gget virus) steeg die naar boven de 90%, met een piek van 99,7%. Een fylogenetische schatting van een uitbraakoorsprong verschoof door onbetrouwbare data tot 1922 of april 2014, tegen januari 2014 bij zorgvuldige samenstelling.',
-    visualUrl:
-      'https://github.com/GertjanAntonisse/synestheticminds-website/releases/download/klopt-het-nog-assets/lost-een-beter-model-het-op.png',
+    visualUrl: 'https://synestheticminds.com/klopt-het-nog/lost-een-beter-model-het-op.png',
     ogDescription:
       'Dezelfde vraag, drie keer een ander antwoord. Waarom een groter AI-model de betrouwbaarheid niet oplost, en wat wel.',
   },
