@@ -2,12 +2,12 @@ import React from 'react';
 import Link from 'next/link';
 import { getDictionary } from '../../../lib/i18n';
 import type { Locale } from '../../../lib/i18n';
-import styles from '../../invariant-design/invariant-design.module.css';
+import styles from '../../evident-design/evident-design.module.css';
 
-export default async function InvariantDesignPage({ params }: { params: Promise<{ locale: string }> }) {
+export default async function EvidentDesignPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const dict = await getDictionary(locale as Locale);
-  const t = dict.invariantDesign;
+  const t = dict.evidentDesign;
 
   return (
     <>
@@ -40,7 +40,7 @@ export default async function InvariantDesignPage({ params }: { params: Promise<
           <h2>{t.coreTitle}</h2>
           <p>{t.coreP}</p>
           <div className={styles.valueChain}>
-            {['Promise', 'Invariant', 'Runtime check', 'Signal on the row', 'Decision'].map((item, i, arr) => (
+            {t.chain.map((item, i, arr) => (
               <React.Fragment key={item}>
                 <div className={styles.chainItem}>
                   <span className={styles.chainLabel}>{item}</span>
@@ -50,48 +50,6 @@ export default async function InvariantDesignPage({ params }: { params: Promise<
             ))}
           </div>
           <p className={styles.chainNote}>{t.chainNote}</p>
-        </div>
-      </section>
-
-      {/* ---- Defense rings ---- */}
-      <section>
-        <div className="container">
-          <div className="label">{t.structureLabel}</div>
-          <h2>{t.structureTitle}</h2>
-          <div className={styles.ringsGrid}>
-            <div className={`${styles.ring} ${styles.ringGreen}`}>
-              <div className={styles.ringHeader}>
-                <span className={styles.ringBadge}>{t.ring1Badge}</span>
-                <span className={styles.ringAction}>{t.ring1Action}</span>
-              </div>
-              <h3>{t.ring1Title}</h3>
-              <p>{t.ring1P}</p>
-            </div>
-            <div className={`${styles.ring} ${styles.ringBlue}`}>
-              <div className={styles.ringHeader}>
-                <span className={styles.ringBadge}>{t.ring2Badge}</span>
-                <span className={styles.ringAction}>{t.ring2Action}</span>
-              </div>
-              <h3>{t.ring2Title}</h3>
-              <p>{t.ring2P}</p>
-            </div>
-            <div className={`${styles.ring} ${styles.ringAmber}`}>
-              <div className={styles.ringHeader}>
-                <span className={styles.ringBadge}>{t.ring3Badge}</span>
-                <span className={styles.ringAction}>{t.ring3Action}</span>
-              </div>
-              <h3>{t.ring3Title}</h3>
-              <p>{t.ring3P}</p>
-            </div>
-            <div className={`${styles.ring} ${styles.ringPlum}`}>
-              <div className={styles.ringHeader}>
-                <span className={styles.ringBadge}>{t.ring4Badge}</span>
-                <span className={styles.ringAction}>{t.ring4Action}</span>
-              </div>
-              <h3>{t.ring4Title}</h3>
-              <p>{t.ring4P}</p>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -117,35 +75,44 @@ export default async function InvariantDesignPage({ params }: { params: Promise<
         </div>
       </section>
 
-      {/* ---- Where applied ---- */}
+      {/* ---- Where it leads ---- */}
+      <section>
+        <div className="container">
+          <div className="label">{t.ladderLabel}</div>
+          <h2>{t.ladderTitle}</h2>
+          <p>{t.ladderP}</p>
+          <div className={styles.valueChain}>
+            {t.ladder.map((item, i, arr) => (
+              <React.Fragment key={item}>
+                <div className={styles.chainItem}>
+                  <span className={styles.chainLabel}>{item}</span>
+                </div>
+                {i < arr.length - 1 && <div className={styles.chainArrow}>&rarr;</div>}
+              </React.Fragment>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ---- Proven ---- */}
       <section>
         <div className="container">
           <div className="label">{t.provenLabel}</div>
           <h2>{t.provenTitle}</h2>
-          <div className={styles.projectGrid}>
-            {['ThreadC', 'TrackAndBack', 'SessionMCP', 'Tradeflow'].map((name) => (
-              <div key={name} className={styles.projectTag}>{name}</div>
-            ))}
-          </div>
           <p className={styles.projectNote}>{t.provenNote}</p>
         </div>
       </section>
 
-{/* ---- CTA ---- */}
+      {/* ---- CTA ---- */}
       <section className="cta-section">
         <div className="container">
           <h2>{t.ctaTitle}</h2>
           <p>{t.ctaP}</p>
           <div className={styles.ctaButtons}>
-            <a
-              href="https://www.linkedin.com/in/reneluijk/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="cta-button"
-            >
+            <Link href={`/${locale}/contact`} className="cta-button">
               {t.ctaButton}
-            </a>
-            <Link href={`/${locale}/${locale === 'nl' ? 'systeembegrip' : 'for-companies'}`} className="cta-button-outline">
+            </Link>
+            <Link href={`/${locale}/invariant-design`} className="cta-button-outline">
               {t.ctaSecondary}
             </Link>
           </div>

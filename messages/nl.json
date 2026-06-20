@@ -2,6 +2,7 @@
   "nav": {
     "forCompanies": "Systeembegrip",
     "invariantDesign": "Invariant Design",
+    "evidentDesign": "Evident Design",
     "contact": "Contact",
     "boek": "Het boek",
     "switchTo": "EN"
@@ -50,9 +51,9 @@
   "forCompanies": {
     "metaTitle": "Voor bedrijven — Synesthetic Minds",
     "metaDesc": "Je hebt geen nieuw systeem nodig. Je moet zien wat het huidige systeem werkelijk doet.",
-    "heroLabel": "Voor bestaande bedrijven",
-    "heroTitle": "Je hebt geen nieuw systeem nodig. Je moet zien wat het huidige werkelijk doet.",
-    "heroTagline": "De meeste organisaties hebben systemen die werken. Het probleem is niet het systeem, maar dat niemand ooit geverifieerd heeft of de uitvoer die het produceert correct is.",
+    "heroLabel": "Systeembegrip",
+    "heroTitle": "Eerst zien wat je systeem werkelijk doet. Dan pas borgen dat het klopt.",
+    "heroTagline": "De meeste organisaties hebben systemen die werken, maar niemand verifieerde ooit of het beeld nog klopt met het werk. Wij brengen dat eerst in beeld met Evident Design, en borgen daarna wat telt met Invariant Design. Twee lagen, één beweging.",
     "howLabel": "Hoe het ontstaat",
     "howTitle": "Het systeem werkt. De uitvoer wordt geaccepteerd. Het gat groeit stilzwijgend.",
     "step1Title": "Bij implementatie",
@@ -85,6 +86,7 @@
     "ctaTitle": "Begin met wat je al weet.",
     "ctaP": "Één gesprek. Geen verplichting. Als het resoneert, gaan we verder.",
     "ctaButton": "Start een gesprek →",
+    "ctaEvident": "Lees over Evident Design →",
     "ctaSecondary": "Leer over Invariant Design →"
   },
   "invariantDesign": {
@@ -133,10 +135,58 @@
     "provenLabel": "Bewezen in de praktijk",
     "provenTitle": "Toegepast in live productieomgevingen.",
     "provenNote": "Invariant Design is geen theoretisch kader. Het draait in productiepipelines waar incorrecte uitvoer echte gevolgen heeft.",
-"ctaTitle": "Wil je systemen bouwen die hun eigen correctheid bewijzen?",
+    "ctaTitle": "Wil je systemen bouwen die hun eigen correctheid bewijzen?",
     "ctaP": "Neem direct contact op met René, of verken hoe dit van toepassing is op je bestaande systemen.",
     "ctaButton": "Verbind met René →",
     "ctaSecondary": "Voor bestaande bedrijven →"
+  },
+  "evidentDesign": {
+    "metaTitle": "Evident Design — Synesthetic Minds",
+    "metaDesc": "Het werkelijke werk zichtbaar maken en de afspraken erover levend houden, zodat afwijking opvalt voordat ze schade doet.",
+    "heroLabel": "Evident Design",
+    "heroTitle": "Iedereen vindt zijn eigen werk vanzelfsprekend. En juist daarom valt er zoveel te zien.",
+    "heroTagline": "Het verbetervermogen van een organisatie zit op de werkvloer, in hoe mensen het werk dagelijks doen en bijsturen. Evident Design maakt dat werk zichtbaar en legt de afspraken erover zo vast dat afwijking opvalt. Zonder nieuwe methode, zonder Lean uit de etalage.",
+    "recogLabel": "Het patroon dat je herkent",
+    "recogTitle": "Het werk loopt. Het beeld dat je ervan hebt, loopt er stilletjes vandaan.",
+    "recogP1": "Niemand besloot dat het anders moest. Er kwam een uitzondering, iemand vond een handige omweg, een afspraak sleet uit. Het werk bleef doorgaan, dus het viel niemand op. Het beeld in de bestuurskamer bleef staan, de werkvloer schoof op.",
+    "recogP2": "Pas als er iets misgaat, of als je AI over dat werk legt, blijkt hoe ver het beeld en het werk uit elkaar zijn gegroeid.",
+    "recogCallout": "Het is geen onwil en geen fout. Mensen houden de boel draaiend binnen wat ze kunnen overzien. Zo werkt het, tot niemand het geheel meer ziet.",
+    "coreLabel": "Het kernidee",
+    "coreTitle": "Een afspraak die haar eigen afwijking laat zien.",
+    "coreP": "Evident Design legt vast hoe het werk werkelijk loopt, niet als procesbeschrijving in een la, maar als praatdocument: een levende standaard waar je samen doorheen loopt. Juist door het te bespreken wordt zichtbaar waar de werkelijkheid van de afspraak is gaan afwijken. Het document borgt het zien, niet de controle.",
+    "chain": [
+      "Werk",
+      "Afspraak",
+      "Praatdocument",
+      "Afwijking zichtbaar",
+      "Gesprek"
+    ],
+    "chainNote": "Geen controlelijst om af te vinken, maar een document om mee te praten. De afwijking is niet het bewijs dat iemand faalde, ze is het beginpunt van verbeteren.",
+    "howLabel": "Hoe het werkt",
+    "howTitle": "Vier stappen, van zien naar borgen.",
+    "step1Title": "Zien",
+    "step1P": "We brengen in beeld wat het werk werkelijk doet, op de plek waar het gebeurt. Niet wat het hoort te doen, wat het doet.",
+    "step2Title": "Afspreken",
+    "step2P": "Wat hier de werkende manier is, maken we expliciet, samen met de mensen die het werk doen. Hun kennis, geen import.",
+    "step3Title": "Vastleggen",
+    "step3P": "De afspraak wordt een praatdocument: kort, op maat, zo geschreven dat afwijking opvalt zodra de werkelijkheid schuift.",
+    "step4Title": "Samen toetsen",
+    "step4P": "Met vaste tussenpozen lopen we het document door. Klopt het nog met het werk? Wat afwijkt, is het gesprek waard, geen verwijt.",
+    "ladderLabel": "Waar het heen leidt",
+    "ladderTitle": "Zichtbaar werk kun je gaan borgen.",
+    "ladderP": "Zodra het werk evident is, wordt een nieuwe vraag mogelijk: welke afspraken zijn stabiel en belangrijk genoeg om hard te borgen? Waar het werk in software zit, neemt Invariant Design het over: dezelfde afspraak, nu bij elke run aantoonbaar. Evident Design maakt het zichtbaar, Invariant Design houdt het bewezen.",
+    "ladder": [
+      "Evident Design",
+      "Selectie",
+      "Invariant Design"
+    ],
+    "provenLabel": "Bewezen in de praktijk",
+    "provenTitle": "Ontstaan op de werkvloer, niet aan de tekentafel.",
+    "provenNote": "De praatdocument-vorm is gegroeid in een grote logistieke organisatie, waar standaard instructies werden gebruikt om het werk bespreekbaar te maken in plaats van af te dwingen.",
+    "ctaTitle": "Wil je zien wat je werk werkelijk doet?",
+    "ctaP": "Eén gesprek, geen verplichting. We beginnen bij wat er al draait.",
+    "ctaButton": "Start een gesprek →",
+    "ctaSecondary": "Verder naar Invariant Design →"
   },
   "contact": {
     "metaTitle": "Contact — Synesthetic Minds",
@@ -226,11 +276,31 @@
     "tableColAnalyticsSub": "GA4, Mixpanel, e.d.",
     "tableColInvariant": "Invariantsignalen",
     "tableRows": [
-      { "question": "Heeft het proces gedraaid?", "analytics": "Ja: eventcount toont 1.847 runs", "invariant": "Ja, en 23 ervan schonden het correctheidscontract" },
-      { "question": "Is het voltooid?", "analytics": "Ja: 94% voltooiingspercentage", "invariant": "94% bereikte de laatste stap. 12% daarvan produceerde incorrecte uitvoer." },
-      { "question": "Is de uitvoer correct?", "analytics": "Geen signaal", "invariant": "Bewijs-artefact gekoppeld aan elk record. Geslaagd of mislukt per rij." },
-      { "question": "Wanneer brak het?", "analytics": "Onbekend: geen event voor correctheidsfout", "invariant": "Exacte run, exact record, exacte invariant die werd geschonden." },
-      { "question": "Wie is getroffen?", "analytics": "Segment op gebruikerseigenschap", "invariant": "Alle records waarbij invariant X faalde: direct opvraagbaar." }
+      {
+        "question": "Heeft het proces gedraaid?",
+        "analytics": "Ja: eventcount toont 1.847 runs",
+        "invariant": "Ja, en 23 ervan schonden het correctheidscontract"
+      },
+      {
+        "question": "Is het voltooid?",
+        "analytics": "Ja: 94% voltooiingspercentage",
+        "invariant": "94% bereikte de laatste stap. 12% daarvan produceerde incorrecte uitvoer."
+      },
+      {
+        "question": "Is de uitvoer correct?",
+        "analytics": "Geen signaal",
+        "invariant": "Bewijs-artefact gekoppeld aan elk record. Geslaagd of mislukt per rij."
+      },
+      {
+        "question": "Wanneer brak het?",
+        "analytics": "Onbekend: geen event voor correctheidsfout",
+        "invariant": "Exacte run, exact record, exacte invariant die werd geschonden."
+      },
+      {
+        "question": "Wie is getroffen?",
+        "analytics": "Segment op gebruikerseigenschap",
+        "invariant": "Alle records waarbij invariant X faalde: direct opvraagbaar."
+      }
     ],
     "journeyLabel": "Dezelfde reis, twee perspectieven",
     "journeyTitle": "Wat elk instrument ziet.",
@@ -239,18 +309,50 @@
     "invariantView": "Invariant-perspectief",
     "invariantConclusion": "Conclusie: contract_failed bij stap 4. Alle downstream-records zijn aangetast.",
     "funnelSteps": [
-      { "label": "Stap 1: Start", "pct": "100%" },
-      { "label": "Stap 2: Valideren", "pct": "98%" },
-      { "label": "Stap 3: Verwerken", "pct": "96%" },
-      { "label": "Stap 4: Contractcheck", "pct": "95%" },
-      { "label": "Stap 5: Voltooid", "pct": "94%" }
+      {
+        "label": "Stap 1: Start",
+        "pct": "100%"
+      },
+      {
+        "label": "Stap 2: Valideren",
+        "pct": "98%"
+      },
+      {
+        "label": "Stap 3: Verwerken",
+        "pct": "96%"
+      },
+      {
+        "label": "Stap 4: Contractcheck",
+        "pct": "95%"
+      },
+      {
+        "label": "Stap 5: Voltooid",
+        "pct": "94%"
+      }
     ],
     "invariantSteps": [
-      { "label": "Stap 1: Start", "ok": true },
-      { "label": "Stap 2: Valideren", "ok": true },
-      { "label": "Stap 3: Verwerken", "ok": true },
-      { "label": "Stap 4: Contractcheck", "ok": false, "signal": "contract_failed" },
-      { "label": "Stap 5: Voltooid", "ok": false, "signal": "downstream aangetast" }
+      {
+        "label": "Stap 1: Start",
+        "ok": true
+      },
+      {
+        "label": "Stap 2: Valideren",
+        "ok": true
+      },
+      {
+        "label": "Stap 3: Verwerken",
+        "ok": true
+      },
+      {
+        "label": "Stap 4: Contractcheck",
+        "ok": false,
+        "signal": "contract_failed"
+      },
+      {
+        "label": "Stap 5: Voltooid",
+        "ok": false,
+        "signal": "downstream aangetast"
+      }
     ],
     "blindLabel": "De vier blinde vlekken",
     "blindTitle": "Wat analytics structureel mist.",
