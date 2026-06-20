@@ -176,6 +176,9 @@ export default function ForCompaniesPage() {
             <Link href="/contact" className="cta-button">
               Start with a conversation &rarr;
             </Link>
+            <Link href="/evident-design" className="cta-button-outline">
+              Learn about Evident Design &rarr;
+            </Link>
             <Link href="/invariant-design" className="cta-button-outline">
               Learn about Invariant Design &rarr;
             </Link>

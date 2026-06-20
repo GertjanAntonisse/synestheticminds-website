@@ -9,6 +9,7 @@ import type { Locale } from '../../lib/i18n';
 
 interface NavDict {
   forCompanies: string;
+  evidentDesign: string;
   invariantDesign: string;
   contact: string;
   boek: string;
@@ -81,6 +82,15 @@ export default function Nav({ locale, dict }: NavProps) {
               onClick={() => setIsOpen(false)}
             >
               {dict.forCompanies}
+            </Link>
+          </li>
+          <li>
+            <Link
+              href={`/${locale}/evident-design`}
+              className={`${styles.link} ${isActive('/evident-design') ? styles.linkActive : ''}`}
+              onClick={() => setIsOpen(false)}
+            >
+              {dict.evidentDesign}
             </Link>
           </li>
           <li>
