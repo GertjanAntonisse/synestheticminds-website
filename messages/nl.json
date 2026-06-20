@@ -186,7 +186,60 @@
     "ctaTitle": "Wil je zien wat je werk werkelijk doet?",
     "ctaP": "Eén gesprek, geen verplichting. We beginnen bij wat er al draait.",
     "ctaButton": "Start een gesprek →",
-    "ctaSecondary": "Verder naar Invariant Design →"
+    "ctaSecondary": "Verder naar Invariant Design →",
+    "siLabel": "In de praktijk",
+    "siTitle": "Onze eigen standaard, als praatdocument.",
+    "siP": "We passen Evident Design ook op onszelf toe. Zo loopt een meedraai-engagement: we doen mee in het werk, twee weken tot een maand, en stellen pas daarna een voorstel voor dat op geleefde ervaring rust.",
+    "siHead": [
+      "Nr",
+      "Wat? (Stap)",
+      "Hoe uitvoeren?",
+      "Waarom?",
+      "SQDC",
+      "Artefact"
+    ],
+    "siRows": [
+      [
+        "1",
+        "Intake-gesprek",
+        "1. Eén vraag scherp krijgen: welke beslissing staat de opdrachtgever op het punt te nemen, en op welke systeemuitvoer is die gebaseerd?\n2. Samen bepalen waar we meedraaien en hoe lang (twee weken tot een maand).\n3. Vooraf afspreken: we doen mee, we beoordelen niet.",
+        "Zonder een echte beslissing erachter is er geen scherpte. De vraag bepaalt waar we kijken, en de no-fault-afspraak maakt dat mensen straks open zijn.",
+        "S - De no-fault-afspraak vooraf haalt de angst eruit.\nQ - Een scherpe vraag richt de observatie.\nD - Een helder begin geeft een helder einde.\nC - Geen tijd verspild aan een te brede scope.",
+        "De scherpe vraag, vastgelegd."
+      ],
+      [
+        "2",
+        "Meedraaien op de vloer",
+        "1. Meedoen in het werk zelf, niet ernaar kijken vanaf een afstand.\n2. De dagelijkse gang volgen, inclusief de drukte en de uitzonderingen.\n3. Aan dezelfde kant van het werk blijven als de mensen; geen aparte waarnemerspositie.",
+        "Het vermogen en de werkelijke logica zitten in het doen. Je ziet ze alleen door mee te doen, niet vanaf de zijlijn.",
+        "S - Meedoen in plaats van toekijken houdt de werkvloer ontspannen.\nQ - Je ziet het echte werk, niet een opgevoerde versie.\nD - Eerste signalen van waar beeld en werk uiteenlopen.\nC - Geen dure observatieopstelling, gewoon meedraaien.",
+        "Veldnotities uit het meedoen."
+      ],
+      [
+        "3",
+        "Observeren en benoemen",
+        "1. Vastleggen wat er feitelijk gebeurt, per betrokken groep.\n2. Feitelijk, zonder interpretatie: wat werd gezien, wat werd gezegd, waar liep het beeld uiteen met het werk.\n3. Iets buiten de scope? Benoemen, niet zelf ingrijpen.",
+        "No-fault. Het is informatie, geen oordeel. Herkenning bij de mensen, inzicht bij de leiding. Een verschil tussen beeld en werk is de vondst, niet het verwijt.",
+        "S - Feitelijk en zonder oordeel houdt het veilig.\nQ - Per groep vastleggen maakt het beeld volledig.\nD - De observatie wordt de basis van het voorstel.\nC - Rolzuiverheid voorkomt verstoring van het werk.",
+        "Observatiedocument per betrokken groep."
+      ],
+      [
+        "4",
+        "Gesprekken vanuit het meedoen",
+        "1. Het waargenomene teruggeven en samen doorlopen.\n2. Als praatdocument, niet als rapport.\n3. Afwijkingen en twijfelgevallen bespreken en toetsen of het klopt.",
+        "Het document borgt het zien, niet de controle. Drift wordt zichtbaar in het gesprek, niet afgevinkt.",
+        "S - Een gesprek, geen afrekening.\nQ - Toetsen bij de mensen scherpt het beeld aan.\nD - Gedeeld beeld maakt een gedragen voorstel mogelijk.\nC - Misverstanden eruit voordat er gebouwd wordt.",
+        "Praatdocument (de levende SI)."
+      ],
+      [
+        "5",
+        "Voorstel op geleefde ervaring",
+        "1. Wat zichtbaar maken en levend houden als praatdocument (Evident Design).\n2. Wat stabiel en kritiek genoeg is, hard borgen in software (Invariant Design).\n3. Het voorstel rust op wat we hebben meegemaakt, niet op een aanname.",
+        "Een voorstel uit de werkelijkheid, geen confectie uit de etalage. Wil de opdrachtgever eerder een oplossing? Eerst zien, dan pas voorstellen.",
+        "S - Een voorstel dat de mensen herkennen, draagt.\nQ - Gegrond in wat werkelijk gebeurt.\nD - Concreet: wat zien, wat borgen, en hoe.\nC - Geen investering in iets dat niet past.",
+        "Het voorstel, met scope en lagen (ED/ID)."
+      ]
+    ]
   },
   "contact": {
     "metaTitle": "Contact — Synesthetic Minds",

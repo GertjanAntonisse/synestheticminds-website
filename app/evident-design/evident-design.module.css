@@ -245,3 +245,57 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ---- SI table (onze eigen standaard) ---- */
+.siTableWrap {
+  overflow-x: auto;
+  margin-top: 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.siTable {
+  width: 100%;
+  min-width: 960px;
+  border-collapse: collapse;
+  background: var(--paper);
+  font-size: 0.9rem;
+}
+
+.siTable th {
+  text-align: left;
+  padding: 14px 16px;
+  background: var(--accent-bg);
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--line);
+  white-space: nowrap;
+}
+
+.siTable td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+  vertical-align: top;
+  line-height: 1.6;
+  white-space: pre-line;
+}
+
+.siTable tr:last-child td {
+  border-bottom: none;
+}
+
+.siTable td:first-child {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.siEdgeHeading {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-top: 36px;
+  color: var(--ink);
+}

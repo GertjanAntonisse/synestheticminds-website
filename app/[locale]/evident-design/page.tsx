@@ -103,6 +103,35 @@ export default async function EvidentDesignPage({ params }: { params: Promise<{ 
         </div>
       </section>
 
+      {/* ---- SI: onze eigen standaard ---- */}
+      <section className="prose">
+        <div className="container">
+          <div className="label">{t.siLabel}</div>
+          <h2>{t.siTitle}</h2>
+          <p>{t.siP}</p>
+          <div className={styles.siTableWrap}>
+            <table className={styles.siTable}>
+              <thead>
+                <tr>
+                  {t.siHead.map((h) => (
+                    <th key={h}>{h}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {t.siRows.map((row, i) => (
+                  <tr key={i}>
+                    {row.map((cell, j) => (
+                      <td key={j}>{cell}</td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
       {/* ---- CTA ---- */}
       <section className="cta-section">
         <div className="container">
