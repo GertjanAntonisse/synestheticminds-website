@@ -4,6 +4,26 @@ import { getDictionary } from '../../../lib/i18n';
 import type { Locale } from '../../../lib/i18n';
 import styles from '../../evident-design/evident-design.module.css';
 
+// Render the value-lens cell (VKOB/SQDC) with each leading label in bold.
+function lensCell(cell: string) {
+  return cell.split('\n').map((line, k, arr) => {
+    const idx = line.indexOf(' - ');
+    return (
+      <React.Fragment key={k}>
+        {idx > -1 ? (
+          <>
+            <strong>{line.slice(0, idx)}</strong>
+            {line.slice(idx)}
+          </>
+        ) : (
+          line
+        )}
+        {k < arr.length - 1 && <br />}
+      </React.Fragment>
+    );
+  });
+}
+
 export default async function EvidentDesignPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const dict = await getDictionary(locale as Locale);
@@ -122,7 +142,7 @@ export default async function EvidentDesignPage({ params }: { params: Promise<{ 
                 {t.siRows.map((row, i) => (
                   <tr key={i}>
                     {row.map((cell, j) => (
-                      <td key={j}>{cell}</td>
+                      <td key={j}>{j === 4 ? lensCell(cell) : cell}</td>
                     ))}
                   </tr>
                 ))}

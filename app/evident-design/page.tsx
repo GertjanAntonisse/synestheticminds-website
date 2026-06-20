@@ -2,6 +2,26 @@ import React from 'react';
 import Link from 'next/link';
 import styles from './evident-design.module.css';
 
+// Render the value-lens cell (SQDC) with each leading label in bold.
+function lensCell(cell: string) {
+  return cell.split('\n').map((line, k, arr) => {
+    const idx = line.indexOf(' - ');
+    return (
+      <React.Fragment key={k}>
+        {idx > -1 ? (
+          <>
+            <strong>{line.slice(0, idx)}</strong>
+            {line.slice(idx)}
+          </>
+        ) : (
+          line
+        )}
+        {k < arr.length - 1 && <br />}
+      </React.Fragment>
+    );
+  });
+}
+
 export const metadata = {
   title: 'Evident Design — Synesthetic Minds',
   description:
@@ -165,7 +185,7 @@ export default function EvidentDesignPage() {
                 ].map((row, i) => (
                   <tr key={i}>
                     {row.map((cell, j) => (
-                      <td key={j}>{cell}</td>
+                      <td key={j}>{j === 4 ? lensCell(cell) : cell}</td>
                     ))}
                   </tr>
                 ))}
