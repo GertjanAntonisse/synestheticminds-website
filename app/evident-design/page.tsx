@@ -128,7 +128,7 @@ export default function EvidentDesignPage() {
         <div className="container">
           <div className="label">Proven in practice</div>
           <h2>Grown on the floor, not at the drawing board.</h2>
-          <p className={styles.projectNote}>
+          <p>
             The talk-document form grew in a large logistics organisation, where standard instructions
             were used to make the work discussable rather than to enforce it.
           </p>

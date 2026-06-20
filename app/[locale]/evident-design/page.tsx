@@ -99,7 +99,7 @@ export default async function EvidentDesignPage({ params }: { params: Promise<{ 
         <div className="container">
           <div className="label">{t.provenLabel}</div>
           <h2>{t.provenTitle}</h2>
-          <p className={styles.projectNote}>{t.provenNote}</p>
+          <p>{t.provenNote}</p>
         </div>
       </section>
 
