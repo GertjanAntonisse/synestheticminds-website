@@ -81,7 +81,7 @@
     "aiCallout": "This is fundamentally different from selling AI as a solution. We introduce AI as an extension of something that already works and is already proven.",
     "practiceLabel": "In practice",
     "practiceTitle": "A conversation first. Then a diagnosis.",
-    "practiceP1": "We start with a single question: what decision are you about to make, and what system output is it based on? From there, we scope a focused diagnostic — typically a few weeks — that produces a clear picture of what your system is actually doing.",
+    "practiceP1": "We begin with one question: which decision are you about to make, and on which system output is it based? Then we find the best way to see what your system really does. That can be a focused diagnosis of a few weeks, or joining the work itself, the approach we describe under Evident Design.",
     "practiceP2": "No large transformation project. No disruption to what's running. A lens, first. Then a decision.",
     "ctaTitle": "Start with what you already know.",
     "ctaP": "One conversation. No commitment. If it resonates, we'll take it from there.",
