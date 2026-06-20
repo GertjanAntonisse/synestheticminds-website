@@ -41,7 +41,7 @@ export default function Nav({ locale, dict }: NavProps) {
   const boekSlug = locale === 'en' ? 'book' : 'boek';
 
   // Localized slug for the system-understanding page: /nl/systeembegrip vs /en/for-companies
-  const forCompaniesSlug = locale === 'nl' ? 'systeembegrip' : 'for-companies';
+  const forCompaniesSlug = locale === 'nl' ? 'systeembegrip' : 'ground-truth';
 
   return (
     <nav className={styles.nav}>

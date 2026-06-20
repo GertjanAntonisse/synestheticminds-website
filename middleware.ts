@@ -18,22 +18,27 @@ export function middleware(request: NextRequest) {
     return NextResponse.rewrite(url);
   }
 
-  // System-understanding page: /nl/systeembegrip (NL) and /en/for-companies (EN)
+  // System-understanding page: /nl/systeembegrip (NL) and /en/ground-truth (EN)
   // are the canonical URLs. The page physically lives at /[locale]/for-companies,
-  // so the NL canonical is rewritten internally, and the off-language variants redirect.
+  // so both canonicals are rewritten internally, and the bare /for-companies paths redirect.
   if (pathname === '/nl/for-companies') {
     const url = request.nextUrl.clone();
     url.pathname = '/nl/systeembegrip';
     return NextResponse.redirect(url);
   }
-  if (pathname === '/en/systeembegrip') {
+  if (pathname === '/en/for-companies') {
     const url = request.nextUrl.clone();
-    url.pathname = '/en/for-companies';
+    url.pathname = '/en/ground-truth';
     return NextResponse.redirect(url);
   }
   if (pathname === '/nl/systeembegrip') {
     const url = request.nextUrl.clone();
     url.pathname = '/nl/for-companies';
+    return NextResponse.rewrite(url);
+  }
+  if (pathname === '/en/ground-truth') {
+    const url = request.nextUrl.clone();
+    url.pathname = '/en/for-companies';
     return NextResponse.rewrite(url);
   }
 
