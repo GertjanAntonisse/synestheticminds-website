@@ -232,7 +232,7 @@ export default function InvariantDesignPage() {
       <section className="cta-section">
         <div className="container">
           <h2>Want to build systems that prove their own correctness?</h2>
-          <p>Connect with René directly — or explore how this applies to your existing systems.</p>
+          <p>Connect with René directly — or see how Evident Design makes the work visible first.</p>
           <div className={styles.ctaButtons}>
             <a
               href="https://www.linkedin.com/in/reneluijk/"
@@ -242,8 +242,8 @@ export default function InvariantDesignPage() {
             >
               Connect with René &rarr;
             </a>
-            <Link href="/for-companies" className="cta-button-outline">
-              For existing companies &rarr;
+            <Link href="/evident-design" className="cta-button-outline">
+              To Evident Design &rarr;
             </Link>
           </div>
         </div>
