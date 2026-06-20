@@ -145,7 +145,7 @@ export default async function InvariantDesignPage({ params }: { params: Promise<
             >
               {t.ctaButton}
             </a>
-            <Link href={`/${locale}/for-companies`} className="cta-button-outline">
+            <Link href={`/${locale}/${locale === 'nl' ? 'systeembegrip' : 'for-companies'}`} className="cta-button-outline">
               {t.ctaSecondary}
             </Link>
           </div>

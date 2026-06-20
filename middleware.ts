@@ -18,6 +18,25 @@ export function middleware(request: NextRequest) {
     return NextResponse.rewrite(url);
   }
 
+  // System-understanding page: /nl/systeembegrip (NL) and /en/for-companies (EN)
+  // are the canonical URLs. The page physically lives at /[locale]/for-companies,
+  // so the NL canonical is rewritten internally, and the off-language variants redirect.
+  if (pathname === '/nl/for-companies') {
+    const url = request.nextUrl.clone();
+    url.pathname = '/nl/systeembegrip';
+    return NextResponse.redirect(url);
+  }
+  if (pathname === '/en/systeembegrip') {
+    const url = request.nextUrl.clone();
+    url.pathname = '/en/for-companies';
+    return NextResponse.redirect(url);
+  }
+  if (pathname === '/nl/systeembegrip') {
+    const url = request.nextUrl.clone();
+    url.pathname = '/nl/for-companies';
+    return NextResponse.rewrite(url);
+  }
+
   // Already locale-prefixed — let through
   if (locales.some((loc) => pathname === `/${loc}` || pathname.startsWith(`/${loc}/`))) {
     return NextResponse.next();

@@ -51,9 +51,9 @@
   "forCompanies": {
     "metaTitle": "For Companies — Synesthetic Minds",
     "metaDesc": "You don't need a new system. You need to see what the current one is actually doing.",
-    "heroLabel": "For existing companies",
-    "heroTitle": "You don't need a new system. You need to see what the current one is actually doing.",
-    "heroTagline": "Most organizations have systems that work. The problem is not the system — it's that no one has ever verified whether the output it produces is correct.",
+    "heroLabel": "System understanding",
+    "heroTitle": "First see what your system really does. Then secure that it holds.",
+    "heroTagline": "Most organisations have systems that work, but no one ever verified whether the picture still matches the work. We make it visible first with Evident Design, then secure what matters with Invariant Design. Two layers, one movement.",
     "howLabel": "How it happens",
     "howTitle": "The system works. The output is accepted. The gap grows silently.",
     "step1Title": "At implementation",

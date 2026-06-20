@@ -59,7 +59,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           <div className="label">{t.howLabel}</div>
           <h2>{t.howTitle}</h2>
           <div className={styles.pathGrid}>
-            <Link href={`/${locale}/for-companies`} className={styles.pathCard}>
+            <Link href={`/${locale}/${locale === 'nl' ? 'systeembegrip' : 'for-companies'}`} className={styles.pathCard}>
               <div className={styles.pathCardLabel}>{t.path1Label}</div>
               <h3>{t.path1Title}</h3>
               <p>{t.path1P}</p>

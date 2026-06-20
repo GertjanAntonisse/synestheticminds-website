@@ -40,6 +40,9 @@ export default function Nav({ locale, dict }: NavProps) {
   // Localized slug for the book page: /nl/boek vs /en/book
   const boekSlug = locale === 'en' ? 'book' : 'boek';
 
+  // Localized slug for the system-understanding page: /nl/systeembegrip vs /en/for-companies
+  const forCompaniesSlug = locale === 'nl' ? 'systeembegrip' : 'for-companies';
+
   return (
     <nav className={styles.nav}>
       <div className={styles.inner}>
@@ -77,8 +80,8 @@ export default function Nav({ locale, dict }: NavProps) {
         <ul className={`${styles.links} ${isOpen ? styles.linksOpen : ''}`}>
           <li>
             <Link
-              href={`/${locale}/for-companies`}
-              className={`${styles.link} ${isActive('/for-companies') ? styles.linkActive : ''}`}
+              href={`/${locale}/${forCompaniesSlug}`}
+              className={`${styles.link} ${isActive(`/${forCompaniesSlug}`) ? styles.linkActive : ''}`}
               onClick={() => setIsOpen(false)}
             >
               {dict.forCompanies}
