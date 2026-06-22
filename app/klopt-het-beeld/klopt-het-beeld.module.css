@@ -1,14 +1,39 @@
-/* ---- Zelf-scan tabel ---- */
+/* ---- Zelf-scan invulformulier ---- */
+.procesField {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.procesField label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.procesField input {
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+  font-size: 1rem;
+  color: var(--ink);
+  max-width: 520px;
+}
+
 .scanTableWrap {
   overflow-x: auto;
-  margin-top: 28px;
+  margin-top: 24px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
 }
 
 .scanTable {
   width: 100%;
-  min-width: 720px;
+  min-width: 760px;
   border-collapse: collapse;
   background: var(--paper);
   font-size: 0.95rem;
@@ -28,11 +53,9 @@
 }
 
 .scanTable td {
-  padding: 16px 18px;
+  padding: 14px 18px;
   border-bottom: 1px solid var(--line);
-  color: var(--ink);
   vertical-align: top;
-  line-height: 1.6;
 }
 
 .scanTable tr:last-child td {
@@ -40,24 +63,99 @@
 }
 
 .scanTable td:first-child {
+  width: 20%;
+}
+
+.themaTitle {
   font-weight: 600;
-  width: 22%;
+  color: var(--ink);
 }
 
-.scanTable .empty {
+.cellQ {
+  display: block;
+  font-size: 0.88rem;
   color: var(--muted);
-  font-style: italic;
+  margin-bottom: 8px;
+  line-height: 1.5;
 }
 
-.downloadRow {
-  margin-top: 22px;
-  font-size: 0.95rem;
-  color: var(--muted);
+.scanTable textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 8px 10px;
+  font: inherit;
+  font-size: 0.92rem;
+  color: var(--ink);
+  background: #fff;
+  resize: vertical;
+  min-height: 48px;
 }
 
-.downloadRow a {
-  color: var(--accent);
-  font-weight: 600;
+/* ---- Acties ---- */
+.actions {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.sendBlock {
+  border-top: 1px solid var(--line);
+  padding-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 560px;
+}
+
+.sendFields {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.sendFields input {
+  flex: 1;
+  min-width: 200px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+  font-size: 1rem;
+  color: var(--ink);
+}
+
+.consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.92rem;
+  color: var(--ink);
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.consent input {
+  margin-top: 3px;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.sentOk {
+  margin-top: 28px;
+  padding: 18px 20px;
+  background: var(--accent-bg);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.errorMsg {
+  color: #b42318;
+  font-size: 0.9rem;
 }
 
 .ctaButtons {
@@ -66,4 +164,22 @@
   gap: 12px;
   justify-content: center;
   align-items: center;
+}
+
+/* ---- Print: schoon invulvel ---- */
+@media print {
+  .actions,
+  .procesField label {
+    display: none !important;
+  }
+  .scanTable textarea {
+    border: none;
+    min-height: 0;
+    background: transparent;
+    padding: 0;
+  }
+  .scanTableWrap {
+    overflow: visible;
+    border: 1px solid #999;
+  }
 }

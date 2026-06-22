@@ -249,12 +249,12 @@
     "heroTagline": "Kies één proces of deelproces waarvan je denkt dat je het goed kent. Juist dat. Hoe vanzelfsprekender het voelt, hoe meer deze scan je laat zien.",
     "scanLabel": "Twee kolommen",
     "scanTitle": "Jouw beeld, naast het werk zelf.",
-    "scanP": "Vul links in wat je gelooft dat er gebeurt. Vul rechts in wat er werkelijk gebeurt, door te gaan kijken en te vragen. De rechterkolom vul je niet vanuit je hoofd.",
-    "tableHead": [
-      "Thema",
-      "Jouw beeld",
-      "Het werk zelf (ga kijken & vragen)"
-    ],
+    "scanP": "Vul links in wat je gelooft dat er gebeurt. Vul rechts in wat er werkelijk gebeurt, door te gaan kijken en te vragen. De rechterkolom vul je niet vanuit je hoofd. Print het ingevulde formulier voor jezelf, of stuur het naar ons als je het samen wil onderzoeken.",
+    "procesLabel": "Welk proces of deelproces?",
+    "procesPlaceholder": "Bijvoorbeeld: orders verwerken, een klant onboarden, een storing afhandelen",
+    "colThema": "Thema",
+    "colBeeld": "Jouw beeld",
+    "colWerk": "Het werk zelf (ga kijken & vragen)",
     "rows": [
       {
         "thema": "De stappen",
@@ -282,9 +282,16 @@
         "werk": "En wie betaalt daar wat het andere wint?"
       }
     ],
-    "downloadLead": "Liever afdrukken en invullen op de werkvloer?",
-    "downloadLabel": "Open de printbare scan",
-    "downloadUrl": "https://docs.google.com/spreadsheets/d/1SIO9QAbybOHPgdYfGGmFeARe7cI2fz6jfMxhddJglT8/edit",
+    "fillPlaceholder": "Vul in…",
+    "nameLabel": "Je naam",
+    "emailLabel": "Je e-mailadres",
+    "consentLabel": "Jullie mogen mijn antwoorden gebruiken om jullie aanpak te verbeteren.",
+    "printButton": "Print of bewaar als PDF",
+    "sendButton": "Stuur naar ons voor een gesprek →",
+    "sending": "Bezig met versturen…",
+    "sentOk": "Dank je. We hebben je scan ontvangen en nemen contact op voor een vrijblijvend gesprek.",
+    "errInvalidEmail": "Vul een geldig e-mailadres in om je scan te sturen.",
+    "errGeneric": "Er ging iets mis bij het versturen. Probeer het opnieuw, of mail naar info@synestheticminds.nl.",
     "mirrorLabel": "De spiegel",
     "mirrorTitle": "Hoe zeker was je?",
     "mirrorP": "Kon je de rechterkolom invullen uit eigen waarneming, of moest je gokken? Elke gok is een plek waar je beeld en het werk uiteen kunnen lopen. En let op: hoe zekerder je was, hoe groter het risico. Zekerheid is precies wat de kloof verbergt.",

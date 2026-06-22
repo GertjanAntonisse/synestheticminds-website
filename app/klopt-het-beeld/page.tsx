@@ -1,9 +1,9 @@
-import React from 'react';
 import Link from 'next/link';
+import ScanForm from './ScanForm';
 import styles from './klopt-het-beeld.module.css';
 
 export const metadata = {
-  title: 'Klopt het beeld nog? — Synesthetic Minds',
+  title: 'Does the picture still fit? — Synesthetic Minds',
   description:
     'A self-scan for one process: lay your picture of the work next to the work itself, and see where they drift apart.',
 };
@@ -37,38 +37,29 @@ export default function ZelfScanPage() {
           <p>
             Fill in the left column with what you believe happens. Fill in the right column with what
             actually happens, by going to look and to ask. You do not fill the right column from your
-            head.
+            head. Print the completed form for yourself, or send it to us if you want to look into it
+            together.
           </p>
-          <div className={styles.scanTableWrap}>
-            <table className={styles.scanTable}>
-              <thead>
-                <tr>
-                  <th>Theme</th>
-                  <th>Your picture</th>
-                  <th>The work itself (go look &amp; ask)</th>
-                </tr>
-              </thead>
-              <tbody>
-                {ROWS.map((row, i) => (
-                  <tr key={i}>
-                    <td>{row.thema}</td>
-                    <td>{row.beeld}</td>
-                    <td>{row.werk}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <p className={styles.downloadRow}>
-            Prefer to print it and fill it in on the floor?{' '}
-            <a
-              href="https://docs.google.com/spreadsheets/d/1SIO9QAbybOHPgdYfGGmFeARe7cI2fz6jfMxhddJglT8/edit"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Open the printable scan
-            </a>
-          </p>
+          <ScanForm
+            t={{
+              procesLabel: 'Which process or sub-process?',
+              procesPlaceholder: 'For example: processing orders, onboarding a customer, handling an incident',
+              colThema: 'Theme',
+              colBeeld: 'Your picture',
+              colWerk: 'The work itself (go look & ask)',
+              rows: ROWS,
+              fillPlaceholder: 'Fill in…',
+              nameLabel: 'Your name',
+              emailLabel: 'Your email address',
+              consentLabel: 'You may use my answers to improve your approach.',
+              printButton: 'Print or save as PDF',
+              sendButton: 'Send to us for a conversation →',
+              sending: 'Sending…',
+              sentOk: 'Thank you. We received your scan and will reach out for a no-obligation conversation.',
+              errInvalidEmail: 'Please enter a valid email address to send your scan.',
+              errGeneric: 'Something went wrong while sending. Please try again, or email info@synestheticminds.nl.',
+            }}
+          />
         </div>
       </section>
 

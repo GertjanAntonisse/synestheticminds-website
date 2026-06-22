@@ -1,7 +1,7 @@
-import React from 'react';
 import Link from 'next/link';
 import { getDictionary } from '../../../lib/i18n';
 import type { Locale } from '../../../lib/i18n';
+import ScanForm from '../../klopt-het-beeld/ScanForm';
 import styles from '../../klopt-het-beeld/klopt-het-beeld.module.css';
 
 export default async function ZelfScanPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -20,38 +20,32 @@ export default async function ZelfScanPage({ params }: { params: Promise<{ local
         </div>
       </section>
 
-      {/* ---- Intro + tabel ---- */}
+      {/* ---- Intro + invulformulier ---- */}
       <section className="prose">
         <div className="container">
           <div className="label">{t.scanLabel}</div>
           <h2>{t.scanTitle}</h2>
           <p>{t.scanP}</p>
-          <div className={styles.scanTableWrap}>
-            <table className={styles.scanTable}>
-              <thead>
-                <tr>
-                  {t.tableHead.map((h) => (
-                    <th key={h}>{h}</th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {t.rows.map((row, i) => (
-                  <tr key={i}>
-                    <td>{row.thema}</td>
-                    <td>{row.beeld}</td>
-                    <td>{row.werk}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <p className={styles.downloadRow}>
-            {t.downloadLead}{' '}
-            <a href={t.downloadUrl} target="_blank" rel="noopener noreferrer">
-              {t.downloadLabel}
-            </a>
-          </p>
+          <ScanForm
+            t={{
+              procesLabel: t.procesLabel,
+              procesPlaceholder: t.procesPlaceholder,
+              colThema: t.colThema,
+              colBeeld: t.colBeeld,
+              colWerk: t.colWerk,
+              rows: t.rows,
+              fillPlaceholder: t.fillPlaceholder,
+              nameLabel: t.nameLabel,
+              emailLabel: t.emailLabel,
+              consentLabel: t.consentLabel,
+              printButton: t.printButton,
+              sendButton: t.sendButton,
+              sending: t.sending,
+              sentOk: t.sentOk,
+              errInvalidEmail: t.errInvalidEmail,
+              errGeneric: t.errGeneric,
+            }}
+          />
         </div>
       </section>
 
