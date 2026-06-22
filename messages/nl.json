@@ -241,6 +241,58 @@
       ]
     ]
   },
+  "zelfScan": {
+    "metaTitle": "Klopt het beeld nog? — Synesthetic Minds",
+    "metaDesc": "Een zelf-scan voor één proces: leg je beeld van het werk naast het werk zelf, en zie waar ze uiteenlopen.",
+    "heroLabel": "Zelf-scan",
+    "heroTitle": "Klopt het beeld nog?",
+    "heroTagline": "Kies één proces of deelproces waarvan je denkt dat je het goed kent. Juist dat. Hoe vanzelfsprekender het voelt, hoe meer deze scan je laat zien.",
+    "scanLabel": "Twee kolommen",
+    "scanTitle": "Jouw beeld, naast het werk zelf.",
+    "scanP": "Vul links in wat je gelooft dat er gebeurt. Vul rechts in wat er werkelijk gebeurt, door te gaan kijken en te vragen. De rechterkolom vul je niet vanuit je hoofd.",
+    "tableHead": [
+      "Thema",
+      "Jouw beeld",
+      "Het werk zelf (ga kijken & vragen)"
+    ],
+    "rows": [
+      {
+        "thema": "De stappen",
+        "beeld": "Welke stappen worden er volgens jou gezet?",
+        "werk": "Welke stappen zet men werkelijk, inclusief de omwegen?"
+      },
+      {
+        "thema": "De uitzonderingen",
+        "beeld": "Hoe vaak wijkt het af van de standaard?",
+        "werk": "Wat zeggen de mensen die het dagelijks doen?"
+      },
+      {
+        "thema": "Het ongeschrevene",
+        "beeld": "Welke afspraken neem je aan dat ze gevolgd worden?",
+        "werk": "Welke afspraken bestaan er die nergens staan? (het boekje)"
+      },
+      {
+        "thema": "Het waarom",
+        "beeld": "Weet je waaróm men het zo doet?",
+        "werk": "Of alleen dát het zo hoort?"
+      },
+      {
+        "thema": "De naden",
+        "beeld": "Waar raakt dit proces het volgende?",
+        "werk": "En wie betaalt daar wat het andere wint?"
+      }
+    ],
+    "downloadLead": "Liever afdrukken en invullen op de werkvloer?",
+    "downloadLabel": "Open de printbare scan",
+    "downloadUrl": "https://docs.google.com/spreadsheets/d/1SIO9QAbybOHPgdYfGGmFeARe7cI2fz6jfMxhddJglT8/edit",
+    "mirrorLabel": "De spiegel",
+    "mirrorTitle": "Hoe zeker was je?",
+    "mirrorP": "Kon je de rechterkolom invullen uit eigen waarneming, of moest je gokken? Elke gok is een plek waar je beeld en het werk uiteen kunnen lopen. En let op: hoe zekerder je was, hoe groter het risico. Zekerheid is precies wat de kloof verbergt.",
+    "ctaTitle": "En nu?",
+    "ctaP": "De rechterkolom vul je alleen echt door te gaan zien: meedraaien, vragen, kijken zonder te oordelen. Dat is waar Evident Design begint.",
+    "ctaButton": "Start een gesprek →",
+    "ctaSecondary": "Over Evident Design →"
+  },
   "contact": {
     "metaTitle": "Contact — Synesthetic Minds",
     "metaDesc": "Één vraag. Geen verplichting. Als het resoneert, gaan we verder.",

@@ -241,6 +241,58 @@
       ]
     ]
   },
+  "zelfScan": {
+    "metaTitle": "Does the picture still fit? — Synesthetic Minds",
+    "metaDesc": "A self-scan for one process: lay your picture of the work next to the work itself, and see where they drift apart.",
+    "heroLabel": "Self-scan",
+    "heroTitle": "Does the picture still fit?",
+    "heroTagline": "Pick one process or sub-process you believe you know well. Exactly that one. The more self-evident it feels, the more this scan will show you.",
+    "scanLabel": "Two columns",
+    "scanTitle": "Your picture, next to the work itself.",
+    "scanP": "Fill in the left column with what you believe happens. Fill in the right column with what actually happens, by going to look and to ask. You do not fill the right column from your head.",
+    "tableHead": [
+      "Theme",
+      "Your picture",
+      "The work itself (go look & ask)"
+    ],
+    "rows": [
+      {
+        "thema": "The steps",
+        "beeld": "Which steps do you think are taken?",
+        "werk": "Which steps are actually taken, including the workarounds?"
+      },
+      {
+        "thema": "The exceptions",
+        "beeld": "How often does it deviate from the standard?",
+        "werk": "What do the people who do it daily say?"
+      },
+      {
+        "thema": "The unwritten",
+        "beeld": "Which agreements do you assume are followed?",
+        "werk": "Which agreements exist that are written down nowhere? (the notebook)"
+      },
+      {
+        "thema": "The why",
+        "beeld": "Do you know why it is done this way?",
+        "werk": "Or only that it is supposed to be done this way?"
+      },
+      {
+        "thema": "The seams",
+        "beeld": "Where does this process touch the next?",
+        "werk": "And who pays there for what the other gains?"
+      }
+    ],
+    "downloadLead": "Prefer to print it and fill it in on the floor?",
+    "downloadLabel": "Open the printable scan",
+    "downloadUrl": "https://docs.google.com/spreadsheets/d/1SIO9QAbybOHPgdYfGGmFeARe7cI2fz6jfMxhddJglT8/edit",
+    "mirrorLabel": "The mirror",
+    "mirrorTitle": "How sure were you?",
+    "mirrorP": "Could you fill the right column from your own observation, or did you have to guess? Every guess is a place where your picture and the work may drift apart. And note: the more certain you were, the greater the risk. Certainty is exactly what hides the gap.",
+    "ctaTitle": "And now?",
+    "ctaP": "You only truly fill the right column by going to see: joining the work, asking, looking without judging. That is where Evident Design begins.",
+    "ctaButton": "Start a conversation →",
+    "ctaSecondary": "About Evident Design →"
+  },
   "contact": {
     "metaTitle": "Contact — Synesthetic Minds",
     "metaDesc": "One question. No commitment. If it resonates, we'll take it from there.",

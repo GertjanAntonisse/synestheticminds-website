@@ -1,0 +1,69 @@
+/* ---- Zelf-scan tabel ---- */
+.scanTableWrap {
+  overflow-x: auto;
+  margin-top: 28px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.scanTable {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+  background: var(--paper);
+  font-size: 0.95rem;
+}
+
+.scanTable th {
+  text-align: left;
+  padding: 14px 18px;
+  background: var(--accent-bg);
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--line);
+  white-space: nowrap;
+}
+
+.scanTable td {
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+  vertical-align: top;
+  line-height: 1.6;
+}
+
+.scanTable tr:last-child td {
+  border-bottom: none;
+}
+
+.scanTable td:first-child {
+  font-weight: 600;
+  width: 22%;
+}
+
+.scanTable .empty {
+  color: var(--muted);
+  font-style: italic;
+}
+
+.downloadRow {
+  margin-top: 22px;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.downloadRow a {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.ctaButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
