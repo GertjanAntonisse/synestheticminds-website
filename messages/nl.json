@@ -249,7 +249,7 @@
     "heroTagline": "Kies één proces of deelproces waarvan je denkt dat je het goed kent. Juist dat. Hoe vanzelfsprekender het voelt, hoe meer deze scan je laat zien.",
     "scanLabel": "Twee kolommen",
     "scanTitle": "Jouw beeld, naast het werk zelf.",
-    "scanP": "Vul links in wat je gelooft dat er gebeurt. Vul rechts in wat er werkelijk gebeurt, door te gaan kijken en te vragen. De rechterkolom vul je niet vanuit je hoofd. Print het ingevulde formulier voor jezelf, of stuur het naar ons als je het samen wil onderzoeken.",
+    "scanP": "Vul links in wat je gelooft dat er gebeurt. Vul rechts in wat er werkelijk gebeurt, door te gaan kijken en te vragen. De rechterkolom vul je niet vanuit je hoofd. Print het ingevulde formulier voor jezelf, of deel het verderop met ons.",
     "procesLabel": "Welk proces of deelproces?",
     "procesPlaceholder": "Bijvoorbeeld: orders verwerken, een klant onboarden, een storing afhandelen",
     "colThema": "Thema",
@@ -287,7 +287,6 @@
     "emailLabel": "Je e-mailadres",
     "consentLabel": "Jullie mogen mijn antwoorden gebruiken om jullie aanpak te verbeteren.",
     "printButton": "Print of bewaar als PDF",
-    "sendButton": "Stuur naar ons voor een gesprek →",
     "sending": "Bezig met versturen…",
     "sentOk": "Dank je. We hebben je scan ontvangen en nemen contact op voor een vrijblijvend gesprek.",
     "errInvalidEmail": "Vul een geldig e-mailadres in om je scan te sturen.",
@@ -298,7 +297,11 @@
     "ctaTitle": "En nu?",
     "ctaP": "De rechterkolom vul je alleen echt door te gaan zien: meedraaien, vragen, kijken zonder te oordelen. Dat is waar Evident Design begint.",
     "ctaButton": "Start een gesprek →",
-    "ctaSecondary": "Over Evident Design →"
+    "ctaSecondary": "Over Evident Design →",
+    "shareLabel": "Deel je scan",
+    "shareTitle": "Deel je ingevulde scan met ons",
+    "shareP": "Stuur je scan op, dan kijken we mee en nemen we contact op. En met je toestemming gebruiken we wat we leren om onze aanpak scherper te maken.",
+    "shareButton": "Deel je scan →"
   },
   "contact": {
     "metaTitle": "Contact — Synesthetic Minds",

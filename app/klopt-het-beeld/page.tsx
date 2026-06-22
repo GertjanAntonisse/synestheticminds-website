@@ -29,12 +29,13 @@ export default function ZelfScanPage() {
       </section>
 
       <ScanForm
+        contactHref="/contact"
         evidentHref="/evident-design"
         t={{
           introLabel: 'Two columns',
           introTitle: 'Your picture, next to the work itself.',
           introP:
-            'Fill in the left column with what you believe happens. Fill in the right column with what actually happens, by going to look and to ask. You do not fill the right column from your head. Print the completed form for yourself, or send it to us if you want to look into it together.',
+            'Fill in the left column with what you believe happens. Fill in the right column with what actually happens, by going to look and to ask. You do not fill the right column from your head. Print the completed form for yourself, or share it with us further down.',
           procesLabel: 'Which process or sub-process?',
           procesPlaceholder: 'For example: processing orders, onboarding a customer, handling an incident',
           colThema: 'Theme',
@@ -47,17 +48,22 @@ export default function ZelfScanPage() {
           mirrorTitle: 'How sure were you?',
           mirrorP:
             'Could you fill the right column from your own observation, or did you have to guess? Every guess is a place where your picture and the work may drift apart. And note: the more certain you were, the greater the risk. Certainty is exactly what hides the gap.',
-          ctaTitle: 'And now?',
-          ctaP:
-            'You only truly fill the right column by going to see: joining the work, asking, looking without judging. That is where Evident Design begins.',
+          shareLabel: 'Share your scan',
+          shareTitle: 'Share your completed scan with us',
+          shareP:
+            "Send us your scan and we'll take a look and get in touch. With your permission, we use what we learn to sharpen our approach.",
           nameLabel: 'Your name',
           emailLabel: 'Your email address',
           consentLabel: 'You may use my answers to improve your approach.',
-          sendButton: 'Send to us for a conversation →',
+          shareButton: 'Share your scan →',
           sending: 'Sending…',
-          sentOk: 'Thank you. We received your scan and will reach out for a no-obligation conversation.',
-          errInvalidEmail: 'Please enter a valid email address to send your scan.',
+          sentOk: 'Thank you. We received your scan and will be in touch.',
+          errInvalidEmail: 'Please enter a valid email address to share your scan.',
           errGeneric: 'Something went wrong while sending. Please try again, or email info@synestheticminds.nl.',
+          ctaTitle: 'And now?',
+          ctaP:
+            'You only truly fill the right column by going to see: joining the work, asking, looking without judging. That is where Evident Design begins.',
+          ctaButton: 'Start a conversation →',
           ctaSecondary: 'About Evident Design →',
         }}
       />

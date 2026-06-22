@@ -19,6 +19,7 @@ export default async function ZelfScanPage({ params }: { params: Promise<{ local
       </section>
 
       <ScanForm
+        contactHref={`/${locale}/contact`}
         evidentHref={`/${locale}/evident-design`}
         t={{
           introLabel: t.scanLabel,
@@ -35,16 +36,20 @@ export default async function ZelfScanPage({ params }: { params: Promise<{ local
           mirrorLabel: t.mirrorLabel,
           mirrorTitle: t.mirrorTitle,
           mirrorP: t.mirrorP,
-          ctaTitle: t.ctaTitle,
-          ctaP: t.ctaP,
+          shareLabel: t.shareLabel,
+          shareTitle: t.shareTitle,
+          shareP: t.shareP,
           nameLabel: t.nameLabel,
           emailLabel: t.emailLabel,
           consentLabel: t.consentLabel,
-          sendButton: t.sendButton,
+          shareButton: t.shareButton,
           sending: t.sending,
           sentOk: t.sentOk,
           errInvalidEmail: t.errInvalidEmail,
           errGeneric: t.errGeneric,
+          ctaTitle: t.ctaTitle,
+          ctaP: t.ctaP,
+          ctaButton: t.ctaButton,
           ctaSecondary: t.ctaSecondary,
         }}
       />

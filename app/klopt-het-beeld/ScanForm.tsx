@@ -20,24 +20,30 @@ export interface ScanStrings {
   mirrorLabel: string;
   mirrorTitle: string;
   mirrorP: string;
-  ctaTitle: string;
-  ctaP: string;
+  shareLabel: string;
+  shareTitle: string;
+  shareP: string;
   nameLabel: string;
   emailLabel: string;
   consentLabel: string;
-  sendButton: string;
+  shareButton: string;
   sending: string;
   sentOk: string;
   errInvalidEmail: string;
   errGeneric: string;
+  ctaTitle: string;
+  ctaP: string;
+  ctaButton: string;
   ctaSecondary: string;
 }
 
 export default function ScanForm({
   t,
+  contactHref,
   evidentHref,
 }: {
   t: ScanStrings;
+  contactHref: string;
   evidentHref: string;
 }) {
   const [proces, setProces] = useState('');
@@ -157,11 +163,12 @@ export default function ScanForm({
         </div>
       </section>
 
-      {/* ---- En nu? + versturen ---- */}
-      <section className="cta-section">
+      {/* ---- Deel je ingevulde scan ---- */}
+      <section className="prose">
         <div className="container">
-          <h2>{t.ctaTitle}</h2>
-          <p>{t.ctaP}</p>
+          <div className="label">{t.shareLabel}</div>
+          <h2>{t.shareTitle}</h2>
+          <p>{t.shareP}</p>
 
           {status === 'ok' ? (
             <p className={styles.sentOk}>{t.sentOk}</p>
@@ -197,17 +204,27 @@ export default function ScanForm({
                 onClick={handleSend}
                 disabled={status === 'sending'}
               >
-                {status === 'sending' ? t.sending : t.sendButton}
+                {status === 'sending' ? t.sending : t.shareButton}
               </button>
               {status === 'error' && <p className={styles.errorMsg}>{errorMsg}</p>}
             </div>
           )}
+        </div>
+      </section>
 
-          {status !== 'ok' && (
-            <p className={styles.secondaryLink}>
-              <Link href={evidentHref}>{t.ctaSecondary}</Link>
-            </p>
-          )}
+      {/* ---- En nu? (afsluitende band) ---- */}
+      <section className="cta-section">
+        <div className="container">
+          <h2>{t.ctaTitle}</h2>
+          <p>{t.ctaP}</p>
+          <div className={styles.altLinks}>
+            <Link href={contactHref} className="cta-button">
+              {t.ctaButton}
+            </Link>
+            <Link href={evidentHref} className="cta-button-outline">
+              {t.ctaSecondary}
+            </Link>
+          </div>
         </div>
       </section>
     </>

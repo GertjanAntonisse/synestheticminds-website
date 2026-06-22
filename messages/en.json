@@ -287,7 +287,6 @@
     "emailLabel": "Your email address",
     "consentLabel": "You may use my answers to improve your approach.",
     "printButton": "Print or save as PDF",
-    "sendButton": "Send to us for a conversation →",
     "sending": "Sending…",
     "sentOk": "Thank you. We received your scan and will reach out for a no-obligation conversation.",
     "errInvalidEmail": "Please enter a valid email address to send your scan.",
@@ -298,7 +297,11 @@
     "ctaTitle": "And now?",
     "ctaP": "You only truly fill the right column by going to see: joining the work, asking, looking without judging. That is where Evident Design begins.",
     "ctaButton": "Start a conversation →",
-    "ctaSecondary": "About Evident Design →"
+    "ctaSecondary": "About Evident Design →",
+    "shareLabel": "Share your scan",
+    "shareTitle": "Share your completed scan with us",
+    "shareP": "Send us your scan and we'll take a look and get in touch. With your permission, we use what we learn to sharpen our approach.",
+    "shareButton": "Share your scan →"
   },
   "contact": {
     "metaTitle": "Contact — Synesthetic Minds",
