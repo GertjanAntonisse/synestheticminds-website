@@ -29,7 +29,6 @@ export default function ZelfScanPage() {
       </section>
 
       <ScanForm
-        contactHref="/contact"
         evidentHref="/evident-design"
         t={{
           introLabel: 'Two columns',
@@ -59,7 +58,6 @@ export default function ZelfScanPage() {
           sentOk: 'Thank you. We received your scan and will reach out for a no-obligation conversation.',
           errInvalidEmail: 'Please enter a valid email address to send your scan.',
           errGeneric: 'Something went wrong while sending. Please try again, or email info@synestheticminds.nl.',
-          ctaButton: 'Start a conversation →',
           ctaSecondary: 'About Evident Design →',
         }}
       />

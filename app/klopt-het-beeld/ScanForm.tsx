@@ -30,17 +30,14 @@ export interface ScanStrings {
   sentOk: string;
   errInvalidEmail: string;
   errGeneric: string;
-  ctaButton: string;
   ctaSecondary: string;
 }
 
 export default function ScanForm({
   t,
-  contactHref,
   evidentHref,
 }: {
   t: ScanStrings;
-  contactHref: string;
   evidentHref: string;
 }) {
   const [proces, setProces] = useState('');
@@ -169,7 +166,7 @@ export default function ScanForm({
           {status === 'ok' ? (
             <p className={styles.sentOk}>{t.sentOk}</p>
           ) : (
-            <div className={styles.sendBlock}>
+            <div className={styles.sendCard}>
               <div className={styles.sendFields}>
                 <input
                   type="text"
@@ -196,7 +193,7 @@ export default function ScanForm({
               </label>
               <button
                 type="button"
-                className="cta-button"
+                className={`cta-button ${styles.sendButton}`}
                 onClick={handleSend}
                 disabled={status === 'sending'}
               >
@@ -206,14 +203,11 @@ export default function ScanForm({
             </div>
           )}
 
-          <div className={styles.altLinks}>
-            <Link href={contactHref} className="cta-button-outline">
-              {t.ctaButton}
-            </Link>
-            <Link href={evidentHref} className="cta-button-outline">
-              {t.ctaSecondary}
-            </Link>
-          </div>
+          {status !== 'ok' && (
+            <p className={styles.secondaryLink}>
+              <Link href={evidentHref}>{t.ctaSecondary}</Link>
+            </p>
+          )}
         </div>
       </section>
     </>
