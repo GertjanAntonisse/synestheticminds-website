@@ -1,6 +1,4 @@
-import Link from 'next/link';
 import ScanForm from './ScanForm';
-import styles from './klopt-het-beeld.module.css';
 
 export const metadata = {
   title: 'Does the picture still fit? — Synesthetic Minds',
@@ -30,70 +28,41 @@ export default function ZelfScanPage() {
         </div>
       </section>
 
-      <section className="prose">
-        <div className="container">
-          <div className="label">Two columns</div>
-          <h2>Your picture, next to the work itself.</h2>
-          <p>
-            Fill in the left column with what you believe happens. Fill in the right column with what
-            actually happens, by going to look and to ask. You do not fill the right column from your
-            head. Print the completed form for yourself, or send it to us if you want to look into it
-            together.
-          </p>
-          <ScanForm
-            t={{
-              procesLabel: 'Which process or sub-process?',
-              procesPlaceholder: 'For example: processing orders, onboarding a customer, handling an incident',
-              colThema: 'Theme',
-              colBeeld: 'Your picture',
-              colWerk: 'The work itself (go look & ask)',
-              rows: ROWS,
-              fillPlaceholder: 'Fill in…',
-              nameLabel: 'Your name',
-              emailLabel: 'Your email address',
-              consentLabel: 'You may use my answers to improve your approach.',
-              printButton: 'Print or save as PDF',
-              sendButton: 'Send to us for a conversation →',
-              sending: 'Sending…',
-              sentOk: 'Thank you. We received your scan and will reach out for a no-obligation conversation.',
-              errInvalidEmail: 'Please enter a valid email address to send your scan.',
-              errGeneric: 'Something went wrong while sending. Please try again, or email info@synestheticminds.nl.',
-            }}
-          />
-        </div>
-      </section>
-
-      <section className="prose">
-        <div className="container">
-          <div className="label">The mirror</div>
-          <h2>How sure were you?</h2>
-          <div className="callout-amber">
-            <p>
-              Could you fill the right column from your own observation, or did you have to guess?
-              Every guess is a place where your picture and the work may drift apart. And note: the
-              more certain you were, the greater the risk. Certainty is exactly what hides the gap.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="cta-section">
-        <div className="container">
-          <h2>And now?</h2>
-          <p>
-            You only truly fill the right column by going to see: joining the work, asking, looking
-            without judging. That is where Evident Design begins.
-          </p>
-          <div className={styles.ctaButtons}>
-            <Link href="/contact" className="cta-button">
-              Start a conversation &rarr;
-            </Link>
-            <Link href="/evident-design" className="cta-button-outline">
-              About Evident Design &rarr;
-            </Link>
-          </div>
-        </div>
-      </section>
+      <ScanForm
+        contactHref="/contact"
+        evidentHref="/evident-design"
+        t={{
+          introLabel: 'Two columns',
+          introTitle: 'Your picture, next to the work itself.',
+          introP:
+            'Fill in the left column with what you believe happens. Fill in the right column with what actually happens, by going to look and to ask. You do not fill the right column from your head. Print the completed form for yourself, or send it to us if you want to look into it together.',
+          procesLabel: 'Which process or sub-process?',
+          procesPlaceholder: 'For example: processing orders, onboarding a customer, handling an incident',
+          colThema: 'Theme',
+          colBeeld: 'Your picture',
+          colWerk: 'The work itself (go look & ask)',
+          rows: ROWS,
+          fillPlaceholder: 'Fill in…',
+          printButton: 'Print or save as PDF',
+          mirrorLabel: 'The mirror',
+          mirrorTitle: 'How sure were you?',
+          mirrorP:
+            'Could you fill the right column from your own observation, or did you have to guess? Every guess is a place where your picture and the work may drift apart. And note: the more certain you were, the greater the risk. Certainty is exactly what hides the gap.',
+          ctaTitle: 'And now?',
+          ctaP:
+            'You only truly fill the right column by going to see: joining the work, asking, looking without judging. That is where Evident Design begins.',
+          nameLabel: 'Your name',
+          emailLabel: 'Your email address',
+          consentLabel: 'You may use my answers to improve your approach.',
+          sendButton: 'Send to us for a conversation →',
+          sending: 'Sending…',
+          sentOk: 'Thank you. We received your scan and will reach out for a no-obligation conversation.',
+          errInvalidEmail: 'Please enter a valid email address to send your scan.',
+          errGeneric: 'Something went wrong while sending. Please try again, or email info@synestheticminds.nl.',
+          ctaButton: 'Start a conversation →',
+          ctaSecondary: 'About Evident Design →',
+        }}
+      />
     </>
   );
 }

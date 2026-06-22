@@ -1,10 +1,14 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { submitScan } from './actions';
 import styles from './klopt-het-beeld.module.css';
 
 export interface ScanStrings {
+  introLabel: string;
+  introTitle: string;
+  introP: string;
   procesLabel: string;
   procesPlaceholder: string;
   colThema: string;
@@ -12,18 +16,33 @@ export interface ScanStrings {
   colWerk: string;
   rows: { thema: string; beeld: string; werk: string }[];
   fillPlaceholder: string;
+  printButton: string;
+  mirrorLabel: string;
+  mirrorTitle: string;
+  mirrorP: string;
+  ctaTitle: string;
+  ctaP: string;
   nameLabel: string;
   emailLabel: string;
   consentLabel: string;
-  printButton: string;
   sendButton: string;
   sending: string;
   sentOk: string;
   errInvalidEmail: string;
   errGeneric: string;
+  ctaButton: string;
+  ctaSecondary: string;
 }
 
-export default function ScanForm({ t }: { t: ScanStrings }) {
+export default function ScanForm({
+  t,
+  contactHref,
+  evidentHref,
+}: {
+  t: ScanStrings;
+  contactHref: string;
+  evidentHref: string;
+}) {
   const [proces, setProces] = useState('');
   const [answers, setAnswers] = useState(t.rows.map(() => ({ beeld: '', werk: '' })));
   const [name, setName] = useState('');
@@ -64,98 +83,139 @@ export default function ScanForm({ t }: { t: ScanStrings }) {
   }
 
   return (
-    <div>
-      <div className={styles.procesField}>
-        <label htmlFor="proces">{t.procesLabel}</label>
-        <input
-          id="proces"
-          type="text"
-          value={proces}
-          onChange={(e) => setProces(e.target.value)}
-          placeholder={t.procesPlaceholder}
-        />
-      </div>
+    <>
+      {/* ---- Intro + invulformulier + print ---- */}
+      <section className="prose">
+        <div className="container">
+          <div className="label">{t.introLabel}</div>
+          <h2>{t.introTitle}</h2>
+          <p>{t.introP}</p>
 
-      <div className={styles.scanTableWrap}>
-        <table className={styles.scanTable}>
-          <thead>
-            <tr>
-              <th>{t.colThema}</th>
-              <th>{t.colBeeld}</th>
-              <th>{t.colWerk}</th>
-            </tr>
-          </thead>
-          <tbody>
-            {t.rows.map((row, i) => (
-              <tr key={i}>
-                <td>
-                  <span className={styles.themaTitle}>{row.thema}</span>
-                </td>
-                <td>
-                  <span className={styles.cellQ}>{row.beeld}</span>
-                  <textarea
-                    value={answers[i].beeld}
-                    onChange={(e) => setAnswer(i, 'beeld', e.target.value)}
-                    placeholder={t.fillPlaceholder}
-                    rows={2}
-                  />
-                </td>
-                <td>
-                  <span className={styles.cellQ}>{row.werk}</span>
-                  <textarea
-                    value={answers[i].werk}
-                    onChange={(e) => setAnswer(i, 'werk', e.target.value)}
-                    placeholder={t.fillPlaceholder}
-                    rows={2}
-                  />
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+          <div className={styles.procesField}>
+            <label htmlFor="proces">{t.procesLabel}</label>
+            <input
+              id="proces"
+              type="text"
+              value={proces}
+              onChange={(e) => setProces(e.target.value)}
+              placeholder={t.procesPlaceholder}
+            />
+          </div>
 
-      {status === 'ok' ? (
-        <p className={styles.sentOk}>{t.sentOk}</p>
-      ) : (
-        <div className={styles.actions}>
-          <button type="button" className="cta-button-outline" onClick={() => window.print()}>
-            {t.printButton}
-          </button>
+          <div className={styles.scanTableWrap}>
+            <table className={styles.scanTable}>
+              <thead>
+                <tr>
+                  <th>{t.colThema}</th>
+                  <th>{t.colBeeld}</th>
+                  <th>{t.colWerk}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {t.rows.map((row, i) => (
+                  <tr key={i}>
+                    <td>
+                      <span className={styles.themaTitle}>{row.thema}</span>
+                    </td>
+                    <td>
+                      <span className={styles.cellQ}>{row.beeld}</span>
+                      <textarea
+                        value={answers[i].beeld}
+                        onChange={(e) => setAnswer(i, 'beeld', e.target.value)}
+                        placeholder={t.fillPlaceholder}
+                        rows={2}
+                      />
+                    </td>
+                    <td>
+                      <span className={styles.cellQ}>{row.werk}</span>
+                      <textarea
+                        value={answers[i].werk}
+                        onChange={(e) => setAnswer(i, 'werk', e.target.value)}
+                        placeholder={t.fillPlaceholder}
+                        rows={2}
+                      />
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
 
-          <div className={styles.sendBlock}>
-            <div className={styles.sendFields}>
-              <input
-                type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                placeholder={t.nameLabel}
-                aria-label={t.nameLabel}
-              />
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder={t.emailLabel}
-                aria-label={t.emailLabel}
-              />
-            </div>
-            <label className={styles.consent}>
-              <input type="checkbox" checked={consent} onChange={(e) => setConsent(e.target.checked)} />
-              <span>{t.consentLabel}</span>
-            </label>
-            <button
-              type="button"
-              className="cta-button"
-              onClick={handleSend}
-              disabled={status === 'sending'}
-            >
-              {status === 'sending' ? t.sending : t.sendButton}
+          <div className={styles.printRow}>
+            <button type="button" className="cta-button-outline" onClick={() => window.print()}>
+              {t.printButton}
             </button>
-            {status === 'error' && <p className={styles.errorMsg}>{errorMsg}</p>}
           </div>
         </div>
-      )}
-    </div>
+      </section>
+
+      {/* ---- De spiegel ---- */}
+      <section className="prose">
+        <div className="container">
+          <div className="label">{t.mirrorLabel}</div>
+          <h2>{t.mirrorTitle}</h2>
+          <div className="callout-amber">
+            <p>{t.mirrorP}</p>
+          </div>
+        </div>
+      </section>
+
+      {/* ---- En nu? + versturen ---- */}
+      <section className="cta-section">
+        <div className="container">
+          <h2>{t.ctaTitle}</h2>
+          <p>{t.ctaP}</p>
+
+          {status === 'ok' ? (
+            <p className={styles.sentOk}>{t.sentOk}</p>
+          ) : (
+            <div className={styles.sendBlock}>
+              <div className={styles.sendFields}>
+                <input
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  placeholder={t.nameLabel}
+                  aria-label={t.nameLabel}
+                />
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder={t.emailLabel}
+                  aria-label={t.emailLabel}
+                />
+              </div>
+              <label className={styles.consent}>
+                <input
+                  type="checkbox"
+                  checked={consent}
+                  onChange={(e) => setConsent(e.target.checked)}
+                />
+                <span>{t.consentLabel}</span>
+              </label>
+              <button
+                type="button"
+                className="cta-button"
+                onClick={handleSend}
+                disabled={status === 'sending'}
+              >
+                {status === 'sending' ? t.sending : t.sendButton}
+              </button>
+              {status === 'error' && <p className={styles.errorMsg}>{errorMsg}</p>}
+            </div>
+          )}
+
+          <div className={styles.altLinks}>
+            <Link href={contactHref} className="cta-button-outline">
+              {t.ctaButton}
+            </Link>
+            <Link href={evidentHref} className="cta-button-outline">
+              {t.ctaSecondary}
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
