@@ -62,7 +62,7 @@ export default function ZelfScanPage() {
           errGeneric: 'Something went wrong while sending. Please try again, or email info@synestheticminds.nl.',
           ctaTitle: 'And now?',
           ctaP:
-            'You only truly fill the right column by going to see: joining the work, asking, looking without judging. That is where Evident Design begins.',
+            'What you could not fill in from memory, you only see on the floor: joining the work, asking, looking without judging. That is where Evident Design begins.',
           ctaButton: 'Start a conversation →',
           ctaSecondary: 'About Evident Design →',
         }}
