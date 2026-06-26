@@ -43,6 +43,8 @@ export default function ZelfScanPage() {
           colWerk: 'The work itself (go look & ask)',
           rows: ROWS,
           fillPlaceholder: 'Fill in…',
+          exampleNote: 'Curious what such a living document looks like in full?',
+          exampleLink: 'See the worked example on Evident Design →',
           printButton: 'Print or save as PDF',
           mirrorLabel: 'The mirror',
           mirrorTitle: 'How sure were you?',

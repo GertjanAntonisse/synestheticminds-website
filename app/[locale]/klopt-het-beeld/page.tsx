@@ -32,6 +32,8 @@ export default async function ZelfScanPage({ params }: { params: Promise<{ local
           colWerk: t.colWerk,
           rows: t.rows,
           fillPlaceholder: t.fillPlaceholder,
+          exampleNote: t.exampleNote,
+          exampleLink: t.exampleLink,
           printButton: t.printButton,
           mirrorLabel: t.mirrorLabel,
           mirrorTitle: t.mirrorTitle,

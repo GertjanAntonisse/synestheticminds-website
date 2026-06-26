@@ -16,6 +16,8 @@ export interface ScanStrings {
   colWerk: string;
   rows: { thema: string; beeld: string; werk: string }[];
   fillPlaceholder: string;
+  exampleNote: string;
+  exampleLink: string;
   printButton: string;
   mirrorLabel: string;
   mirrorTitle: string;
@@ -143,6 +145,11 @@ export default function ScanForm({
               </tbody>
             </table>
           </div>
+
+          <p className={styles.exampleNote}>
+            {t.exampleNote}{' '}
+            <Link href={evidentHref}>{t.exampleLink}</Link>
+          </p>
 
           <div className={styles.printRow}>
             <button type="button" className="cta-button-outline" onClick={() => window.print()}>

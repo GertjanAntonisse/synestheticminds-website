@@ -92,7 +92,19 @@
   min-height: 48px;
 }
 
+.procesField input::placeholder,
+.scanTable textarea::placeholder {
+  color: var(--muted);
+  opacity: 1;
+}
+
 /* ---- Acties ---- */
+.exampleNote {
+  margin-top: 20px;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
 .printRow {
   margin-top: 24px;
 }

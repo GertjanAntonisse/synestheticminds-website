@@ -283,6 +283,8 @@
       }
     ],
     "fillPlaceholder": "Fill in…",
+    "exampleNote": "Curious what such a living document looks like in full?",
+    "exampleLink": "See the worked example on Evident Design →",
     "nameLabel": "Your name",
     "emailLabel": "Your email address",
     "consentLabel": "You may use my answers to improve your approach.",
