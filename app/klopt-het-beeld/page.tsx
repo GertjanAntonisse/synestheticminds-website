@@ -29,6 +29,7 @@ export default function ZelfScanPage() {
       </section>
 
       <ScanForm
+        locale="en"
         contactHref="/contact"
         evidentHref="/evident-design"
         t={{

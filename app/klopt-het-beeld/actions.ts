@@ -1,5 +1,8 @@
 'use server';
 
+import { headers } from 'next/headers';
+import { logEvent } from '../../lib/events';
+
 export type ScanResult =
   | { ok: true }
   | { ok: false; error: 'invalid_email' | 'not_configured' | 'brevo_error' | 'unknown' };
@@ -20,11 +23,32 @@ export async function submitScan(formData: FormData): Promise<ScanResult> {
   const email = String(formData.get('email') ?? '').trim();
   const consent = String(formData.get('consent') ?? '') === 'on';
   const proces = String(formData.get('proces') ?? '').trim();
+  const locale = String(formData.get('locale') ?? '').trim();
+  const utm_source = String(formData.get('utm_source') ?? '').trim();
+  const utm_medium = String(formData.get('utm_medium') ?? '').trim();
+  const utm_campaign = String(formData.get('utm_campaign') ?? '').trim();
+  const utm_content = String(formData.get('utm_content') ?? '').trim();
   const rowsRaw = String(formData.get('rows') ?? '[]');
 
   if (!email || !EMAIL_RE.test(email)) {
     return { ok: false, error: 'invalid_email' };
   }
+
+  // Log the submission to the events stream (independent of Brevo, so a valid
+  // lead is captured even if email delivery is not configured or fails).
+  await logEvent({
+    event: 'submit',
+    path: locale ? `/${locale}/klopt-het-beeld` : null,
+    locale,
+    utm_source,
+    utm_medium,
+    utm_campaign,
+    utm_content,
+    email,
+    consent,
+    meta: { proces: proces || null },
+    userAgent: (await headers()).get('user-agent'),
+  });
 
   const apiKey = process.env.BREVO_API_KEY;
   if (!apiKey) {

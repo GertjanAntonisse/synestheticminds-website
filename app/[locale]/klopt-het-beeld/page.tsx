@@ -19,6 +19,7 @@ export default async function ZelfScanPage({ params }: { params: Promise<{ local
       </section>
 
       <ScanForm
+        locale={locale}
         contactHref={`/${locale}/contact`}
         evidentHref={`/${locale}/evident-design`}
         t={{

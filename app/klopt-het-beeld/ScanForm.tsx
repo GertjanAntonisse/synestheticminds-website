@@ -1,9 +1,16 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { submitScan } from './actions';
 import styles from './klopt-het-beeld.module.css';
+
+type Utm = {
+  utm_source: string;
+  utm_medium: string;
+  utm_campaign: string;
+  utm_content: string;
+};
 
 export interface ScanStrings {
   introLabel: string;
@@ -41,10 +48,12 @@ export interface ScanStrings {
 
 export default function ScanForm({
   t,
+  locale,
   contactHref,
   evidentHref,
 }: {
   t: ScanStrings;
+  locale: string;
   contactHref: string;
   evidentHref: string;
 }) {
@@ -55,9 +64,37 @@ export default function ScanForm({
   const [consent, setConsent] = useState(false);
   const [status, setStatus] = useState<'idle' | 'sending' | 'ok' | 'error'>('idle');
   const [errorMsg, setErrorMsg] = useState('');
+  const [utm, setUtm] = useState<Utm>({ utm_source: '', utm_medium: '', utm_campaign: '', utm_content: '' });
+
+  // Capture the campaign parameters of the landing URL once, so they can travel
+  // with the print event and the submission for per-campaign attribution.
+  useEffect(() => {
+    const sp = new URLSearchParams(window.location.search);
+    setUtm({
+      utm_source: sp.get('utm_source') ?? '',
+      utm_medium: sp.get('utm_medium') ?? '',
+      utm_campaign: sp.get('utm_campaign') ?? '',
+      utm_content: sp.get('utm_content') ?? '',
+    });
+  }, []);
 
   function setAnswer(i: number, key: 'beeld' | 'werk', value: string) {
     setAnswers((prev) => prev.map((a, j) => (j === i ? { ...a, [key]: value } : a)));
+  }
+
+  function handlePrint() {
+    try {
+      const payload = JSON.stringify({
+        event: 'save',
+        path: window.location.pathname,
+        locale,
+        ...utm,
+      });
+      navigator.sendBeacon?.('/api/event', new Blob([payload], { type: 'application/json' }));
+    } catch {
+      // Logging is best-effort; never block the print.
+    }
+    window.print();
   }
 
   async function handleSend() {
@@ -74,6 +111,11 @@ export default function ScanForm({
     fd.set('email', email);
     fd.set('proces', proces);
     if (consent) fd.set('consent', 'on');
+    fd.set('locale', locale);
+    fd.set('utm_source', utm.utm_source);
+    fd.set('utm_medium', utm.utm_medium);
+    fd.set('utm_campaign', utm.utm_campaign);
+    fd.set('utm_content', utm.utm_content);
     fd.set(
       'rows',
       JSON.stringify(t.rows.map((r, i) => ({ thema: r.thema, beeld: answers[i].beeld, werk: answers[i].werk })))
@@ -152,7 +194,7 @@ export default function ScanForm({
           </p>
 
           <div className={styles.printRow}>
-            <button type="button" className="cta-button-outline" onClick={() => window.print()}>
+            <button type="button" className="cta-button-outline" onClick={handlePrint}>
               {t.printButton}
             </button>
           </div>
