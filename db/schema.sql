@@ -6,7 +6,7 @@
 -- link, geen nieuwe tabel en geen migratie.
 --
 -- Gevoed door:
---   middleware.ts          -> event 'visit'  (paginabezoek met UTM)
+--   middleware.ts          -> event 'visit'  (elk paginabezoek, UTM indien aanwezig)
 --   POST /api/event        -> on-page acties (bv. 'save'), via sendBeacon
 --   GET  /api/go           -> getrackte links/downloads, logt en redirect
 --   submitScan (action)    -> event 'submit' (met email + consent in de rij)

@@ -3,29 +3,41 @@ import type { NextFetchEvent } from 'next/server';
 import { locales, getLocaleFromCountry } from './lib/i18n';
 import { logEvent, readUtm } from './lib/events';
 
-// Pages whose visits we log when they carry UTM. Keyed by path so adding a new
-// tracked page is a one-line change, not a new code path.
-const TRACKED_PATH_RE = /^\/(nl|en)\/(klopt-het-beeld)\/?$/;
+// Every locale-prefixed page counts. A visit without UTM is still a visit, and
+// only logging tagged traffic meant the log could only ever confirm campaigns
+// we already knew about.
+const LOCALE_PATH_RE = /^\/(nl|en)(\/|$)/;
 
-// Logs a page visit when it carries UTM parameters. Only genuine navigations:
-// after the page loads it fires several RSC/prefetch requests at its own URL
-// (same UTM), which would otherwise each log and inflate the count. Real
-// navigations send `Sec-Fetch-Dest: document`; RSC/prefetch send `empty`.
+// Paths that exist only to redirect elsewhere. The destination logs the visit,
+// so logging here would count one navigation twice.
+const REDIRECT_ONLY = new Set(['/nl/for-companies', '/en/for-companies', '/en/boek', '/nl/book']);
+
+// Crawlers, link-preview fetchers and uptime checks. Without this the log fills
+// with traffic that never read anything, which is exactly the kind of number
+// that looks like reach and is not.
+const BOT_UA_RE = /bot|crawler|spider|slurp|headless|preview|monitor|curl|wget|python-requests/i;
+
+// Logs a page visit. Only genuine navigations: after the page loads it fires
+// several RSC/prefetch requests at its own URL, which would otherwise each log
+// and inflate the count. Real navigations send `Sec-Fetch-Dest: document`;
+// RSC/prefetch send `empty`.
 async function logVisit(request: NextRequest): Promise<void> {
-  const match = request.nextUrl.pathname.match(TRACKED_PATH_RE);
-  if (!match) return;
+  const { pathname } = request.nextUrl;
+  const match = pathname.match(LOCALE_PATH_RE);
+  if (!match) return; // bare paths redirect to a locale first; that one logs
+  if (REDIRECT_ONLY.has(pathname)) return;
   if (request.headers.get('sec-fetch-dest') !== 'document') return;
 
-  const utm = readUtm(request.nextUrl.searchParams);
-  if (!utm.utm_source && !utm.utm_medium && !utm.utm_campaign && !utm.utm_content) return;
+  const userAgent = request.headers.get('user-agent');
+  if (userAgent && BOT_UA_RE.test(userAgent)) return;
 
   await logEvent({
     event: 'visit',
-    path: request.nextUrl.pathname,
+    path: pathname,
     locale: match[1],
-    ...utm,
+    ...readUtm(request.nextUrl.searchParams),
     referer: request.headers.get('referer'),
-    userAgent: request.headers.get('user-agent'),
+    userAgent,
   });
 }
 
