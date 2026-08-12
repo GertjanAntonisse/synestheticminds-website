@@ -204,6 +204,9 @@ export default function EvidentDesignPage() {
             <Link href="/contact" className="cta-button">
               Start a conversation &rarr;
             </Link>
+            <Link href="/klopt-het-beeld" className="cta-button-outline">
+              Take the self-scan &rarr;
+            </Link>
             <Link href="/invariant-design" className="cta-button-outline">
               On to Invariant Design &rarr;
             </Link>

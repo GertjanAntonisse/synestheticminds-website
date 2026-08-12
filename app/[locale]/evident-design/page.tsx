@@ -161,6 +161,9 @@ export default async function EvidentDesignPage({ params }: { params: Promise<{ 
             <Link href={`/${locale}/contact`} className="cta-button">
               {t.ctaButton}
             </Link>
+            <Link href={`/${locale}/klopt-het-beeld`} className="cta-button-outline">
+              {t.ctaScan}
+            </Link>
             <Link href={`/${locale}/invariant-design`} className="cta-button-outline">
               {t.ctaSecondary}
             </Link>
