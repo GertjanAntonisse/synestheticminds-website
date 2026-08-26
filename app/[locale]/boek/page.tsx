@@ -34,9 +34,11 @@ export default async function BoekPage({ params }: { params: Promise<{ locale: s
   ];
 
   const arc = [
-    { name: t.arc1Name, text: t.arc1Text, status: t.arc1Status, current: true },
-    { name: t.arc2Name, text: t.arc2Text, status: t.arc2Status, current: false },
-    { name: t.arc3Name, text: t.arc3Text, status: t.arc3Status, current: false },
+    // De markering betekent: dit deel is te koop. Zolang er één boek was viel dat
+    // samen met "het huidige deel"; met twee verschenen delen niet meer.
+    { name: t.arc1Name, text: t.arc1Text, status: t.arc1Status, verschenen: true },
+    { name: t.arc2Name, text: t.arc2Text, status: t.arc2Status, verschenen: true },
+    { name: t.arc3Name, text: t.arc3Text, status: t.arc3Status, verschenen: false },
   ];
 
   return (
@@ -159,7 +161,7 @@ export default async function BoekPage({ params }: { params: Promise<{ locale: s
             {arc.map((b) => (
               <li
                 key={b.name}
-                className={`${styles.arcItem} ${b.current ? styles.arcItemCurrent : ''}`}
+                className={`${styles.arcItem} ${b.verschenen ? styles.arcItemCurrent : ''}`}
               >
                 <div className={styles.arcHead}>
                   <span className={styles.arcName}>{b.name}</span>
