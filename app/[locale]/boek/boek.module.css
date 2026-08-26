@@ -259,3 +259,70 @@
     font-size: 1.4rem;
   }
 }
+
+/* ---- De twee delen naast elkaar in de hero ---- */
+.coverStack {
+  display: flex;
+  gap: 18px;
+  flex-shrink: 0;
+}
+
+.stackCover {
+  display: block;
+  width: 190px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+/* ---- Boekenblokken ---- */
+.books {
+  display: grid;
+  gap: 28px;
+  margin-top: 28px;
+}
+
+.book {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--paper);
+}
+
+.bookCover {
+  flex-shrink: 0;
+  width: 150px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.bookBody {
+  flex: 1;
+}
+
+.bookMeta {
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.bookTitle {
+  margin: 0 0 10px 0;
+}
+
+.bookText {
+  margin: 0 0 18px 0;
+}
+
+@media (max-width: 720px) {
+  .coverStack { gap: 12px; }
+  .stackCover { width: 132px; }
+  .book { flex-direction: column; gap: 18px; }
+  .bookCover { width: 128px; }
+}

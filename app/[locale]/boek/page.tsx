@@ -5,7 +5,12 @@ import { getDictionary } from '../../../lib/i18n';
 import type { Locale } from '../../../lib/i18n';
 import styles from './boek.module.css';
 
-const BUY_URL = 'https://www.amazon.com/dp/B0G6MDBLH5';
+// Amazon.nl is de primaire markt van de reeks; .com stuurde Nederlandse lezers
+// naar de Amerikaanse winkel.
+const BUY_URL_1 = 'https://www.amazon.nl/dp/B0G6MDBLH5';
+// Deel 2 is ingediend en wacht op goedkeuring. Zodra de ASIN bekend is, komt
+// die hier; tot dan wijst de knop naar de seriepagina.
+const BUY_URL_2 = 'https://www.amazon.nl/s?k=De+logica+van+werk+Antonisse';
 
 export async function generateMetadata({
   params,
@@ -23,6 +28,13 @@ export default async function BoekPage({ params }: { params: Promise<{ locale: s
   const dict = await getDictionary(locale as Locale);
   const t = dict.boek;
 
+  const boeken = [
+    { naam: t.book1Name, meta: t.book1Meta, tekst: t.book1Text, cta: t.book1Cta,
+      cover: '/boek/cover-boek1.jpg', alt: t.coverAlt1, url: BUY_URL_1 },
+    { naam: t.book2Name, meta: t.book2Meta, tekst: t.book2Text, cta: t.book2Cta,
+      cover: '/boek/cover-boek2.jpg', alt: t.coverAlt2, url: BUY_URL_2 },
+  ];
+
   const arc = [
     { name: t.arc1Name, text: t.arc1Text, status: t.arc1Status, current: true },
     { name: t.arc2Name, text: t.arc2Text, status: t.arc2Status, current: false },
@@ -31,18 +43,21 @@ export default async function BoekPage({ params }: { params: Promise<{ locale: s
 
   return (
     <>
-      {/* ---- Hero met cover ---- */}
+      {/* ---- Hero: de reeks ---- */}
       <section className={styles.bookHero}>
         <div className={`container-wide ${styles.bookHeroInner}`}>
-          <div className={styles.coverWrap}>
-            <Image
-              src="/boek/cover.jpg"
-              alt={t.coverAlt}
-              width={300}
-              height={450}
-              className={styles.cover}
-              priority
-            />
+          <div className={styles.coverStack}>
+            {boeken.map((b) => (
+              <Image
+                key={b.cover}
+                src={b.cover}
+                alt={b.alt}
+                width={300}
+                height={480}
+                className={styles.stackCover}
+                priority
+              />
+            ))}
           </div>
           <div className={styles.heroText}>
             <div className={styles.seriesMark}>
@@ -60,13 +75,47 @@ export default async function BoekPage({ params }: { params: Promise<{ locale: s
             <div className={styles.bookName}>{t.heroSubtitle}</div>
             <p className={styles.heroTagline}>{t.heroTagline}</p>
             <div className={styles.heroActions}>
-              <a href={BUY_URL} className="cta-button" target="_blank" rel="noopener noreferrer">
-                {t.ctaButton}
+              <a href="#boeken" className="cta-button">
+                {t.heroCtaBooks}
               </a>
               <Link href={`/${locale}/klopt-het-nog`} className="cta-button-outline">
                 {t.ctaSecondary}
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ---- De twee delen ---- */}
+      <section id="boeken">
+        <div className="container">
+          <div className="label">{t.booksLabel}</div>
+          <h2>{t.booksTitle}</h2>
+          <div className={styles.books}>
+            {boeken.map((b) => (
+              <article key={b.naam} className={styles.book}>
+                <Image
+                  src={b.cover}
+                  alt={b.alt}
+                  width={200}
+                  height={320}
+                  className={styles.bookCover}
+                />
+                <div className={styles.bookBody}>
+                  <div className={styles.bookMeta}>{b.meta}</div>
+                  <h3 className={styles.bookTitle}>{b.naam}</h3>
+                  <p className={styles.bookText}>{b.tekst}</p>
+                  <a
+                    href={b.url}
+                    className="cta-button-outline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {b.cta}
+                  </a>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -157,9 +206,9 @@ export default async function BoekPage({ params }: { params: Promise<{ locale: s
           <div className="label">{t.ctaLabel}</div>
           <h2>{t.ctaTitle}</h2>
           <p>{t.ctaText}</p>
-          <a href={BUY_URL} className="cta-button" target="_blank" rel="noopener noreferrer">
+          <Link href={`/${locale}/klopt-het-beeld`} className="cta-button">
             {t.ctaButton}
-          </a>
+          </Link>
         </div>
       </section>
     </>
