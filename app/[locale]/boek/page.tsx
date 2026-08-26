@@ -8,9 +8,7 @@ import styles from './boek.module.css';
 // Amazon.nl is de primaire markt van de reeks; .com stuurde Nederlandse lezers
 // naar de Amerikaanse winkel.
 const BUY_URL_1 = 'https://www.amazon.nl/dp/B0G6MDBLH5';
-// Deel 2 is ingediend en wacht op goedkeuring. Zodra de ASIN bekend is, komt
-// die hier; tot dan wijst de knop naar de seriepagina.
-const BUY_URL_2 = 'https://www.amazon.nl/s?k=De+logica+van+werk+Antonisse';
+const BUY_URL_2 = 'https://www.amazon.nl/dp/B0HGMC6WGN';
 
 export async function generateMetadata({
   params,
