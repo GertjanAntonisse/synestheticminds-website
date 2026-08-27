@@ -7,8 +7,12 @@ import styles from './boek.module.css';
 
 // Amazon.nl is de primaire markt van de reeks; .com stuurde Nederlandse lezers
 // naar de Amerikaanse winkel.
-const BUY_URL_1 = 'https://www.amazon.nl/dp/B0G6MDBLH5';
-const BUY_URL_2 = 'https://www.amazon.nl/dp/B0HGMC6WGN';
+const BUY_NL_1 = 'https://www.amazon.nl/dp/B0G6MDBLH5';
+const BUY_NL_2 = 'https://www.amazon.nl/dp/B0HGMC6WGN';
+// De Engelse editie van deel 1 is ingediend; zodra de ASIN bekend is komt die
+// hier. Deel 2 bestaat alleen in het Nederlands, dus daar wijst de Engelse
+// pagina naar de Nederlandse uitgave.
+const BUY_EN_1 = 'https://www.amazon.com/s?k=Life+in+Logistics+Antonisse';
 
 export async function generateMetadata({
   params,
@@ -28,9 +32,9 @@ export default async function BoekPage({ params }: { params: Promise<{ locale: s
 
   const boeken = [
     { naam: t.book1Name, meta: t.book1Meta, tekst: t.book1Text, cta: t.book1Cta,
-      cover: '/boek/cover-boek1.jpg', alt: t.coverAlt1, url: BUY_URL_1 },
+      cover: t.cover1, alt: t.coverAlt1, url: locale === 'en' ? BUY_EN_1 : BUY_NL_1 },
     { naam: t.book2Name, meta: t.book2Meta, tekst: t.book2Text, cta: t.book2Cta,
-      cover: '/boek/cover-boek2.jpg', alt: t.coverAlt2, url: BUY_URL_2 },
+      cover: t.cover2, alt: t.coverAlt2, url: BUY_NL_2 },
   ];
 
   const arc = [

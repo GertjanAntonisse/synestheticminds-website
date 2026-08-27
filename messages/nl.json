@@ -603,6 +603,8 @@
     "book2Name": "Versnellen wat je niet begrijpt",
     "book2Meta": "Deel 2 · Noodstop · Verschenen",
     "book2Text": "Wat er gebeurt wanneer organisaties gaan automatiseren wat ze nooit hebben gezien. Niet het mislukken van AI is gevaarlijk, maar het slagen ervan: een systeem dat sneller wordt terwijl het zicht verdwijnt op wat het overeind hield.",
-    "book2Cta": "Naar deel 2"
+    "book2Cta": "Naar deel 2",
+    "cover1": "/boek/cover-boek1.jpg",
+    "cover2": "/boek/cover-boek2.jpg"
   }
 }
