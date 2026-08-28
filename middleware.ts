@@ -10,7 +10,8 @@ const LOCALE_PATH_RE = /^\/(nl|en)(\/|$)/;
 
 // Paths that exist only to redirect elsewhere. The destination logs the visit,
 // so logging here would count one navigation twice.
-const REDIRECT_ONLY = new Set(['/nl/for-companies', '/en/for-companies', '/en/boek', '/nl/book']);
+const REDIRECT_ONLY = new Set(['/nl/for-companies', '/en/for-companies', '/en/boek',
+  '/nl/book', '/en/klopt-het-beeld', '/nl/self-scan']);
 
 // Crawlers, link-preview fetchers and uptime checks. Without this the log fills
 // with traffic that never read anything, which is exactly the kind of number
@@ -81,6 +82,22 @@ export function middleware(request: NextRequest, event: NextFetchEvent) {
   if (pathname === '/en/ground-truth') {
     const url = request.nextUrl.clone();
     url.pathname = '/en/for-companies';
+    return NextResponse.rewrite(url);
+  }
+
+  // Localized slug for the self-scan: /nl/klopt-het-beeld (NL) and /en/self-scan
+  // (EN) are the canonical URLs. The page lives at /[locale]/klopt-het-beeld,
+  // so the EN path is rewritten internally and the off-language variants
+  // redirect. The page calls itself Self-scan in its own English copy, which is
+  // where the slug comes from.
+  if (pathname === '/en/klopt-het-beeld' || pathname === '/nl/self-scan') {
+    const url = request.nextUrl.clone();
+    url.pathname = pathname === '/en/klopt-het-beeld' ? '/en/self-scan' : '/nl/klopt-het-beeld';
+    return NextResponse.redirect(url);
+  }
+  if (pathname === '/en/self-scan') {
+    const url = request.nextUrl.clone();
+    url.pathname = '/en/klopt-het-beeld';
     return NextResponse.rewrite(url);
   }
 

@@ -38,7 +38,7 @@ export async function submitScan(formData: FormData): Promise<ScanResult> {
   // lead is captured even if email delivery is not configured or fails).
   await logEvent({
     event: 'submit',
-    path: locale ? `/${locale}/klopt-het-beeld` : null,
+    path: locale ? `/${locale}/${locale === 'en' ? 'self-scan' : 'klopt-het-beeld'}` : null,
     locale,
     utm_source,
     utm_medium,

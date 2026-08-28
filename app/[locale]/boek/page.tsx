@@ -30,6 +30,9 @@ export default async function BoekPage({ params }: { params: Promise<{ locale: s
   const dict = await getDictionary(locale as Locale);
   const t = dict.boek;
 
+  // Localized slug for the self-scan: /nl/klopt-het-beeld vs /en/self-scan
+  const scanSlug = locale === 'en' ? 'self-scan' : 'klopt-het-beeld';
+
   const boeken = [
     { naam: t.book1Name, meta: t.book1Meta, tekst: t.book1Text, cta: t.book1Cta,
       cover: t.cover1, alt: t.coverAlt1, url: locale === 'en' ? BUY_EN_1 : BUY_NL_1 },
@@ -210,7 +213,7 @@ export default async function BoekPage({ params }: { params: Promise<{ locale: s
           <div className="label">{t.ctaLabel}</div>
           <h2>{t.ctaTitle}</h2>
           <p>{t.ctaText}</p>
-          <Link href={`/${locale}/klopt-het-beeld`} className="cta-button">
+          <Link href={`/${locale}/${scanSlug}`} className="cta-button">
             {t.ctaButton}
           </Link>
         </div>

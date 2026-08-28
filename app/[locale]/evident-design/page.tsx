@@ -29,6 +29,9 @@ export default async function EvidentDesignPage({ params }: { params: Promise<{ 
   const dict = await getDictionary(locale as Locale);
   const t = dict.evidentDesign;
 
+  // Localized slug for the self-scan: /nl/klopt-het-beeld vs /en/self-scan
+  const scanSlug = locale === 'en' ? 'self-scan' : 'klopt-het-beeld';
+
   return (
     <>
       {/* ---- Hero ---- */}
@@ -161,7 +164,7 @@ export default async function EvidentDesignPage({ params }: { params: Promise<{ 
             <Link href={`/${locale}/contact`} className="cta-button">
               {t.ctaButton}
             </Link>
-            <Link href={`/${locale}/klopt-het-beeld`} className="cta-button-outline">
+            <Link href={`/${locale}/${scanSlug}`} className="cta-button-outline">
               {t.ctaScan}
             </Link>
             <Link href={`/${locale}/invariant-design`} className="cta-button-outline">
