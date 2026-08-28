@@ -9,10 +9,11 @@ import styles from './boek.module.css';
 // naar de Amerikaanse winkel.
 const BUY_NL_1 = 'https://www.amazon.nl/dp/B0G6MDBLH5';
 const BUY_NL_2 = 'https://www.amazon.nl/dp/B0HGMC6WGN';
-// De Engelse editie van deel 1 is ingediend; zodra de ASIN bekend is komt die
-// hier. Deel 2 bestaat alleen in het Nederlands, dus daar wijst de Engelse
-// pagina naar de Nederlandse uitgave.
-const BUY_EN_1 = 'https://www.amazon.com/s?k=Life+in+Logistics+Antonisse';
+// De Engelse editie van deel 1 staat op amazon.com; een zoekopdracht als link
+// liet de lezer zelf uitzoeken welk boek bedoeld werd. Deel 2 bestaat nog
+// alleen in het Nederlands, dus daar wijst de Engelse pagina naar de
+// Nederlandse uitgave.
+const BUY_EN_1 = 'https://www.amazon.com/dp/B0HGS8HS4C';
 
 export async function generateMetadata({
   params,
