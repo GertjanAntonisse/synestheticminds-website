@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import type { NextFetchEvent } from 'next/server';
-import { locales, getLocaleFromCountry } from './lib/i18n';
+import { locales, getLocaleFromCountry, isLocale, LOCALE_COOKIE } from './lib/i18n';
 import { logEvent, readUtm } from './lib/events';
 
 // Every locale-prefixed page counts. A visit without UTM is still a visit, and
@@ -123,9 +123,14 @@ export function middleware(request: NextRequest, event: NextFetchEvent) {
     return NextResponse.next();
   }
 
-  // Detect locale from Vercel's country header (set automatically on Vercel Edge)
-  const country = request.headers.get('x-vercel-ip-country');
-  const locale = getLocaleFromCountry(country);
+  // Een taal die de bezoeker zelf koos gaat voor het land van zijn IP-adres.
+  // Dit geldt alleen hier, op paden zonder taalvoorvoegsel: wie een link met
+  // /nl of /en opent krijgt die taal, ook als het cookie iets anders zegt. Een
+  // gedeelde link hoort te tonen wat de afzender bedoelde.
+  const chosen = request.cookies.get(LOCALE_COOKIE)?.value;
+  const locale = isLocale(chosen)
+    ? chosen
+    : getLocaleFromCountry(request.headers.get('x-vercel-ip-country'));
 
   const url = request.nextUrl.clone();
   url.pathname = `/${locale}${pathname === '/' ? '' : pathname}`;

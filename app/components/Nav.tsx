@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import styles from './nav.module.css';
-import type { Locale } from '../../lib/i18n';
+import { LOCALE_COOKIE, type Locale } from '../../lib/i18n';
 
 interface NavDict {
   forCompanies: string;
@@ -37,6 +37,14 @@ export default function Nav({ locale, dict }: NavProps) {
   const otherLocale: Locale = locale === 'nl' ? 'en' : 'nl';
   const switchHref = pathname.replace(`/${locale}`, `/${otherLocale}`);
 
+  // Alleen deze klik legt de taalkeuze vast, een jaar lang. Functioneel cookie:
+  // het bevat niets dan 'nl' of 'en', gaat naar geen derde partij en wordt
+  // alleen gelezen om te bepalen waar iemand zonder taalvoorvoegsel binnenkomt.
+  function rememberLocale() {
+    const secure = window.location.protocol === 'https:' ? '; secure' : '';
+    document.cookie = `${LOCALE_COOKIE}=${otherLocale}; path=/; max-age=31536000; samesite=lax${secure}`;
+  }
+
   // Localized slug for the book page: /nl/boek vs /en/book
   const boekSlug = locale === 'en' ? 'book' : 'boek';
 
@@ -59,7 +67,11 @@ export default function Nav({ locale, dict }: NavProps) {
 
         <div className={styles.navRight}>
           {/* Language switcher — always visible */}
-          <Link href={switchHref} className={`${styles.link} ${styles.langSwitch}`}>
+          <Link
+            href={switchHref}
+            className={`${styles.link} ${styles.langSwitch}`}
+            onClick={rememberLocale}
+          >
             {dict.switchTo}
           </Link>
 
