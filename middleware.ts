@@ -11,7 +11,8 @@ const LOCALE_PATH_RE = /^\/(nl|en)(\/|$)/;
 // Paths that exist only to redirect elsewhere. The destination logs the visit,
 // so logging here would count one navigation twice.
 const REDIRECT_ONLY = new Set(['/nl/for-companies', '/en/for-companies', '/en/boek',
-  '/nl/book', '/en/klopt-het-beeld', '/nl/self-scan']);
+  '/nl/book', '/en/klopt-het-beeld', '/nl/self-scan', '/nl/ground-truth',
+  '/en/systeembegrip']);
 
 // Crawlers, link-preview fetchers and uptime checks. Without this the log fills
 // with traffic that never read anything, which is exactly the kind of number
@@ -83,6 +84,22 @@ export function middleware(request: NextRequest, event: NextFetchEvent) {
     const url = request.nextUrl.clone();
     url.pathname = '/en/for-companies';
     return NextResponse.rewrite(url);
+  }
+
+  // The language switch in the nav swaps only the locale prefix, so from
+  // /en/ground-truth it lands on /nl/ground-truth. For boek/book and
+  // klopt-het-beeld/self-scan the other-language slug already redirects, but
+  // systeembegrip and ground-truth share no word, so the switch dead-ended in a
+  // 404 on exactly that page.
+  if (pathname === '/nl/ground-truth') {
+    const url = request.nextUrl.clone();
+    url.pathname = '/nl/systeembegrip';
+    return NextResponse.redirect(url);
+  }
+  if (pathname === '/en/systeembegrip') {
+    const url = request.nextUrl.clone();
+    url.pathname = '/en/ground-truth';
+    return NextResponse.redirect(url);
   }
 
   // Localized slug for the self-scan: /nl/klopt-het-beeld (NL) and /en/self-scan
