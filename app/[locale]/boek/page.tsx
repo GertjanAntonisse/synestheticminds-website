@@ -4,15 +4,14 @@ import Link from 'next/link';
 import { getDictionary } from '../../../lib/i18n';
 import type { Locale } from '../../../lib/i18n';
 import styles from './boek.module.css';
+import { boekSleutel } from '../../../lib/boeken';
 
-// Amazon.nl is de primaire markt van de reeks; .com stuurde Nederlandse lezers
-// naar de Amerikaanse winkel.
-const BUY_NL_1 = 'https://www.amazon.nl/dp/B0G6MDBLH5';
-const BUY_NL_2 = 'https://www.amazon.nl/dp/B0HGMC6WGN';
-// De Engelse edities staan op amazon.com. Die winkel bedient de lezer die deze
-// pagina krijgt: de Engelse versie wordt alleen geserveerd buiten Nederland.
-const BUY_EN_1 = 'https://www.amazon.com/dp/B0HGS8HS4C';
-const BUY_EN_2 = 'https://www.amazon.com/dp/B0HGXC697G';
+// De koopknop wijst naar de eigen gelogde omleiding en niet rechtstreeks naar
+// de winkel. Anders houdt de meting op bij deze pagina, terwijl juist de stap
+// erna telt. De winkel-URL's staan in lib/boeken.ts; hier gaat alleen een
+// sleutel mee, zodat de query nooit een bestemming kan aanwijzen.
+const koopLink = (locale: string, deel: 1 | 2) =>
+  `/api/go?event=koop&dest=${boekSleutel(locale, deel)}&locale=${locale}`;
 
 export async function generateMetadata({
   params,
@@ -35,9 +34,9 @@ export default async function BoekPage({ params }: { params: Promise<{ locale: s
 
   const boeken = [
     { naam: t.book1Name, meta: t.book1Meta, tekst: t.book1Text, cta: t.book1Cta,
-      cover: t.cover1, alt: t.coverAlt1, url: locale === 'en' ? BUY_EN_1 : BUY_NL_1 },
+      cover: t.cover1, alt: t.coverAlt1, url: koopLink(locale, 1) },
     { naam: t.book2Name, meta: t.book2Meta, tekst: t.book2Text, cta: t.book2Cta,
-      cover: t.cover2, alt: t.coverAlt2, url: locale === 'en' ? BUY_EN_2 : BUY_NL_2 },
+      cover: t.cover2, alt: t.coverAlt2, url: koopLink(locale, 2) },
   ];
 
   const arc = [
@@ -112,11 +111,14 @@ export default async function BoekPage({ params }: { params: Promise<{ locale: s
                   <div className={styles.bookMeta}>{b.meta}</div>
                   <h3 className={styles.bookTitle}>{b.naam}</h3>
                   <p className={styles.bookText}>{b.tekst}</p>
+                  {/* Bewust zonder noreferrer: de eerste stap is de eigen
+                      omleiding, die de campagnecodes uit de verwijzende URL
+                      leest. Met noreferrer komt die informatie niet mee. */}
                   <a
                     href={b.url}
                     className="cta-button-outline"
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="noopener"
                   >
                     {b.cta}
                   </a>
