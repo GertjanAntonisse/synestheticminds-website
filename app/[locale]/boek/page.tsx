@@ -138,10 +138,16 @@ export default async function BoekPage({ params }: { params: Promise<{ locale: s
                       >
                         {t.downloadEpub}
                       </a>
+                      {/* De PDF opent de browser zelf, en zonder eigen tabblad
+                          verdwijnt deze pagina daarachter. De EPUB komt binnen
+                          als bestand, dus daar blijft de pagina vanzelf staan
+                          en zou een leeg tabblad achterblijven. */}
                       <a
                         href={downloadLink(locale, b.deel, 'pdf')}
                         className="cta-button-outline"
                         aria-label={t.downloadPdfAria.replace('{boek}', b.naam)}
+                        target="_blank"
+                        rel="noopener"
                       >
                         {t.downloadPdf}
                       </a>
