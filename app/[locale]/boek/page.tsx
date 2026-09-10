@@ -30,7 +30,20 @@ export async function generateMetadata({
   const { locale } = await params;
   const dict = await getDictionary(locale as Locale);
   const t = dict.boek;
-  return { title: t.metaTitle, description: t.metaDesc };
+
+  // De algemene SM-kaart zegt niets over de boeken, en de kaart is precies wat
+  // iemand ziet voordat hij klikt. Deze pagina krijgt daarom een eigen kaart
+  // per taal, gebouwd met scripts/maak-og-kaart.py. Een absoluut adres, want
+  // LinkedIn en Facebook halen het beeld op zonder de pagina als context.
+  const kaart = `https://synestheticminds.com/boek/og-boek-${locale === 'en' ? 'en' : 'nl'}.png`;
+  const beeld = [{ url: kaart, width: 1200, height: 630, alt: t.metaTitle }];
+
+  return {
+    title: t.metaTitle,
+    description: t.metaDesc,
+    openGraph: { title: t.metaTitle, description: t.metaDesc, images: beeld },
+    twitter: { card: 'summary_large_image', title: t.metaTitle, description: t.metaDesc, images: beeld },
+  };
 }
 
 export default async function BoekPage({ params }: { params: Promise<{ locale: string }> }) {
