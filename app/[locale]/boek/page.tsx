@@ -5,6 +5,7 @@ import { getDictionary } from '../../../lib/i18n';
 import type { Locale } from '../../../lib/i18n';
 import styles from './boek.module.css';
 import { boekSleutel, BOEK_DOWNLOADS } from '../../../lib/boeken';
+import DelenKnoppen from './DelenKnoppen';
 
 // De koopknop wijst naar de eigen gelogde omleiding en niet rechtstreeks naar
 // de winkel. Anders houdt de meting op bij deze pagina, terwijl juist de stap
@@ -167,10 +168,33 @@ export default async function BoekPage({ params }: { params: Promise<{ locale: s
             ))}
           </div>
           {gratis && (
-            <div className={styles.downloadNote}>
-              <p>{t.downloadReaders}</p>
-              <p className={styles.downloadPass}>{t.downloadPass}</p>
-            </div>
+            <>
+              <div className={styles.downloadNote}>
+                <p>{t.downloadReaders}</p>
+              </div>
+              {/* Doorgeven is de hele bedoeling van het weggeven, dus staat het
+                  hier als handeling en niet als zin. Instagram ontbreekt met
+                  opzet: dat kent geen deel-adres op het web, en op een telefoon
+                  zit het in het deelvenster achter de knop hierboven. */}
+              <div className={styles.deelBlok} id="doorgeven">
+                <h3 className={styles.deelTitel}>{t.delenTitle}</h3>
+                <p className={styles.deelIntro}>{t.delenIntro}</p>
+                <DelenKnoppen
+                  locale={locale}
+                  teksten={{
+                    whatsapp: t.delenWhatsapp,
+                    linkedin: t.delenLinkedin,
+                    facebook: t.delenFacebook,
+                    email: t.delenEmail,
+                    kopieer: t.delenKopieer,
+                    gekopieerd: t.delenGekopieerd,
+                    natief: t.delenNatief,
+                    bericht: t.delenBericht,
+                    mailOnderwerp: t.delenMailOnderwerp,
+                  }}
+                />
+              </div>
+            </>
           )}
         </div>
       </section>

@@ -616,6 +616,17 @@
     "downloadPdfAria": "Download {boek} als PDF",
     "downloadReaders": "De EPUB werkt op Kobo, Tolino, telefoon en tablet, en komt via Send to Kindle ook op een Kindle. De PDF leest op elk scherm en is gemaakt om te printen.",
     "downloadPass": "Doorgeven mag.",
-    "heroCtaDownload": "Download de boeken"
+    "heroCtaDownload": "Download de boeken",
+    "delenTitle": "Ken je iemand die hierop vastloopt?",
+    "delenIntro": "Doorgeven mag. Stuur de pagina door, dan kiest hij zelf wat hij ermee doet.",
+    "delenWhatsapp": "WhatsApp",
+    "delenLinkedin": "LinkedIn",
+    "delenFacebook": "Facebook",
+    "delenEmail": "E-mail",
+    "delenKopieer": "Link kopiëren",
+    "delenGekopieerd": "Gekopieerd",
+    "delenNatief": "Delen",
+    "delenBericht": "Twee boeken over de vraag of het beeld dat we hebben van ons werk klopt met het werk zelf. Vrij te downloaden.",
+    "delenMailOnderwerp": "De logica van werk, twee boeken om te lezen"
   }
 }

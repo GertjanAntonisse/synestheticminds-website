@@ -616,6 +616,17 @@
     "downloadPdfAria": "Download {boek} as PDF",
     "downloadReaders": "The EPUB works on Kobo, Tolino, phone and tablet, and reaches a Kindle through Send to Kindle. The PDF reads on any screen and is made to be printed.",
     "downloadPass": "Feel free to pass it on.",
-    "heroCtaDownload": "Download the books"
+    "heroCtaDownload": "Download the books",
+    "delenTitle": "Know someone who runs into this?",
+    "delenIntro": "Feel free to pass it on. Send the page along, and let them decide what to do with it.",
+    "delenWhatsapp": "WhatsApp",
+    "delenLinkedin": "LinkedIn",
+    "delenFacebook": "Facebook",
+    "delenEmail": "Email",
+    "delenKopieer": "Copy link",
+    "delenGekopieerd": "Copied",
+    "delenNatief": "Share",
+    "delenBericht": "Two books on one question: does the picture we hold of our work match the work itself? Free to download.",
+    "delenMailOnderwerp": "The Logic of Work, two books worth reading"
   }
 }
