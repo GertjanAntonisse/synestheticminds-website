@@ -614,7 +614,7 @@
     "downloadEpubAria": "Download {boek} als EPUB",
     "downloadPdfAria": "Download {boek} als PDF",
     "downloadReaders": "De EPUB werkt op Kobo, Tolino, telefoon en tablet, en komt via Send to Kindle ook op een Kindle. De PDF leest op elk scherm en is gemaakt om te printen.",
-    "downloadPass": "Doorgeven mag. Dat is de bedoeling.",
+    "downloadPass": "Doorgeven mag.",
     "heroCtaDownload": "Download de boeken"
   }
 }

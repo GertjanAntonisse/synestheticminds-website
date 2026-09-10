@@ -614,7 +614,7 @@
     "downloadEpubAria": "Download {boek} as EPUB",
     "downloadPdfAria": "Download {boek} as PDF",
     "downloadReaders": "The EPUB works on Kobo, Tolino, phone and tablet, and reaches a Kindle through Send to Kindle. The PDF reads on any screen and is made to be printed.",
-    "downloadPass": "Passing it on is the point.",
+    "downloadPass": "Feel free to pass it on.",
     "heroCtaDownload": "Download the books"
   }
 }
