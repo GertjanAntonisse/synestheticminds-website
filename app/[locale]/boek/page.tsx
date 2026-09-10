@@ -201,6 +201,7 @@ export default async function BoekPage({ params }: { params: Promise<{ locale: s
                     email: t.delenEmail,
                     kopieer: t.delenKopieer,
                     gekopieerd: t.delenGekopieerd,
+                    geplakt: t.delenGeplakt,
                     natief: t.delenNatief,
                     bericht: t.delenBericht,
                     mailOnderwerp: t.delenMailOnderwerp,

@@ -623,10 +623,11 @@
     "delenLinkedin": "LinkedIn",
     "delenFacebook": "Facebook",
     "delenEmail": "E-mail",
-    "delenKopieer": "Link kopiëren",
+    "delenKopieer": "Tekst kopiëren",
     "delenGekopieerd": "Gekopieerd",
     "delenNatief": "Delen",
     "delenBericht": "Twee boeken over de vraag of het beeld dat we hebben van ons werk klopt met het werk zelf. Vrij te downloaden.",
-    "delenMailOnderwerp": "De logica van werk, twee boeken om te lezen"
+    "delenMailOnderwerp": "De logica van werk, twee boeken om te lezen",
+    "delenGeplakt": "De tekst staat op je klembord. LinkedIn en Facebook vullen hem niet zelf in, dus plak hem in je bericht."
   }
 }

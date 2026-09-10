@@ -10,6 +10,7 @@ interface DelenTeksten {
   email: string;
   kopieer: string;
   gekopieerd: string;
+  geplakt: string;
   natief: string;
   bericht: string;
   mailOnderwerp: string;
@@ -33,6 +34,7 @@ export default function DelenKnoppen({ locale, teksten }: DelenKnoppenProps) {
   const [basis, setBasis] = useState(`https://synestheticminds.com/${locale}/boek`);
   const [kanNatief, setKanNatief] = useState(false);
   const [gekopieerd, setGekopieerd] = useState(false);
+  const [geplakt, setGeplakt] = useState(false);
 
   useEffect(() => {
     setBasis(window.location.origin + window.location.pathname);
@@ -55,15 +57,38 @@ export default function DelenKnoppen({ locale, teksten }: DelenKnoppenProps) {
     }).catch(() => {});
   }
 
-  async function kopieer() {
+  // Tekst plus adres, want alleen een adres zegt de ontvanger niets.
+  const volledigBericht = (kanaal: string) => `${teksten.bericht}\n\n${deelUrl(basis, kanaal)}`;
+
+  async function naarKlembord(kanaal: string): Promise<boolean> {
     try {
-      await navigator.clipboard.writeText(deelUrl(basis, 'link'));
-      setGekopieerd(true);
-      meld('link');
-      setTimeout(() => setGekopieerd(false), 2500);
+      await navigator.clipboard.writeText(volledigBericht(kanaal));
+      return true;
     } catch {
       // Zonder klembord (oudere browser, of geen https) gebeurt er niets.
-      // De andere knoppen werken dan nog gewoon.
+      // De knoppen zelf werken dan nog gewoon.
+      return false;
+    }
+  }
+
+  async function kopieer() {
+    if (!(await naarKlembord('link'))) return;
+    setGekopieerd(true);
+    meld('link');
+    setTimeout(() => setGekopieerd(false), 2500);
+  }
+
+  // LinkedIn en Facebook hebben het vooraf invullen van tekst afgeschaft: ze
+  // nemen alleen het adres aan en laten de schrijver zelf typen. Wat wel kan is
+  // de tekst klaarzetten op het klembord, zodat plakken volstaat.
+  function naarVenster(kanaal: string) {
+    meld(kanaal);
+    if (kanaal === 'linkedin' || kanaal === 'facebook') {
+      void naarKlembord(kanaal).then((gelukt) => {
+        if (!gelukt) return;
+        setGeplakt(true);
+        setTimeout(() => setGeplakt(false), 6000);
+      });
     }
   }
 
@@ -102,7 +127,7 @@ export default function DelenKnoppen({ locale, teksten }: DelenKnoppenProps) {
           className={styles.deelKnop}
           target="_blank"
           rel="noopener"
-          onClick={() => meld(k.naam)}
+          onClick={() => naarVenster(k.naam)}
         >
           {k.label}
         </a>
@@ -110,6 +135,11 @@ export default function DelenKnoppen({ locale, teksten }: DelenKnoppenProps) {
       <button type="button" className={styles.deelKnop} onClick={kopieer}>
         {gekopieerd ? teksten.gekopieerd : teksten.kopieer}
       </button>
+      {geplakt && (
+        <p className={styles.deelMelding} role="status">
+          {teksten.geplakt}
+        </p>
+      )}
     </div>
   );
 }

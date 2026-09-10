@@ -623,10 +623,11 @@
     "delenLinkedin": "LinkedIn",
     "delenFacebook": "Facebook",
     "delenEmail": "Email",
-    "delenKopieer": "Copy link",
+    "delenKopieer": "Copy text",
     "delenGekopieerd": "Copied",
     "delenNatief": "Share",
     "delenBericht": "Two books on one question: does the picture we hold of our work match the work itself? Free to download.",
-    "delenMailOnderwerp": "The Logic of Work, two books worth reading"
+    "delenMailOnderwerp": "The Logic of Work, two books worth reading",
+    "delenGeplakt": "The text is on your clipboard. LinkedIn and Facebook do not fill it in for you, so paste it into your post."
   }
 }
