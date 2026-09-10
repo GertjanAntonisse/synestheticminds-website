@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { getDictionary } from '../../../lib/i18n';
 import type { Locale } from '../../../lib/i18n';
 import styles from './boek.module.css';
-import { boekSleutel } from '../../../lib/boeken';
+import { boekSleutel, BOEK_DOWNLOADS } from '../../../lib/boeken';
 
 // De koopknop wijst naar de eigen gelogde omleiding en niet rechtstreeks naar
 // de winkel. Anders houdt de meting op bij deze pagina, terwijl juist de stap
@@ -12,6 +12,14 @@ import { boekSleutel } from '../../../lib/boeken';
 // sleutel mee, zodat de query nooit een bestemming kan aanwijzen.
 const koopLink = (locale: string, deel: 1 | 2) =>
   `/api/go?event=koop&dest=${boekSleutel(locale, deel)}&locale=${locale}`;
+
+// Downloads lopen langs dezelfde omleiding als de koopknop deed, zodat het
+// weggeven even hard te meten is als het verkopen was. Zonder dat zou de
+// overstap naar gratis de trechter onzichtbaar maken op precies de plek waar
+// hij vroeger zichtbaar was.
+const downloadLink = (locale: string, deel: 1 | 2, vorm: 'epub' | 'pdf') =>
+  `/api/go?event=download&to=${encodeURIComponent(BOEK_DOWNLOADS[deel][vorm])}` +
+  `&locale=${locale}&utm_content=boek${deel}-${vorm}`;
 
 export async function generateMetadata({
   params,
@@ -32,11 +40,17 @@ export default async function BoekPage({ params }: { params: Promise<{ locale: s
   // Localized slug for the self-scan: /nl/klopt-het-beeld vs /en/self-scan
   const scanSlug = locale === 'en' ? 'self-scan' : 'klopt-het-beeld';
 
+  // De Nederlandse delen staan buiten KDP Select en mogen dus weggegeven
+  // worden. De Engelse zitten er tot eind november 2026 in, en die
+  // exclusiviteit verbiedt dezelfde tekst elders, ook gratis. Loopt de
+  // inschrijving af, dan kan deze regel weg: de teksten staan er al.
+  const gratis = locale !== 'en';
+
   const boeken = [
-    { naam: t.book1Name, meta: t.book1Meta, tekst: t.book1Text, cta: t.book1Cta,
-      cover: t.cover1, alt: t.coverAlt1, url: koopLink(locale, 1) },
-    { naam: t.book2Name, meta: t.book2Meta, tekst: t.book2Text, cta: t.book2Cta,
-      cover: t.cover2, alt: t.coverAlt2, url: koopLink(locale, 2) },
+    { deel: 1 as const, naam: t.book1Name, meta: t.book1Meta, tekst: t.book1Text,
+      cta: t.book1Cta, cover: t.cover1, alt: t.coverAlt1, url: koopLink(locale, 1) },
+    { deel: 2 as const, naam: t.book2Name, meta: t.book2Meta, tekst: t.book2Text,
+      cta: t.book2Cta, cover: t.cover2, alt: t.coverAlt2, url: koopLink(locale, 2) },
   ];
 
   const arc = [
@@ -82,7 +96,7 @@ export default async function BoekPage({ params }: { params: Promise<{ locale: s
             <p className={styles.heroTagline}>{t.heroTagline}</p>
             <div className={styles.heroActions}>
               <a href="#boeken" className="cta-button">
-                {t.heroCtaBooks}
+                {gratis ? t.heroCtaDownload : t.heroCtaBooks}
               </a>
               <Link href={`/${locale}/klopt-het-nog`} className="cta-button-outline">
                 {t.ctaSecondary}
@@ -95,8 +109,9 @@ export default async function BoekPage({ params }: { params: Promise<{ locale: s
       {/* ---- De twee delen ---- */}
       <section id="boeken">
         <div className="container">
-          <div className="label">{t.booksLabel}</div>
-          <h2>{t.booksTitle}</h2>
+          <div className="label">{gratis ? t.downloadLabel : t.booksLabel}</div>
+          <h2>{gratis ? t.downloadTitle : t.booksTitle}</h2>
+          {gratis && <p className={styles.downloadIntro}>{t.downloadIntro}</p>}
           <div className={styles.books}>
             {boeken.map((b) => (
               <article key={b.naam} className={styles.book}>
@@ -114,18 +129,43 @@ export default async function BoekPage({ params }: { params: Promise<{ locale: s
                   {/* Bewust zonder noreferrer: de eerste stap is de eigen
                       omleiding, die de campagnecodes uit de verwijzende URL
                       leest. Met noreferrer komt die informatie niet mee. */}
-                  <a
-                    href={b.url}
-                    className="cta-button-outline"
-                    target="_blank"
-                    rel="noopener"
-                  >
-                    {b.cta}
-                  </a>
+                  {gratis ? (
+                    <div className={styles.downloads}>
+                      <a
+                        href={downloadLink(locale, b.deel, 'epub')}
+                        className="cta-button"
+                        aria-label={t.downloadEpubAria.replace('{boek}', b.naam)}
+                      >
+                        {t.downloadEpub}
+                      </a>
+                      <a
+                        href={downloadLink(locale, b.deel, 'pdf')}
+                        className="cta-button-outline"
+                        aria-label={t.downloadPdfAria.replace('{boek}', b.naam)}
+                      >
+                        {t.downloadPdf}
+                      </a>
+                    </div>
+                  ) : (
+                    <a
+                      href={b.url}
+                      className="cta-button-outline"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      {b.cta}
+                    </a>
+                  )}
                 </div>
               </article>
             ))}
           </div>
+          {gratis && (
+            <div className={styles.downloadNote}>
+              <p>{t.downloadReaders}</p>
+              <p className={styles.downloadPass}>{t.downloadPass}</p>
+            </div>
+          )}
         </div>
       </section>
 

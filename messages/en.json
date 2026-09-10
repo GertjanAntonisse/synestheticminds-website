@@ -605,6 +605,16 @@
     "book2Text": "What happens when organisations start automating what they never saw. It is not the failure of AI that is dangerous, but its success: a system that speeds up while the view of what held it together disappears.",
     "book2Cta": "To part 2",
     "cover1": "/boek/cover-boek1-en.jpg",
-    "cover2": "/boek/cover-boek2-en.jpg"
+    "cover2": "/boek/cover-boek2-en.jpg",
+    "downloadLabel": "Free",
+    "downloadTitle": "Both parts, no sign-up.",
+    "downloadIntro": "The books are here in full. No form, no email address, no sample chapter. What you do with what you read is up to you.",
+    "downloadEpub": "EPUB",
+    "downloadPdf": "PDF",
+    "downloadEpubAria": "Download {boek} as EPUB",
+    "downloadPdfAria": "Download {boek} as PDF",
+    "downloadReaders": "The EPUB works on Kobo, Tolino, phone and tablet, and reaches a Kindle through Send to Kindle. The PDF reads on any screen and is made to be printed.",
+    "downloadPass": "Passing it on is the point.",
+    "heroCtaDownload": "Download the books"
   }
 }

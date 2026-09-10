@@ -326,3 +326,31 @@
   .book { flex-direction: column; gap: 18px; }
   .bookCover { width: 128px; }
 }
+
+/* ---- Downloads ---- */
+.downloadIntro {
+  max-width: 60ch;
+  margin: 12px 0 0 0;
+  color: var(--muted);
+}
+
+.downloads {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.downloadNote {
+  max-width: 68ch;
+  margin-top: 22px;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+.downloadNote p {
+  margin: 0 0 6px 0;
+}
+
+.downloadPass {
+  color: var(--ink);
+}

@@ -605,6 +605,16 @@
     "book2Text": "Wat er gebeurt wanneer organisaties gaan automatiseren wat ze nooit hebben gezien. Niet het mislukken van AI is gevaarlijk, maar het slagen ervan: een systeem dat sneller wordt terwijl het zicht verdwijnt op wat het overeind hield.",
     "book2Cta": "Naar deel 2",
     "cover1": "/boek/cover-boek1.jpg",
-    "cover2": "/boek/cover-boek2.jpg"
+    "cover2": "/boek/cover-boek2.jpg",
+    "downloadLabel": "Gratis",
+    "downloadTitle": "Beide delen, zonder aanmelding.",
+    "downloadIntro": "De boeken staan hier compleet. Geen formulier, geen e-mailadres, geen proefhoofdstuk. Wat je met wat je leest doet, is aan jou.",
+    "downloadEpub": "EPUB",
+    "downloadPdf": "PDF",
+    "downloadEpubAria": "Download {boek} als EPUB",
+    "downloadPdfAria": "Download {boek} als PDF",
+    "downloadReaders": "De EPUB werkt op Kobo, Tolino, telefoon en tablet, en komt via Send to Kindle ook op een Kindle. De PDF leest op elk scherm en is gemaakt om te printen.",
+    "downloadPass": "Doorgeven mag. Dat is de bedoeling.",
+    "heroCtaDownload": "Download de boeken"
   }
 }

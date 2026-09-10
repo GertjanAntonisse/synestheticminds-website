@@ -18,3 +18,13 @@ export type BoekSleutel = keyof typeof BOEK_LINKS;
 export function boekSleutel(locale: string, deel: 1 | 2): BoekSleutel {
   return `${locale === 'en' ? 'en' : 'nl'}-${deel}` as BoekSleutel;
 }
+
+// De weggeef-edities staan op de eigen site. Bewust de Kobo-EPUB: de volledige
+// editie draagt Bookerly, en die licentie reikt niet verder dan Kindle, dus die
+// mogen wij niet zelf verspreiden. De PDF komt uit diezelfde bron.
+export const BOEK_DOWNLOADS = {
+  1: { epub: '/boek/download/Het-leven-in-de-logistiek.epub',
+       pdf: '/boek/download/Het-leven-in-de-logistiek.pdf' },
+  2: { epub: '/boek/download/Versnellen-wat-je-niet-begrijpt.epub',
+       pdf: '/boek/download/Versnellen-wat-je-niet-begrijpt.pdf' },
+} as const;

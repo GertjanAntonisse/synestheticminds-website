@@ -139,7 +139,10 @@ export function middleware(request: NextRequest, event: NextFetchEvent) {
 
 export const config = {
   matcher: [
-    // Skip Next.js internals, static files, and API routes
-    '/((?!api|_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp|avif|ico|woff2?|ttf|otf|eot|css|js)).*)',
+    // Skip Next.js internals, static files, and API routes. epub en pdf horen
+    // in die lijst omdat de boeken uit public/ komen: zonder uitzondering
+    // stuurt de taalomleiding hieronder ze naar /nl/... en loopt de download
+    // dood op een 404.
+    '/((?!api|_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp|avif|ico|woff2?|ttf|otf|eot|css|js|epub|pdf)).*)',
   ],
 };
