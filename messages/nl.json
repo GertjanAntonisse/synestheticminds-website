@@ -49,7 +49,7 @@
     "ctaButton": "Start het gesprek →"
   },
   "forCompanies": {
-    "metaTitle": "Voor bedrijven — Synesthetic Minds",
+    "metaTitle": "Voor bedrijven · Synesthetic Minds",
     "metaDesc": "Je hebt geen nieuw systeem nodig. Je moet zien wat het huidige systeem werkelijk doet.",
     "heroLabel": "Systeembegrip",
     "heroTitle": "Eerst zien wat je systeem werkelijk doet. Dan pas borgen dat het klopt.",
@@ -90,7 +90,7 @@
     "ctaSecondary": "Leer over Invariant Design →"
   },
   "invariantDesign": {
-    "metaTitle": "Invariant Design — Synesthetic Minds",
+    "metaTitle": "Invariant Design · Synesthetic Minds",
     "metaDesc": "Bewijs van correctheid ingebouwd in elke systeemuitvoer. Geen dashboard dat je apart bekijkt, maar bewijs dat meereist met de data.",
     "heroLabel": "Invariant Design",
     "heroTitle": "Je systeemuitvoer moet zijn eigen bewijs van correctheid dragen.",
@@ -141,7 +141,7 @@
     "ctaSecondary": "Naar Evident Design →"
   },
   "evidentDesign": {
-    "metaTitle": "Evident Design — Synesthetic Minds",
+    "metaTitle": "Evident Design · Synesthetic Minds",
     "metaDesc": "Het werkelijke werk zichtbaar maken en de afspraken erover levend houden, zodat afwijking opvalt voordat ze schade doet.",
     "heroLabel": "Evident Design",
     "heroTitle": "Iedereen vindt zijn eigen werk vanzelfsprekend. En juist daarom valt er zoveel te zien.",
@@ -243,7 +243,7 @@
     ]
   },
   "zelfScan": {
-    "metaTitle": "Klopt het beeld nog? — Synesthetic Minds",
+    "metaTitle": "Klopt het beeld nog? · Synesthetic Minds",
     "metaDesc": "Een zelf-scan voor één proces: leg je beeld van het werk naast het werk zelf, en zie waar ze uiteenlopen.",
     "heroLabel": "Zelf-scan",
     "heroTitle": "Klopt het beeld nog?",
@@ -307,7 +307,7 @@
     "shareButton": "Deel je scan →"
   },
   "contact": {
-    "metaTitle": "Contact — Synesthetic Minds",
+    "metaTitle": "Contact · Synesthetic Minds",
     "metaDesc": "Één vraag. Geen verplichting. Als het resoneert, gaan we verder.",
     "heroLabel": "Begin hier",
     "heroTitle": "Klopt het beeld met de werkelijkheid?",
@@ -324,7 +324,7 @@
     "expect3": "Als er een fit is, stellen we een gerichte diagnose voor. Zo niet, dan zeggen we dat."
   },
   "inPractice": {
-    "metaTitle": "Invarianten in de praktijk — Synesthetic Minds",
+    "metaTitle": "Invarianten in de praktijk · Synesthetic Minds",
     "metaDesc": "Invarianten groeien met je systeem mee. Van ontworpen vooraf tot ontdekt via incidenten, en van deploy-gates tot runtime-signalen.",
     "heroLabel": "In de praktijk",
     "heroTitle": "Invarianten groeien met je systeem mee.",
@@ -351,9 +351,9 @@
     "cycle4P": "De invariant slaagt of hij slaagt niet. Als hij faalt, wordt de deploy geblokkeerd. De beslissing wordt genomen door bewijsmateriaal, niet door oordeel.",
     "ciLabel": "Hoe het eruitziet",
     "ciTitle": "Een echte CI-pipeline met invariant-gates.",
-    "ciHeader": "GitHub Actions — Pull Request #847",
+    "ciHeader": "GitHub Actions · Pull Request #847",
     "ciBranch": "feat/synthesis-v2",
-    "ciFooter": "1 check mislukt — deploy geblokkeerd",
+    "ciFooter": "1 check mislukt · deploy geblokkeerd",
     "ciCallout": "Geen mockup. Deze runs worden uitgevoerd op echte AWS-infrastructuur met wegwerpbare testaccounts. Elke run produceert bewijs. Een fout hier betekent dat er iets veranderde dat niet had mogen veranderen.",
     "baLabel": "De transformatie",
     "baTitle": "Voor en na invariant-gates.",
@@ -378,7 +378,7 @@
     "ctaSecondary": "Terug naar Invariant Design →"
   },
   "vsAnalytics": {
-    "metaTitle": "Wat analytics je niet vertelt — Synesthetic Minds",
+    "metaTitle": "Wat analytics je niet vertelt · Synesthetic Minds",
     "metaDesc": "Analytics meet activiteit. Invarianten meten correctheid. Het verschil telt wanneer beslissingen worden genomen op de uitvoer.",
     "heroLabel": "Wat analytics je niet vertelt",
     "heroTitle": "Analytics vertelt je dat werk gedaan is. Invarianten vertellen je dat het werk goed gedaan is.",
@@ -488,7 +488,7 @@
     "ctaSecondary": "Zie het in de praktijk →"
   },
   "whyNow": {
-    "metaTitle": "Waarom nu — Synesthetic Minds",
+    "metaTitle": "Waarom nu · Synesthetic Minds",
     "metaDesc": "Je shipt sneller dan je kunt verifiëren. Dat gat is waar vertrouwen wegloopt.",
     "heroLabel": "Waarom nu",
     "heroTitle": "Je shipt sneller dan je kunt verifiëren.",
@@ -525,7 +525,7 @@
     "ctaSecondary": "Wat analytics je niet vertelt →"
   },
   "kloptHetNog": {
-    "metaTitle": "Klopt het nog? — Synesthetic Minds",
+    "metaTitle": "Klopt het nog? · Synesthetic Minds",
     "metaDesc": "Tweewekelijkse notitie met observaties rond AI in praktijk en actualiteit.",
     "heroLabel": "Lees mee",
     "heroTitle": "Voordat AI iets oplost, moet duidelijk zijn wat er werkelijk gebeurt.",
@@ -549,7 +549,7 @@
     "mailtoSubject": "Aanmelding Klopt het nog?"
   },
   "boek": {
-    "metaTitle": "De logica van werk — de boeken | Synesthetic Minds",
+    "metaTitle": "De logica van werk: de boeken · Synesthetic Minds",
     "metaDesc": "Twee delen over dezelfde vraag: klopt het beeld dat we hebben van ons werk met het werk zelf? Deel 1 gaat over leren zien, deel 2 over wat er gebeurt als versnelling voorafgaat aan begrip.",
     "heroLabel": "De reeks",
     "seriesName": "De logica van werk:",
