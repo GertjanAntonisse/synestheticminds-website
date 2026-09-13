@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import type { NextFetchEvent } from 'next/server';
 import { locales, getLocaleFromCountry, isLocale, LOCALE_COOKIE } from './lib/i18n';
-import { logEvent, readUtm } from './lib/events';
+import { logEvent, readUtm, BOT_UA_RE } from './lib/events';
 
 // Every locale-prefixed page counts. A visit without UTM is still a visit, and
 // only logging tagged traffic meant the log could only ever confirm campaigns
@@ -13,11 +13,6 @@ const LOCALE_PATH_RE = /^\/(nl|en)(\/|$)/;
 const REDIRECT_ONLY = new Set(['/nl/for-companies', '/en/for-companies', '/en/boek',
   '/nl/book', '/en/klopt-het-beeld', '/nl/self-scan', '/nl/ground-truth',
   '/en/systeembegrip']);
-
-// Crawlers, link-preview fetchers and uptime checks. Without this the log fills
-// with traffic that never read anything, which is exactly the kind of number
-// that looks like reach and is not.
-const BOT_UA_RE = /bot|crawler|spider|slurp|headless|preview|monitor|curl|wget|python-requests/i;
 
 // Logs a page visit. Only genuine navigations: after the page loads it fires
 // several RSC/prefetch requests at its own URL, which would otherwise each log

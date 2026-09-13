@@ -1,0 +1,9 @@
+{
+  "toelichting": "Vingerafdrukken die niet meetellen als bezoeker. Een dashboard dat jezelf meetelt, meet je eigen werk en niet je publiek. Alles wat hier staat wordt op de pagina zelf vermeld, met aantal en reden.",
+  "afdrukken": {
+    "365d59e9b0d62fad": "Gertjan, eigen browser",
+    "8f42af6f304383bb": "curl, tests tijdens het bouwen van de downloadpagina op 10 sep 2026",
+    "8986623ed5c7dc57": "downloadde vier bestanden zonder de boekpagina ooit te openen en zonder verwijzende pagina, op 10 sep 2026"
+  },
+  "sondepaden": "(wp-login|/admin|/signin|/login|/dashboard|robots.txt|\\.env|\\.git)"
+}

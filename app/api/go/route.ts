@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { logEvent, readUtm } from '../../../lib/events';
+import { logEvent, readUtm, BOT_UA_RE } from '../../../lib/events';
 import { BOEK_LINKS, type BoekSleutel } from '../../../lib/boeken';
 
 // General logged redirect. Put any link, download or save URL through here with
@@ -66,14 +66,21 @@ export async function GET(request: NextRequest) {
 
   const destination = named ?? to;
 
+  // Hier wordt niet weggefilterd maar gemerkt. Een crawler die de koopknop
+  // aanklikt is geen lezer, maar het feit dat hij langskwam is wel informatie;
+  // weggooien zou een tweede blinde vlek maken. Wie telt, laat de gemerkte rijen
+  // buiten beschouwing.
+  const userAgent = request.headers.get('user-agent');
+  const bot = userAgent ? BOT_UA_RE.test(userAgent) : false;
+
   await logEvent({
     event: sp.get('event') || 'click',
     path: request.nextUrl.pathname,
     locale: sp.get('locale'),
     ...utm,
     referer,
-    userAgent: request.headers.get('user-agent'),
-    meta: destination ? { to: destination } : null,
+    userAgent,
+    meta: { ...(destination ? { to: destination } : {}), ...(bot ? { bot: true } : {}) },
   });
 
   // A named destination is trusted because it never left the server.

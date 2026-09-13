@@ -19,6 +19,13 @@ export interface EventInput {
   userAgent?: string | null; // hashed here, never stored raw
 }
 
+// Crawlers, link-voorvertoningen en uptime-controles. Stond eerst alleen in de
+// middleware, waardoor bezoeken wel werden gefilterd en de gelogde omleiding niet:
+// /api/go legde elke aanroep vast. Op 13 september 2026 bleek daardoor dat 38 van
+// de 46 koop-kliks van afdrukken kwamen die nooit een pagina hadden geopend.
+// Eén definitie, twee gebruikers.
+export const BOT_UA_RE = /bot|crawler|spider|slurp|headless|preview|monitor|curl|wget|python-requests/i;
+
 const str = (v: unknown): string | null => (typeof v === 'string' && v ? v : null);
 
 export async function logEvent(input: EventInput): Promise<void> {
