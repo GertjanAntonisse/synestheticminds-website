@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { logEvent, readUtm, BOT_UA_RE } from '../../../lib/events';
 import { BOEK_LINKS, type BoekSleutel } from '../../../lib/boeken';
+import { UTM_COOKIE, parseUtmCookie } from '../../../lib/utm-cookie';
 
 // General logged redirect. Put any link, download or save URL through here with
 // a UTM and an event name, and it logs the click and forwards the visitor:
@@ -54,14 +55,17 @@ export async function GET(request: NextRequest) {
   const referer = request.headers.get('referer');
   const named = namedDestination(sp.get('dest'));
 
-  // Explicit codes on the link win; the referring page fills in what is missing.
+  // Explicit codes on the link win, then the referring page, then the 30-day
+  // cookie set on the last tagged visit — the fallback for a download that
+  // happens later, in a new tab, or with a browser that strips the referer.
   const fromReferer = utmFromReferer(referer);
+  const fromCookie = parseUtmCookie(request.cookies.get(UTM_COOKIE)?.value);
   const own = readUtm(sp);
   const utm = {
-    utm_source: own.utm_source ?? fromReferer.utm_source ?? null,
-    utm_medium: own.utm_medium ?? fromReferer.utm_medium ?? null,
-    utm_campaign: own.utm_campaign ?? fromReferer.utm_campaign ?? null,
-    utm_content: own.utm_content ?? fromReferer.utm_content ?? null,
+    utm_source: own.utm_source ?? fromReferer.utm_source ?? fromCookie?.utm_source ?? null,
+    utm_medium: own.utm_medium ?? fromReferer.utm_medium ?? fromCookie?.utm_medium ?? null,
+    utm_campaign: own.utm_campaign ?? fromReferer.utm_campaign ?? fromCookie?.utm_campaign ?? null,
+    utm_content: own.utm_content ?? fromReferer.utm_content ?? fromCookie?.utm_content ?? null,
   };
 
   const destination = named ?? to;

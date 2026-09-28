@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import type { NextFetchEvent } from 'next/server';
 import { locales, getLocaleFromCountry, isLocale, LOCALE_COOKIE } from './lib/i18n';
 import { logEvent, readUtm, BOT_UA_RE } from './lib/events';
+import { UTM_COOKIE, UTM_COOKIE_MAX_AGE, utmCookieValue } from './lib/utm-cookie';
 
 // Every locale-prefixed page counts. A visit without UTM is still a visit, and
 // only logging tagged traffic meant the log could only ever confirm campaigns
@@ -38,10 +39,27 @@ async function logVisit(request: NextRequest): Promise<void> {
   });
 }
 
+// Remembers the most recent tagged visit for 30 days, so a download or buy click
+// that happens later, or without a referer, can still be traced to the post that
+// brought the visitor in. Only overwrites the cookie when the visit itself carries
+// a campaign code, so an untagged later visit never erases the earlier attribution.
+function withUtmCookie(response: NextResponse, request: NextRequest, pathname: string): NextResponse {
+  const utm = readUtm(request.nextUrl.searchParams);
+  if (utm.utm_source && LOCALE_PATH_RE.test(pathname)) {
+    response.cookies.set(UTM_COOKIE, utmCookieValue(utm), {
+      maxAge: UTM_COOKIE_MAX_AGE,
+      sameSite: 'lax',
+      path: '/',
+    });
+  }
+  return response;
+}
+
 export function middleware(request: NextRequest, event: NextFetchEvent) {
   event.waitUntil(logVisit(request));
 
   const { pathname } = request.nextUrl;
+  const withCookie = (response: NextResponse) => withUtmCookie(response, request, pathname);
 
   // Localized slug for the book page: /nl/boek (NL) and /en/book (EN) are the
   // canonical URLs. The page physically lives at /[locale]/boek, so the EN
@@ -49,12 +67,12 @@ export function middleware(request: NextRequest, event: NextFetchEvent) {
   if (pathname === '/en/boek' || pathname === '/nl/book') {
     const url = request.nextUrl.clone();
     url.pathname = pathname === '/en/boek' ? '/en/book' : '/nl/boek';
-    return NextResponse.redirect(url);
+    return withCookie(NextResponse.redirect(url));
   }
   if (pathname === '/en/book') {
     const url = request.nextUrl.clone();
     url.pathname = '/en/boek';
-    return NextResponse.rewrite(url);
+    return withCookie(NextResponse.rewrite(url));
   }
 
   // System-understanding page: /nl/systeembegrip (NL) and /en/ground-truth (EN)
@@ -63,22 +81,22 @@ export function middleware(request: NextRequest, event: NextFetchEvent) {
   if (pathname === '/nl/for-companies') {
     const url = request.nextUrl.clone();
     url.pathname = '/nl/systeembegrip';
-    return NextResponse.redirect(url);
+    return withCookie(NextResponse.redirect(url));
   }
   if (pathname === '/en/for-companies') {
     const url = request.nextUrl.clone();
     url.pathname = '/en/ground-truth';
-    return NextResponse.redirect(url);
+    return withCookie(NextResponse.redirect(url));
   }
   if (pathname === '/nl/systeembegrip') {
     const url = request.nextUrl.clone();
     url.pathname = '/nl/for-companies';
-    return NextResponse.rewrite(url);
+    return withCookie(NextResponse.rewrite(url));
   }
   if (pathname === '/en/ground-truth') {
     const url = request.nextUrl.clone();
     url.pathname = '/en/for-companies';
-    return NextResponse.rewrite(url);
+    return withCookie(NextResponse.rewrite(url));
   }
 
   // The language switch in the nav swaps only the locale prefix, so from
@@ -89,12 +107,12 @@ export function middleware(request: NextRequest, event: NextFetchEvent) {
   if (pathname === '/nl/ground-truth') {
     const url = request.nextUrl.clone();
     url.pathname = '/nl/systeembegrip';
-    return NextResponse.redirect(url);
+    return withCookie(NextResponse.redirect(url));
   }
   if (pathname === '/en/systeembegrip') {
     const url = request.nextUrl.clone();
     url.pathname = '/en/ground-truth';
-    return NextResponse.redirect(url);
+    return withCookie(NextResponse.redirect(url));
   }
 
   // Localized slug for the self-scan: /nl/klopt-het-beeld (NL) and /en/self-scan
@@ -105,17 +123,17 @@ export function middleware(request: NextRequest, event: NextFetchEvent) {
   if (pathname === '/en/klopt-het-beeld' || pathname === '/nl/self-scan') {
     const url = request.nextUrl.clone();
     url.pathname = pathname === '/en/klopt-het-beeld' ? '/en/self-scan' : '/nl/klopt-het-beeld';
-    return NextResponse.redirect(url);
+    return withCookie(NextResponse.redirect(url));
   }
   if (pathname === '/en/self-scan') {
     const url = request.nextUrl.clone();
     url.pathname = '/en/klopt-het-beeld';
-    return NextResponse.rewrite(url);
+    return withCookie(NextResponse.rewrite(url));
   }
 
   // Already locale-prefixed — let through
   if (locales.some((loc) => pathname === `/${loc}` || pathname.startsWith(`/${loc}/`))) {
-    return NextResponse.next();
+    return withCookie(NextResponse.next());
   }
 
   // Een taal die de bezoeker zelf koos gaat voor het land van zijn IP-adres.
@@ -129,7 +147,7 @@ export function middleware(request: NextRequest, event: NextFetchEvent) {
 
   const url = request.nextUrl.clone();
   url.pathname = `/${locale}${pathname === '/' ? '' : pathname}`;
-  return NextResponse.redirect(url);
+  return withCookie(NextResponse.redirect(url));
 }
 
 export const config = {
