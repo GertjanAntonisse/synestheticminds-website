@@ -49,6 +49,8 @@ const KERN_BESTANDEN = ['werkinstructies.json', 'kern-overzicht.json'];
 // Uitsplitsingen gaan mee als de vraag erom vraagt. Ze zijn klein genoeg om heel mee te geven,
 // en een afgekapte tabel geeft een verkeerd gevoel van volledigheid.
 const UITSPLITSINGEN: { bestand: string; patroon: RegExp }[] = [
+  { bestand: 'order-controle.json', patroon: /order|pick|inpak|controle|artikel|verzend|retour|klant|bestel|gevraagd|gepickt|ontbr|fout/i },
+  { bestand: 'verzendcontrole.json', patroon: /controle|inpak|verzend|goedgekeurd|afgekeurd|keur|gezien|gemist/i },
   { bestand: 'scan-per-medewerker.json', patroon: /medewerker|picker|persoon|personen|mensen|\bwie\b|iemand|\bmw-\d/i },
   { bestand: 'scan-per-week.json', patroon: /week|weken|verloop|trend|tijd|maand|maart|april|mei\b|januari|februari|periode|voor en na/i },
   { bestand: 'scan-per-vak.json', patroon: /locatie|\brij\b|rijen|vak|laag|zone|\bwaar\b|plek|magazijn|hoogvolume|\br\d/i },

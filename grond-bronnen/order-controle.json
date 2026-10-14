@@ -1,0 +1,124 @@
+{
+ "toelichting": "Per order: wat is gevraagd (de order), wat is gepickt (de picks) en wat de controle voor het inpakken heeft vastgelegd. Een afwijking is hier een order waarvan de gepickte artikelen of aantallen niet gelijk zijn aan wat is gevraagd. De afwijkingen zijn berekend uit orders.json en picks.json.",
+ "totalen": {
+  "orders": 120,
+  "orders_met_picks": 110,
+  "orders_zonder_picks": 10,
+  "orders_met_afwijking_tussen_gevraagd_en_gepickt": 7,
+  "daarvan_goedgekeurd_bij_de_controle_voor_het_inpakken": 7,
+  "daarvan_afgekeurd_bij_de_controle": 0,
+  "picks_in_totaal": 215,
+  "picks_van_een_artikel_dat_niet_in_de_order_staat": 7
+ },
+ "afwijkende_orders": [
+  {
+   "order_id": "26-0033",
+   "datum": "2026-03-25",
+   "verschil_per_artikel": {
+    "ART-003": {
+     "gevraagd": 0,
+     "gepickt": 4
+    },
+    "ART-005": {
+     "gevraagd": 4,
+     "gepickt": 0
+    }
+   },
+   "controle_voor_inpakken": "goedgekeurd"
+  },
+  {
+   "order_id": "26-0045",
+   "datum": "2026-04-05",
+   "verschil_per_artikel": {
+    "ART-002": {
+     "gevraagd": 0,
+     "gepickt": 4
+    },
+    "ART-005": {
+     "gevraagd": 4,
+     "gepickt": 0
+    }
+   },
+   "controle_voor_inpakken": "goedgekeurd"
+  },
+  {
+   "order_id": "26-0053",
+   "datum": "2026-01-18",
+   "verschil_per_artikel": {
+    "ART-002": {
+     "gevraagd": 3,
+     "gepickt": 0
+    },
+    "ART-004": {
+     "gevraagd": 0,
+     "gepickt": 3
+    }
+   },
+   "controle_voor_inpakken": "goedgekeurd"
+  },
+  {
+   "order_id": "26-0058",
+   "datum": "2026-01-25",
+   "verschil_per_artikel": {
+    "ART-002": {
+     "gevraagd": 1,
+     "gepickt": 3
+    },
+    "ART-004": {
+     "gevraagd": 2,
+     "gepickt": 0
+    }
+   },
+   "controle_voor_inpakken": "goedgekeurd"
+  },
+  {
+   "order_id": "26-0061",
+   "datum": "2026-04-03",
+   "verschil_per_artikel": {
+    "ART-003": {
+     "gevraagd": 3,
+     "gepickt": 0
+    },
+    "ART-004": {
+     "gevraagd": 0,
+     "gepickt": 3
+    }
+   },
+   "controle_voor_inpakken": "goedgekeurd"
+  },
+  {
+   "order_id": "X-00076",
+   "datum": "2026-02-08",
+   "verschil_per_artikel": {
+    "ART-001": {
+     "gevraagd": 7,
+     "gepickt": 0
+    },
+    "ART-003": {
+     "gevraagd": 5,
+     "gepickt": 0
+    },
+    "ART-006": {
+     "gevraagd": 0,
+     "gepickt": 12
+    }
+   },
+   "controle_voor_inpakken": "goedgekeurd"
+  },
+  {
+   "order_id": "26-0106",
+   "datum": "2026-04-02",
+   "verschil_per_artikel": {
+    "ART-004": {
+     "gevraagd": 5,
+     "gepickt": 0
+    },
+    "ART-005": {
+     "gevraagd": 0,
+     "gepickt": 5
+    }
+   },
+   "controle_voor_inpakken": "goedgekeurd"
+  }
+ ]
+}

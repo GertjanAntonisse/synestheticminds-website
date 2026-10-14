@@ -144,3 +144,60 @@ json.dump([{**{k: e[k] for k in VELDEN}, "periode": e["periode"], "week": week_v
           open(REGELS / "scanregels.json", "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
 for p in sorted(BRONNEN.glob("*.json")): print(f"{p.stat().st_size/1024:7.1f} kB  {p.name}")
 print(f"{(REGELS / 'scanregels.json').stat().st_size/1024/1024:7.1f} MB  grond-regels/scanregels.json")
+
+# 5. orders: wat gevraagd is, wat gepickt is en wat de controle voor het inpakken zei.
+# De afwijkingen worden hier zelf afgeleid uit orders en picks. De labels uit de bron
+# (artikel_correct, locatie_correct, goedgekeurd_met_fout, verkeerde_picks) blijven buiten de speeltuin.
+from collections import defaultdict
+orders = json.load(open(BRON / "data" / "orders.json", encoding="utf-8"))
+picks = json.load(open(BRON / "data" / "picks.json", encoding="utf-8"))
+bevestigingen = {v["order_id"]: v for v in json.load(open(BRON / "data" / "verzendbevestigingen.json", encoding="utf-8"))}
+voorraad = {v["artikel_id"]: v["locatie"] for v in json.load(open(BRON / "data" / "voorraad.json", encoding="utf-8"))}
+
+gepickt = defaultdict(lambda: defaultdict(int))
+picks_per_order = defaultdict(list)
+for p in picks:
+    gepickt[p["order_id"]][p["artikel_id"]] += p["aantal"]
+    picks_per_order[p["order_id"]].append(p)
+
+afwijkende_orders = []
+zonder_picks = 0
+goedgekeurd_totaal = 0
+for o in orders:
+    gevraagd = defaultdict(int)
+    for r in o["regels"]: gevraagd[r["artikel_id"]] += r["aantal"]
+    g = gepickt.get(o["order_id"])
+    if not g:
+        zonder_picks += 1
+        continue
+    b = bevestigingen.get(o["order_id"])
+    if b and b["goedgekeurd"]: goedgekeurd_totaal += 1
+    verschil = {a: {"gevraagd": gevraagd.get(a, 0), "gepickt": g.get(a, 0)} for a in sorted(set(gevraagd) | set(g)) if gevraagd.get(a, 0) != g.get(a, 0)}
+    if verschil:
+        afwijkende_orders.append({"order_id": o["order_id"], "datum": o["datum"], "verschil_per_artikel": verschil,
+                                  "controle_voor_inpakken": ("goedgekeurd" if b["goedgekeurd"] else "afgekeurd") if b else "geen controle vastgelegd"})
+
+niet_gevraagd = [p for p in picks if p["artikel_id"] not in {r["artikel_id"] for o in orders if o["order_id"] == p["order_id"] for r in o["regels"]}]
+goedgekeurd_afwijkend = [a for a in afwijkende_orders if a["controle_voor_inpakken"] == "goedgekeurd"]
+
+order_controle = {
+    "toelichting": "Per order: wat is gevraagd (de order), wat is gepickt (de picks) en wat de controle voor het inpakken heeft vastgelegd. Een afwijking is hier een order waarvan de gepickte artikelen of aantallen niet gelijk zijn aan wat is gevraagd. De afwijkingen zijn berekend uit orders.json en picks.json.",
+    "totalen": {
+        "orders": len(orders),
+        "orders_met_picks": len(orders) - zonder_picks,
+        "orders_zonder_picks": zonder_picks,
+        "orders_met_afwijking_tussen_gevraagd_en_gepickt": len(afwijkende_orders),
+        "daarvan_goedgekeurd_bij_de_controle_voor_het_inpakken": len(goedgekeurd_afwijkend),
+        "daarvan_afgekeurd_bij_de_controle": sum(1 for a in afwijkende_orders if a["controle_voor_inpakken"] == "afgekeurd"),
+        "picks_in_totaal": len(picks),
+        "picks_van_een_artikel_dat_niet_in_de_order_staat": len(niet_gevraagd),
+    },
+    "afwijkende_orders": afwijkende_orders,
+}
+(BRONNEN / "order-controle.json").write_text(json.dumps(order_controle, ensure_ascii=False, indent=1), encoding="utf-8")
+(BRONNEN / "verzendcontrole.json").write_text(
+    '{"toelichting":"Wat de controle voor het inpakken per order heeft vastgelegd: of alle artikelen volgens de controle klopten en of de order is goedgekeurd.",\n"controles":[\n' +
+    ",\n".join(json.dumps({"order_id": v["order_id"], "alle_artikelen_correct": v["alle_artikelen_correct"], "goedgekeurd": v["goedgekeurd"]}, separators=(",", ":")) for v in bevestigingen.values()) + "\n]}\n", encoding="utf-8")
+json.loads((BRONNEN / "verzendcontrole.json").read_text(encoding="utf-8"))
+print(json.dumps(order_controle["totalen"], ensure_ascii=False, indent=1))
+print(f"order-controle.json {(BRONNEN / 'order-controle.json').stat().st_size/1024:.1f} kB, verzendcontrole.json {(BRONNEN / 'verzendcontrole.json').stat().st_size/1024:.1f} kB")

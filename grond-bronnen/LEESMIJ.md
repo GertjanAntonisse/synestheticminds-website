@@ -10,6 +10,9 @@ Dit is een gesimuleerd magazijn van een webshop in kleding en schoenen. Alle geg
 
 - `orders.json`, `picks.json`, `zendingen.json`, `retouren.json`, `voorraad.json`: de orders en wat daarmee in het magazijn is gedaan.
 
+- `order-controle.json`: per order wat is gevraagd, wat is gepickt en wat de controle voor het inpakken heeft gedaan. Een afwijking is een order waarvan de gepickte artikelen of aantallen niet gelijk zijn aan wat is gevraagd.
+- `verzendcontrole.json`: wat de controle voor het inpakken per order heeft vastgelegd.
+
 ## De scanregels van de pickers
 
 Er zijn 26.234 scanregels: elke keer dat een picker een locatie scant, met tijd, route en piktijd. Die regels zijn te veel om als geheel te doorzoeken. Daarom zijn ze samengevat, en elke samenvatting is te herleiden tot de regels zelf:

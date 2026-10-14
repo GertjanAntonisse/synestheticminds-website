@@ -681,7 +681,8 @@
       "What changed on 1 April, and which other instructions does that affect?",
       "Which assumptions lie under the route instruction?",
       "Did the work after 1 April still meet the pick time instruction?",
-      "Can you say whether the change caused the deviations?"
+      "Can you say whether the change caused the deviations?",
+      "Are there orders where something other than what was asked was picked, and was that caught at packing?"
     ],
     "typeLabels": {
       "feit": "fact",
