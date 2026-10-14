@@ -129,6 +129,9 @@ export default async function ForCompaniesPage({ params }: { params: Promise<{ l
             <Link href={`/${locale}/evident-design`} className="cta-button-outline">
               {t.ctaEvident}
             </Link>
+            <Link href={`/${locale}/grond`} className="cta-button-outline">
+              {t.ctaGrond}
+            </Link>
             <Link href={`/${locale}/invariant-design`} className="cta-button-outline">
               {t.ctaSecondary}
             </Link>
