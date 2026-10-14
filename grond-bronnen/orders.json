@@ -1,0 +1,2147 @@
+[
+ {
+  "order_id": "26-0001",
+  "datum": "2026-02-01",
+  "status": "open",
+  "klant_id": "K-049",
+  "regels": [
+   {
+    "artikel_id": "ART-005",
+    "aantal": 4,
+    "voorraad_op_moment_van_order": 32
+   }
+  ]
+ },
+ {
+  "order_id": "26-0002",
+  "datum": "2026-01-19",
+  "status": "open",
+  "klant_id": "K-031",
+  "regels": [
+   {
+    "artikel_id": "ART-007",
+    "aantal": 5,
+    "voorraad_op_moment_van_order": 11
+   }
+  ]
+ },
+ {
+  "order_id": "26-0003",
+  "datum": "2026-01-18",
+  "status": "open",
+  "klant_id": "K-010",
+  "regels": [
+   {
+    "artikel_id": "ART-002",
+    "aantal": 2,
+    "voorraad_op_moment_van_order": 3
+   },
+   {
+    "artikel_id": "ART-008",
+    "aantal": 5,
+    "voorraad_op_moment_van_order": 13
+   }
+  ]
+ },
+ {
+  "order_id": "26-0004",
+  "datum": "2026-03-21",
+  "status": "open",
+  "klant_id": "K-029",
+  "regels": [
+   {
+    "artikel_id": "ART-007",
+    "aantal": 1,
+    "voorraad_op_moment_van_order": 11
+   },
+   {
+    "artikel_id": "ART-003",
+    "aantal": 1,
+    "voorraad_op_moment_van_order": 181
+   }
+  ]
+ },
+ {
+  "order_id": "26-0005",
+  "datum": "2026-02-11",
+  "status": "open",
+  "klant_id": "K-014",
+  "regels": [
+   {
+    "artikel_id": "ART-003",
+    "aantal": 5,
+    "voorraad_op_moment_van_order": 181
+   }
+  ]
+ },
+ {
+  "order_id": "26-0006",
+  "datum": "2026-01-14",
+  "status": "open",
+  "klant_id": "K-029",
+  "regels": [
+   {
+    "artikel_id": "ART-005",
+    "aantal": 3,
+    "voorraad_op_moment_van_order": 32
+   },
+   {
+    "artikel_id": "ART-001",
+    "aantal": 4,
+    "voorraad_op_moment_van_order": 77
+   }
+  ]
+ },
+ {
+  "order_id": "26-0007",
+  "datum": "2026-02-11",
+  "status": "open",
+  "klant_id": "K-041",
+  "regels": [
+   {
+    "artikel_id": "ART-007",
+    "aantal": 2,
+    "voorraad_op_moment_van_order": 11
+   }
+  ]
+ },
+ {
+  "order_id": "26-0008",
+  "datum": "2026-02-15",
+  "status": "open",
+  "klant_id": "K-005",
+  "regels": [
+   {
+    "artikel_id": "ART-005",
+    "aantal": 3,
+    "voorraad_op_moment_van_order": 32
+   },
+   {
+    "artikel_id": "ART-004",
+    "aantal": 3,
+    "voorraad_op_moment_van_order": 136
+   }
+  ]
+ },
+ {
+  "order_id": "26-0009",
+  "datum": "2026-03-18",
+  "status": "open",
+  "klant_id": "K-006",
+  "regels": [
+   {
+    "artikel_id": "ART-006",
+    "aantal": 1,
+    "voorraad_op_moment_van_order": 70
+   },
+   {
+    "artikel_id": "ART-005",
+    "aantal": 5,
+    "voorraad_op_moment_van_order": 32
+   }
+  ]
+ },
+ {
+  "order_id": "26-0010",
+  "datum": "2026-01-18",
+  "status": "open",
+  "klant_id": "K-018",
+  "regels": [
+   {
+    "artikel_id": "ART-008",
+    "aantal": 4,
+    "voorraad_op_moment_van_order": 13
+   }
+  ]
+ },
+ {
+  "order_id": "26-0011",
+  "datum": "2026-02-07",
+  "status": "open",
+  "klant_id": "K-028",
+  "regels": [
+   {
+    "artikel_id": "ART-002",
+    "aantal": 2,
+    "voorraad_op_moment_van_order": 3
+   },
+   {
+    "artikel_id": "ART-004",
+    "aantal": 1,
+    "voorraad_op_moment_van_order": 136
+   }
+  ]
+ },
+ {
+  "order_id": "26-0012",
+  "datum": "2026-02-25",
+  "status": "open",
+  "klant_id": "K-045",
+  "regels": [
+   {
+    "artikel_id": "ART-007",
+    "aantal": 2,
+    "voorraad_op_moment_van_order": 0
+   },
+   {
+    "artikel_id": "ART-008",
+    "aantal": 3,
+    "voorraad_op_moment_van_order": 13
+   },
+   {
+    "artikel_id": "ART-005",
+    "aantal": 4,
+    "voorraad_op_moment_van_order": 32
+   }
+  ]
+ },
+ {
+  "order_id": "26-0013",
+  "datum": "2026-01-16",
+  "status": "open",
+  "klant_id": "K-035",
+  "regels": [
+   {
+    "artikel_id": "ART-004",
+    "aantal": 5,
+    "voorraad_op_moment_van_order": 136
+   }
+  ]
+ },
+ {
+  "order_id": "26-0014",
+  "datum": "2026-04-04",
+  "status": "open",
+  "klant_id": "K-049",
+  "regels": [
+   {
+    "artikel_id": "ART-003",
+    "aantal": 4,
+    "voorraad_op_moment_van_order": 181
+   },
+   {
+    "artikel_id": "ART-008",
+    "aantal": 5,
+    "voorraad_op_moment_van_order": 13
+   }
+  ]
+ },
+ {
+  "order_id": "26-0015",
+  "datum": null,
+  "status": "open",
+  "klant_id": "K-036",
+  "regels": [
+   {
+    "artikel_id": "ART-002",
+    "aantal": 1,
+    "voorraad_op_moment_van_order": 3
+   },
+   {
+    "artikel_id": "ART-008",
+    "aantal": 1,
+    "voorraad_op_moment_van_order": 13
+   }
+  ]
+ },
+ {
+  "order_id": "26-0016",
+  "datum": "2026-02-02",
+  "status": "open",
+  "klant_id": "K-046",
+  "regels": [
+   {
+    "artikel_id": "ART-005",
+    "aantal": 2,
+    "voorraad_op_moment_van_order": 32
+   },
+   {
+    "artikel_id": "ART-004",
+    "aantal": 2,
+    "voorraad_op_moment_van_order": 136
+   },
+   {
+    "artikel_id": "ART-007",
+    "aantal": 5,
+    "voorraad_op_moment_van_order": 11
+   }
+  ]
+ },
+ {
+  "order_id": "26-0017",
+  "datum": "2026-01-28",
+  "status": "open",
+  "klant_id": "K-018",
+  "regels": [
+   {
+    "artikel_id": "ART-006",
+    "aantal": 1,
+    "voorraad_op_moment_van_order": 70
+   },
+   {
+    "artikel_id": "ART-007",
+    "aantal": 3,
+    "voorraad_op_moment_van_order": 11
+   }
+  ]
+ },
+ {
+  "order_id": "26-0018",
+  "datum": "2026-03-31",
+  "status": "open",
+  "klant_id": "K-032",
+  "regels": [
+   {
+    "artikel_id": "ART-008",
+    "aantal": 5,
+    "voorraad_op_moment_van_order": 13
+   },
+   {
+    "artikel_id": "ART-003",
+    "aantal": 3,
+    "voorraad_op_moment_van_order": 181
+   }
+  ]
+ },
+ {
+  "order_id": "26-0019",
+  "datum": "2026-02-14",
+  "status": "open",
+  "klant_id": "K-025",
+  "regels": [
+   {
+    "artikel_id": "ART-001",
+    "aantal": 4,
+    "voorraad_op_moment_van_order": 77
+   },
+   {
+    "artikel_id": "ART-003",
+    "aantal": 2,
+    "voorraad_op_moment_van_order": 181
+   }
+  ]
+ },
+ {
+  "order_id": "26-0020",
+  "datum": "2026-01-16",
+  "status": "open",
+  "klant_id": "K-033",
+  "regels": [
+   {
+    "artikel_id": "ART-002",
+    "aantal": 1,
+    "voorraad_op_moment_van_order": 3
+   },
+   {
+    "artikel_id": "ART-007",
+    "aantal": 4,
+    "voorraad_op_moment_van_order": 11
+   }
+  ]
+ },
+ {
+  "order_id": "X-00021",
+  "datum": "2026-02-01",
+  "status": "open",
+  "klant_id": null,
+  "regels": [
+   {
+    "artikel_id": "ART-002",
+    "aantal": 2,
+    "voorraad_op_moment_van_order": 3
+   }
+  ]
+ },
+ {
+  "order_id": "26-0022",
+  "datum": "2026-03-07",
+  "status": "open",
+  "klant_id": "K-006",
+  "regels": [
+   {
+    "artikel_id": "ART-007",
+    "aantal": 4,
+    "voorraad_op_moment_van_order": 11
+   },
+   {
+    "artikel_id": "ART-003",
+    "aantal": 1,
+    "voorraad_op_moment_van_order": 181
+   },
+   {
+    "artikel_id": "ART-006",
+    "aantal": 2,
+    "voorraad_op_moment_van_order": 70
+   }
+  ]
+ },
+ {
+  "order_id": "26-0023",
+  "datum": "2026-02-17",
+  "status": "open",
+  "klant_id": "K-048",
+  "regels": [
+   {
+    "artikel_id": "ART-002",
+    "aantal": 3,
+    "voorraad_op_moment_van_order": 3
+   }
+  ]
+ },
+ {
+  "order_id": "26-0024",
+  "datum": "2026-01-14",
+  "status": "open",
+  "klant_id": "K-021",
+  "regels": [
+   {
+    "artikel_id": "ART-006",
+    "aantal": 2,
+    "voorraad_op_moment_van_order": 70
+   },
+   {
+    "artikel_id": "ART-003",
+    "aantal": 5,
+    "voorraad_op_moment_van_order": 181
+   }
+  ]
+ },
+ {
+  "order_id": "26-0025",
+  "datum": "2026-02-04",
+  "status": "open",
+  "klant_id": "K-012",
+  "regels": [
+   {
+    "artikel_id": "ART-004",
+    "aantal": 2,
+    "voorraad_op_moment_van_order": 136
+   },
+   {
+    "artikel_id": "ART-008",
+    "aantal": 3,
+    "voorraad_op_moment_van_order": 13
+   }
+  ]
+ },
+ {
+  "order_id": "26-0026",
+  "datum": "2026-01-15",
+  "status": "open",
+  "klant_id": "K-019",
+  "regels": [
+   {
+    "artikel_id": "ART-002",
+    "aantal": 2,
+    "voorraad_op_moment_van_order": 3
+   }
+  ]
+ },
+ {
+  "order_id": "26-0027",
+  "datum": "2026-02-23",
+  "status": "open",
+  "klant_id": "K-028",
+  "regels": [
+   {
+    "artikel_id": "ART-005",
+    "aantal": 4,
+    "voorraad_op_moment_van_order": 32
+   },
+   {
+    "artikel_id": "ART-002",
+    "aantal": 2,
+    "voorraad_op_moment_van_order": 3
+   }
+  ]
+ },
+ {
+  "order_id": "26-0028",
+  "datum": "2026-03-27",
+  "status": "open",
+  "klant_id": "K-045",
+  "regels": [
+   {
+    "artikel_id": "ART-007",
+    "aantal": 1,
+    "voorraad_op_moment_van_order": 11
+   },
+   {
+    "artikel_id": "ART-003",
+    "aantal": 4,
+    "voorraad_op_moment_van_order": 181
+   },
+   {
+    "artikel_id": "ART-001",
+    "aantal": 3,
+    "voorraad_op_moment_van_order": 77
+   }
+  ]
+ },
+ {
+  "order_id": "26-0029",
+  "datum": "2026-02-13",
+  "status": "open",
+  "klant_id": "K-023",
+  "regels": [
+   {
+    "artikel_id": "ART-005",
+    "aantal": 2,
+    "voorraad_op_moment_van_order": 32
+   }
+  ]
+ },
+ {
+  "order_id": "26-0030",
+  "datum": "2026-04-06",
+  "status": "open",
+  "klant_id": "K-003",
+  "regels": [
+   {
+    "artikel_id": "ART-001",
+    "aantal": 2,
+    "voorraad_op_moment_van_order": 77
+   },
+   {
+    "artikel_id": "ART-005",
+    "aantal": 3,
+    "voorraad_op_moment_van_order": 32
+   }
+  ]
+ },
+ {
+  "order_id": "26-0031",
+  "datum": "2026-03-06",
+  "status": "open",
+  "klant_id": "K-013",
+  "regels": [
+   {
+    "artikel_id": "ART-006",
+    "aantal": 2,
+    "voorraad_op_moment_van_order": 70
+   },
+   {
+    "artikel_id": "ART-005",
+    "aantal": 4,
+    "voorraad_op_moment_van_order": 32
+   },
+   {
+    "artikel_id": "ART-007",
+    "aantal": 3,
+    "voorraad_op_moment_van_order": 11
+   }
+  ]
+ },
+ {
+  "order_id": "26-0032",
+  "datum": "2026-02-23",
+  "status": "open",
+  "klant_id": "K-030",
+  "regels": [
+   {
+    "artikel_id": "ART-004",
+    "aantal": 4,
+    "voorraad_op_moment_van_order": 136
+   }
+  ]
+ },
+ {
+  "order_id": "26-0033",
+  "datum": "2026-03-25",
+  "status": "open",
+  "klant_id": "K-006",
+  "regels": [
+   {
+    "artikel_id": "ART-005",
+    "aantal": 4,
+    "voorraad_op_moment_van_order": 32
+   }
+  ]
+ },
+ {
+  "order_id": "26-0034",
+  "datum": "2026-02-17",
+  "status": "open",
+  "klant_id": "K-025",
+  "regels": [
+   {
+    "artikel_id": "ART-002",
+    "aantal": 1,
+    "voorraad_op_moment_van_order": 3
+   },
+   {
+    "artikel_id": "ART-006",
+    "aantal": 5,
+    "voorraad_op_moment_van_order": 70
+   }
+  ]
+ },
+ {
+  "order_id": "26-0035",
+  "datum": "2026-03-31",
+  "status": "open",
+  "klant_id": "K-042",
+  "regels": [
+   {
+    "artikel_id": "ART-005",
+    "aantal": 2,
+    "voorraad_op_moment_van_order": 32
+   },
+   {
+    "artikel_id": "ART-006",
+    "aantal": 1,
+    "voorraad_op_moment_van_order": 0
+   }
+  ]
+ },
+ {
+  "order_id": "26-0036",
+  "datum": "2026-03-15",
+  "status": "open",
+  "klant_id": "K-007",
+  "regels": [
+   {
+    "artikel_id": "ART-003",
+    "aantal": 5,
+    "voorraad_op_moment_van_order": 181
+   },
+   {
+    "artikel_id": "ART-004",
+    "aantal": 2,
+    "voorraad_op_moment_van_order": 136
+   },
+   {
+    "artikel_id": "ART-007",
+    "aantal": 1,
+    "voorraad_op_moment_van_order": 11
+   }
+  ]
+ },
+ {
+  "order_id": "26-0037",
+  "datum": "2026-04-02",
+  "status": "open",
+  "klant_id": "K-018",
+  "regels": [
+   {
+    "artikel_id": "ART-004",
+    "aantal": 2,
+    "voorraad_op_moment_van_order": 136
+   },
+   {
+    "artikel_id": "ART-008",
+    "aantal": 1,
+    "voorraad_op_moment_van_order": 13
+   }
+  ]
+ },
+ {
+  "order_id": "26-0038",
+  "datum": "2026-03-03",
+  "status": "open",
+  "klant_id": "K-042",
+  "regels": [
+   {
+    "artikel_id": "ART-005",
+    "aantal": 4,
+    "voorraad_op_moment_van_order": 32
+   },
+   {
+    "artikel_id": "ART-002",
+    "aantal": 1,
+    "voorraad_op_moment_van_order": 3
+   }
+  ]
+ },
+ {
+  "order_id": "26-0039",
+  "datum": "2026-03-28",
+  "status": "open",
+  "klant_id": "K-004",
+  "regels": [
+   {
+    "artikel_id": "ART-003",
+    "aantal": 2,
+    "voorraad_op_moment_van_order": 181
+   }
+  ]
+ },
+ {
+  "order_id": "26-0040",
+  "datum": "2026-03-23",
+  "status": "open",
+  "klant_id": "K-038",
+  "regels": [
+   {
+    "artikel_id": "ART-006",
+    "aantal": 5,
+    "voorraad_op_moment_van_order": 70
+   }
+  ]
+ },
+ {
+  "order_id": "X-00041",
+  "datum": "2026-01-30",
+  "status": "open",
+  "klant_id": null,
+  "regels": [
+   {
+    "artikel_id": "ART-002",
+    "aantal": 1,
+    "voorraad_op_moment_van_order": 3
+   }
+  ]
+ },
+ {
+  "order_id": "26-0042",
+  "datum": "2026-02-26",
+  "status": "open",
+  "klant_id": "K-038",
+  "regels": [
+   {
+    "artikel_id": "ART-005",
+    "aantal": 4,
+    "voorraad_op_moment_van_order": 32
+   }
+  ]
+ },
+ {
+  "order_id": "26-0043",
+  "datum": "2026-01-22",
+  "status": "open",
+  "klant_id": "K-029",
+  "regels": [
+   {
+    "artikel_id": "ART-002",
+    "aantal": 3,
+    "voorraad_op_moment_van_order": 3
+   },
+   {
+    "artikel_id": "ART-004",
+    "aantal": 9,
+    "voorraad_op_moment_van_order": 0
+   },
+   {
+    "artikel_id": "ART-005",
+    "aantal": 1,
+    "voorraad_op_moment_van_order": 32
+   }
+  ]
+ },
+ {
+  "order_id": "26-0044",
+  "datum": "2026-03-16",
+  "status": "open",
+  "klant_id": "K-028",
+  "regels": [
+   {
+    "artikel_id": "ART-008",
+    "aantal": 3,
+    "voorraad_op_moment_van_order": 13
+   },
+   {
+    "artikel_id": "ART-001",
+    "aantal": 1,
+    "voorraad_op_moment_van_order": 77
+   }
+  ]
+ },
+ {
+  "order_id": "26-0045",
+  "datum": "2026-04-05",
+  "status": "open",
+  "klant_id": "K-038",
+  "regels": [
+   {
+    "artikel_id": "ART-007",
+    "aantal": 4,
+    "voorraad_op_moment_van_order": 11
+   },
+   {
+    "artikel_id": "ART-005",
+    "aantal": 4,
+    "voorraad_op_moment_van_order": 32
+   }
+  ]
+ },
+ {
+  "order_id": "26-0046",
+  "datum": "2026-01-30",
+  "status": "open",
+  "klant_id": "K-042",
+  "regels": [
+   {
+    "artikel_id": "ART-004",
+    "aantal": 4,
+    "voorraad_op_moment_van_order": 136
+   },
+   {
+    "artikel_id": "ART-008",
+    "aantal": 4,
+    "voorraad_op_moment_van_order": 13
+   },
+   {
+    "artikel_id": "ART-007",
+    "aantal": 1,
+    "voorraad_op_moment_van_order": 11
+   }
+  ]
+ },
+ {
+  "order_id": "26-0047",
+  "datum": "2026-02-25",
+  "status": "open",
+  "klant_id": "K-017",
+  "regels": [
+   {
+    "artikel_id": "ART-008",
+    "aantal": 1,
+    "voorraad_op_moment_van_order": 13
+   }
+  ]
+ },
+ {
+  "order_id": "26-0048",
+  "datum": "2026-01-28",
+  "status": "open",
+  "klant_id": "K-048",
+  "regels": [
+   {
+    "artikel_id": "ART-001",
+    "aantal": 5,
+    "voorraad_op_moment_van_order": 77
+   }
+  ]
+ },
+ {
+  "order_id": "26-0049",
+  "datum": "2026-01-29",
+  "status": "open",
+  "klant_id": "K-023",
+  "regels": [
+   {
+    "artikel_id": "ART-001",
+    "aantal": 3,
+    "voorraad_op_moment_van_order": 77
+   },
+   {
+    "artikel_id": "ART-003",
+    "aantal": 5,
+    "voorraad_op_moment_van_order": 181
+   }
+  ]
+ },
+ {
+  "order_id": "26-0050",
+  "datum": "2026-03-14",
+  "status": "open",
+  "klant_id": "K-007",
+  "regels": [
+   {
+    "artikel_id": "ART-006",
+    "aantal": 4,
+    "voorraad_op_moment_van_order": 70
+   },
+   {
+    "artikel_id": "ART-001",
+    "aantal": 5,
+    "voorraad_op_moment_van_order": 77
+   },
+   {
+    "artikel_id": "ART-003",
+    "aantal": 5,
+    "voorraad_op_moment_van_order": 181
+   }
+  ]
+ },
+ {
+  "order_id": "X-00051",
+  "datum": "2026-02-14",
+  "status": "open",
+  "klant_id": null,
+  "regels": [
+   {
+    "artikel_id": "ART-005",
+    "aantal": 3,
+    "voorraad_op_moment_van_order": 0
+   },
+   {
+    "artikel_id": "ART-003",
+    "aantal": 4,
+    "voorraad_op_moment_van_order": 181
+   },
+   {
+    "artikel_id": "ART-007",
+    "aantal": 1,
+    "voorraad_op_moment_van_order": 11
+   }
+  ]
+ },
+ {
+  "order_id": "26-0052",
+  "datum": "2026-03-20",
+  "status": "open",
+  "klant_id": "K-025",
+  "regels": [
+   {
+    "artikel_id": "ART-003",
+    "aantal": 3,
+    "voorraad_op_moment_van_order": 181
+   },
+   {
+    "artikel_id": "ART-008",
+    "aantal": 5,
+    "voorraad_op_moment_van_order": 13
+   }
+  ]
+ },
+ {
+  "order_id": "26-0053",
+  "datum": "2026-01-18",
+  "status": "open",
+  "klant_id": "K-011",
+  "regels": [
+   {
+    "artikel_id": "ART-002",
+    "aantal": 3,
+    "voorraad_op_moment_van_order": 3
+   }
+  ]
+ },
+ {
+  "order_id": "26-0054",
+  "datum": "2026-04-01",
+  "status": "open",
+  "klant_id": "K-027",
+  "regels": [
+   {
+    "artikel_id": "ART-002",
+    "aantal": 3,
+    "voorraad_op_moment_van_order": 3
+   },
+   {
+    "artikel_id": "ART-003",
+    "aantal": 4,
+    "voorraad_op_moment_van_order": 181
+   },
+   {
+    "artikel_id": "ART-004",
+    "aantal": 3,
+    "voorraad_op_moment_van_order": 136
+   }
+  ]
+ },
+ {
+  "order_id": "26-0055",
+  "datum": null,
+  "status": "open",
+  "klant_id": "K-004",
+  "regels": [
+   {
+    "artikel_id": "ART-004",
+    "aantal": 3,
+    "voorraad_op_moment_van_order": 136
+   },
+   {
+    "artikel_id": "ART-007",
+    "aantal": 1,
+    "voorraad_op_moment_van_order": 11
+   }
+  ]
+ },
+ {
+  "order_id": "X-00056",
+  "datum": "2026-03-08",
+  "status": "open",
+  "klant_id": null,
+  "regels": [
+   {
+    "artikel_id": "ART-004",
+    "aantal": 3,
+    "voorraad_op_moment_van_order": 136
+   },
+   {
+    "artikel_id": "ART-005",
+    "aantal": 1,
+    "voorraad_op_moment_van_order": 32
+   },
+   {
+    "artikel_id": "ART-007",
+    "aantal": 4,
+    "voorraad_op_moment_van_order": 11
+   }
+  ]
+ },
+ {
+  "order_id": "26-0057",
+  "datum": "2026-02-24",
+  "status": "open",
+  "klant_id": "K-028",
+  "regels": [
+   {
+    "artikel_id": "ART-007",
+    "aantal": 3,
+    "voorraad_op_moment_van_order": 11
+   },
+   {
+    "artikel_id": "ART-003",
+    "aantal": 5,
+    "voorraad_op_moment_van_order": 181
+   },
+   {
+    "artikel_id": "ART-001",
+    "aantal": 3,
+    "voorraad_op_moment_van_order": 77
+   }
+  ]
+ },
+ {
+  "order_id": "26-0058",
+  "datum": "2026-01-25",
+  "status": "open",
+  "klant_id": "K-028",
+  "regels": [
+   {
+    "artikel_id": "ART-002",
+    "aantal": 1,
+    "voorraad_op_moment_van_order": 3
+   },
+   {
+    "artikel_id": "ART-004",
+    "aantal": 2,
+    "voorraad_op_moment_van_order": 136
+   },
+   {
+    "artikel_id": "ART-003",
+    "aantal": 1,
+    "voorraad_op_moment_van_order": 181
+   }
+  ]
+ },
+ {
+  "order_id": "26-0059",
+  "datum": "2026-02-06",
+  "status": "open",
+  "klant_id": "K-023",
+  "regels": [
+   {
+    "artikel_id": "ART-003",
+    "aantal": 2,
+    "voorraad_op_moment_van_order": 181
+   },
+   {
+    "artikel_id": "ART-002",
+    "aantal": 1,
+    "voorraad_op_moment_van_order": 3
+   },
+   {
+    "artikel_id": "ART-001",
+    "aantal": 1,
+    "voorraad_op_moment_van_order": 77
+   }
+  ]
+ },
+ {
+  "order_id": "26-0060",
+  "datum": "2026-04-04",
+  "status": "open",
+  "klant_id": "K-030",
+  "regels": [
+   {
+    "artikel_id": "ART-008",
+    "aantal": 5,
+    "voorraad_op_moment_van_order": 13
+   },
+   {
+    "artikel_id": "ART-006",
+    "aantal": 3,
+    "voorraad_op_moment_van_order": 70
+   },
+   {
+    "artikel_id": "ART-005",
+    "aantal": 1,
+    "voorraad_op_moment_van_order": 32
+   }
+  ]
+ },
+ {
+  "order_id": "26-0061",
+  "datum": "2026-04-03",
+  "status": "open",
+  "klant_id": "K-018",
+  "regels": [
+   {
+    "artikel_id": "ART-002",
+    "aantal": 1,
+    "voorraad_op_moment_van_order": 3
+   },
+   {
+    "artikel_id": "ART-003",
+    "aantal": 3,
+    "voorraad_op_moment_van_order": 181
+   }
+  ]
+ },
+ {
+  "order_id": "26-0062",
+  "datum": "2026-01-26",
+  "status": "open",
+  "klant_id": "K-039",
+  "regels": [
+   {
+    "artikel_id": "ART-001",
+    "aantal": 5,
+    "voorraad_op_moment_van_order": 77
+   },
+   {
+    "artikel_id": "ART-004",
+    "aantal": 3,
+    "voorraad_op_moment_van_order": 136
+   }
+  ]
+ },
+ {
+  "order_id": "26-0063",
+  "datum": "2026-03-17",
+  "status": "open",
+  "klant_id": "K-004",
+  "regels": [
+   {
+    "artikel_id": "ART-002",
+    "aantal": 1,
+    "voorraad_op_moment_van_order": 3
+   },
+   {
+    "artikel_id": "ART-005",
+    "aantal": 4,
+    "voorraad_op_moment_van_order": 32
+   }
+  ]
+ },
+ {
+  "order_id": "26-0064",
+  "datum": "2026-03-23",
+  "status": "open",
+  "klant_id": "K-040",
+  "regels": [
+   {
+    "artikel_id": "ART-005",
+    "aantal": 3,
+    "voorraad_op_moment_van_order": 32
+   },
+   {
+    "artikel_id": "ART-004",
+    "aantal": 1,
+    "voorraad_op_moment_van_order": 136
+   }
+  ]
+ },
+ {
+  "order_id": "26-0065",
+  "datum": "2026-02-22",
+  "status": "open",
+  "klant_id": "K-022",
+  "regels": [
+   {
+    "artikel_id": "ART-007",
+    "aantal": 5,
+    "voorraad_op_moment_van_order": 11
+   },
+   {
+    "artikel_id": "ART-003",
+    "aantal": 3,
+    "voorraad_op_moment_van_order": 181
+   },
+   {
+    "artikel_id": "ART-008",
+    "aantal": 2,
+    "voorraad_op_moment_van_order": 13
+   }
+  ]
+ },
+ {
+  "order_id": "26-0066",
+  "datum": "2026-02-24",
+  "status": "open",
+  "klant_id": "K-045",
+  "regels": [
+   {
+    "artikel_id": "ART-002",
+    "aantal": 2,
+    "voorraad_op_moment_van_order": 3
+   }
+  ]
+ },
+ {
+  "order_id": "26-0067",
+  "datum": "2026-02-23",
+  "status": "open",
+  "klant_id": "K-043",
+  "regels": [
+   {
+    "artikel_id": "ART-002",
+    "aantal": 2,
+    "voorraad_op_moment_van_order": 3
+   },
+   {
+    "artikel_id": "ART-006",
+    "aantal": 5,
+    "voorraad_op_moment_van_order": 0
+   },
+   {
+    "artikel_id": "ART-007",
+    "aantal": 2,
+    "voorraad_op_moment_van_order": 11
+   }
+  ]
+ },
+ {
+  "order_id": "26-0068",
+  "datum": "2026-03-15",
+  "status": "open",
+  "klant_id": "K-015",
+  "regels": [
+   {
+    "artikel_id": "ART-002",
+    "aantal": 1,
+    "voorraad_op_moment_van_order": 3
+   }
+  ]
+ },
+ {
+  "order_id": "26-0069",
+  "datum": "2026-03-26",
+  "status": "open",
+  "klant_id": "K-034",
+  "regels": [
+   {
+    "artikel_id": "ART-003",
+    "aantal": 2,
+    "voorraad_op_moment_van_order": 181
+   },
+   {
+    "artikel_id": "ART-005",
+    "aantal": 5,
+    "voorraad_op_moment_van_order": 32
+   }
+  ]
+ },
+ {
+  "order_id": "26-0070",
+  "datum": "2026-02-06",
+  "status": "open",
+  "klant_id": "K-029",
+  "regels": [
+   {
+    "artikel_id": "ART-004",
+    "aantal": 4,
+    "voorraad_op_moment_van_order": 136
+   },
+   {
+    "artikel_id": "ART-008",
+    "aantal": 2,
+    "voorraad_op_moment_van_order": 13
+   }
+  ]
+ },
+ {
+  "order_id": "26-0071",
+  "datum": "2026-03-13",
+  "status": "open",
+  "klant_id": "K-024",
+  "regels": [
+   {
+    "artikel_id": "ART-008",
+    "aantal": 5,
+    "voorraad_op_moment_van_order": 13
+   },
+   {
+    "artikel_id": "ART-004",
+    "aantal": 2,
+    "voorraad_op_moment_van_order": 136
+   },
+   {
+    "artikel_id": "ART-003",
+    "aantal": 5,
+    "voorraad_op_moment_van_order": 181
+   }
+  ]
+ },
+ {
+  "order_id": "26-0072",
+  "datum": "2026-02-12",
+  "status": "open",
+  "klant_id": "K-042",
+  "regels": [
+   {
+    "artikel_id": "ART-002",
+    "aantal": 1,
+    "voorraad_op_moment_van_order": 3
+   },
+   {
+    "artikel_id": "ART-006",
+    "aantal": 2,
+    "voorraad_op_moment_van_order": 70
+   }
+  ]
+ },
+ {
+  "order_id": "26-0073",
+  "datum": "2026-03-18",
+  "status": "open",
+  "klant_id": "K-028",
+  "regels": [
+   {
+    "artikel_id": "ART-008",
+    "aantal": 1,
+    "voorraad_op_moment_van_order": 13
+   }
+  ]
+ },
+ {
+  "order_id": "26-0074",
+  "datum": "2026-03-06",
+  "status": "open",
+  "klant_id": "K-024",
+  "regels": [
+   {
+    "artikel_id": "ART-006",
+    "aantal": 3,
+    "voorraad_op_moment_van_order": 70
+   }
+  ]
+ },
+ {
+  "order_id": "26-0075",
+  "datum": "2026-02-23",
+  "status": "open",
+  "klant_id": "K-009",
+  "regels": [
+   {
+    "artikel_id": "ART-003",
+    "aantal": 4,
+    "voorraad_op_moment_van_order": 181
+   },
+   {
+    "artikel_id": "ART-007",
+    "aantal": 1,
+    "voorraad_op_moment_van_order": 11
+   }
+  ]
+ },
+ {
+  "order_id": "X-00076",
+  "datum": "2026-02-08",
+  "status": "open",
+  "klant_id": null,
+  "regels": [
+   {
+    "artikel_id": "ART-007",
+    "aantal": 1,
+    "voorraad_op_moment_van_order": 11
+   },
+   {
+    "artikel_id": "ART-001",
+    "aantal": 7,
+    "voorraad_op_moment_van_order": 0
+   },
+   {
+    "artikel_id": "ART-003",
+    "aantal": 5,
+    "voorraad_op_moment_van_order": 181
+   }
+  ]
+ },
+ {
+  "order_id": "26-0077",
+  "datum": "2026-01-28",
+  "status": "open",
+  "klant_id": "K-039",
+  "regels": [
+   {
+    "artikel_id": "ART-004",
+    "aantal": 1,
+    "voorraad_op_moment_van_order": 136
+   },
+   {
+    "artikel_id": "ART-006",
+    "aantal": 2,
+    "voorraad_op_moment_van_order": 70
+   },
+   {
+    "artikel_id": "ART-002",
+    "aantal": 1,
+    "voorraad_op_moment_van_order": 3
+   }
+  ]
+ },
+ {
+  "order_id": "26-0078",
+  "datum": "2026-01-25",
+  "status": "open",
+  "klant_id": "K-024",
+  "regels": [
+   {
+    "artikel_id": "ART-001",
+    "aantal": 7,
+    "voorraad_op_moment_van_order": 0
+   },
+   {
+    "artikel_id": "ART-004",
+    "aantal": 3,
+    "voorraad_op_moment_van_order": 136
+   },
+   {
+    "artikel_id": "ART-007",
+    "aantal": 3,
+    "voorraad_op_moment_van_order": 11
+   }
+  ]
+ },
+ {
+  "order_id": "26-0079",
+  "datum": "2026-02-25",
+  "status": "open",
+  "klant_id": "K-047",
+  "regels": [
+   {
+    "artikel_id": "ART-006",
+    "aantal": 3,
+    "voorraad_op_moment_van_order": 70
+   }
+  ]
+ },
+ {
+  "order_id": "26-0080",
+  "datum": "2026-02-07",
+  "status": "open",
+  "klant_id": "K-030",
+  "regels": [
+   {
+    "artikel_id": "ART-003",
+    "aantal": 4,
+    "voorraad_op_moment_van_order": 181
+   },
+   {
+    "artikel_id": "ART-007",
+    "aantal": 4,
+    "voorraad_op_moment_van_order": 0
+   }
+  ]
+ },
+ {
+  "order_id": "26-0081",
+  "datum": "2026-02-05",
+  "status": "open",
+  "klant_id": "K-021",
+  "regels": [
+   {
+    "artikel_id": "ART-007",
+    "aantal": 1,
+    "voorraad_op_moment_van_order": 11
+   },
+   {
+    "artikel_id": "ART-008",
+    "aantal": 2,
+    "voorraad_op_moment_van_order": 13
+   },
+   {
+    "artikel_id": "ART-005",
+    "aantal": 1,
+    "voorraad_op_moment_van_order": 32
+   }
+  ]
+ },
+ {
+  "order_id": "26-0082",
+  "datum": "2026-02-24",
+  "status": "open",
+  "klant_id": "K-008",
+  "regels": [
+   {
+    "artikel_id": "ART-007",
+    "aantal": 4,
+    "voorraad_op_moment_van_order": 11
+   },
+   {
+    "artikel_id": "ART-006",
+    "aantal": 2,
+    "voorraad_op_moment_van_order": 70
+   }
+  ]
+ },
+ {
+  "order_id": "26-0083",
+  "datum": "2026-03-17",
+  "status": "open",
+  "klant_id": "K-034",
+  "regels": [
+   {
+    "artikel_id": "ART-007",
+    "aantal": 5,
+    "voorraad_op_moment_van_order": 11
+   }
+  ]
+ },
+ {
+  "order_id": "26-0084",
+  "datum": "2026-02-07",
+  "status": "open",
+  "klant_id": "K-019",
+  "regels": [
+   {
+    "artikel_id": "ART-006",
+    "aantal": 3,
+    "voorraad_op_moment_van_order": 70
+   }
+  ]
+ },
+ {
+  "order_id": "26-0085",
+  "datum": "2026-03-07",
+  "status": "open",
+  "klant_id": "K-045",
+  "regels": [
+   {
+    "artikel_id": "ART-001",
+    "aantal": 3,
+    "voorraad_op_moment_van_order": 77
+   },
+   {
+    "artikel_id": "ART-006",
+    "aantal": 4,
+    "voorraad_op_moment_van_order": 70
+   }
+  ]
+ },
+ {
+  "order_id": "26-0086",
+  "datum": "2026-01-18",
+  "status": "open",
+  "klant_id": "K-043",
+  "regels": [
+   {
+    "artikel_id": "ART-003",
+    "aantal": 5,
+    "voorraad_op_moment_van_order": 181
+   },
+   {
+    "artikel_id": "ART-001",
+    "aantal": 4,
+    "voorraad_op_moment_van_order": 77
+   }
+  ]
+ },
+ {
+  "order_id": "26-0087",
+  "datum": "2026-01-20",
+  "status": "open",
+  "klant_id": null,
+  "regels": [
+   {
+    "artikel_id": "ART-006",
+    "aantal": 1,
+    "voorraad_op_moment_van_order": 70
+   },
+   {
+    "artikel_id": "ART-004",
+    "aantal": 4,
+    "voorraad_op_moment_van_order": 136
+   }
+  ]
+ },
+ {
+  "order_id": "26-0088",
+  "datum": "2026-03-02",
+  "status": "open",
+  "klant_id": "K-049",
+  "regels": [
+   {
+    "artikel_id": "ART-006",
+    "aantal": 3,
+    "voorraad_op_moment_van_order": 70
+   }
+  ]
+ },
+ {
+  "order_id": "26-0089",
+  "datum": "2026-01-25",
+  "status": "open",
+  "klant_id": "K-048",
+  "regels": [
+   {
+    "artikel_id": "ART-007",
+    "aantal": 3,
+    "voorraad_op_moment_van_order": 11
+   },
+   {
+    "artikel_id": "ART-005",
+    "aantal": 2,
+    "voorraad_op_moment_van_order": 32
+   },
+   {
+    "artikel_id": "ART-001",
+    "aantal": 3,
+    "voorraad_op_moment_van_order": 77
+   }
+  ]
+ },
+ {
+  "order_id": "26-0090",
+  "datum": "2026-03-15",
+  "status": "open",
+  "klant_id": "K-008",
+  "regels": [
+   {
+    "artikel_id": "ART-008",
+    "aantal": 4,
+    "voorraad_op_moment_van_order": 13
+   }
+  ]
+ },
+ {
+  "order_id": "26-0091",
+  "datum": "2026-02-25",
+  "status": "open",
+  "klant_id": "K-023",
+  "regels": [
+   {
+    "artikel_id": "ART-005",
+    "aantal": 2,
+    "voorraad_op_moment_van_order": 32
+   },
+   {
+    "artikel_id": "ART-003",
+    "aantal": 5,
+    "voorraad_op_moment_van_order": 181
+   },
+   {
+    "artikel_id": "ART-002",
+    "aantal": 1,
+    "voorraad_op_moment_van_order": 3
+   }
+  ]
+ },
+ {
+  "order_id": "26-0092",
+  "datum": "2026-02-13",
+  "status": "open",
+  "klant_id": "K-002",
+  "regels": [
+   {
+    "artikel_id": "ART-006",
+    "aantal": 1,
+    "voorraad_op_moment_van_order": 70
+   },
+   {
+    "artikel_id": "ART-004",
+    "aantal": 4,
+    "voorraad_op_moment_van_order": 136
+   },
+   {
+    "artikel_id": "ART-005",
+    "aantal": 4,
+    "voorraad_op_moment_van_order": 32
+   }
+  ]
+ },
+ {
+  "order_id": "26-0093",
+  "datum": "2026-03-08",
+  "status": "open",
+  "klant_id": "K-005",
+  "regels": [
+   {
+    "artikel_id": "ART-002",
+    "aantal": 3,
+    "voorraad_op_moment_van_order": 3
+   },
+   {
+    "artikel_id": "ART-004",
+    "aantal": 5,
+    "voorraad_op_moment_van_order": 136
+   }
+  ]
+ },
+ {
+  "order_id": "26-0094",
+  "datum": "2026-02-04",
+  "status": "open",
+  "klant_id": "K-028",
+  "regels": [
+   {
+    "artikel_id": "ART-002",
+    "aantal": 2,
+    "voorraad_op_moment_van_order": 3
+   }
+  ]
+ },
+ {
+  "order_id": "26-0095",
+  "datum": "2026-02-26",
+  "status": "open",
+  "klant_id": "K-015",
+  "regels": [
+   {
+    "artikel_id": "ART-005",
+    "aantal": 5,
+    "voorraad_op_moment_van_order": 32
+   },
+   {
+    "artikel_id": "ART-007",
+    "aantal": 3,
+    "voorraad_op_moment_van_order": 11
+   },
+   {
+    "artikel_id": "ART-001",
+    "aantal": 1,
+    "voorraad_op_moment_van_order": 77
+   }
+  ]
+ },
+ {
+  "order_id": "26-0096",
+  "datum": "2026-02-05",
+  "status": "open",
+  "klant_id": "K-038",
+  "regels": [
+   {
+    "artikel_id": "ART-006",
+    "aantal": 1,
+    "voorraad_op_moment_van_order": 0
+   },
+   {
+    "artikel_id": "ART-007",
+    "aantal": 5,
+    "voorraad_op_moment_van_order": 11
+   },
+   {
+    "artikel_id": "ART-005",
+    "aantal": 2,
+    "voorraad_op_moment_van_order": 32
+   }
+  ]
+ },
+ {
+  "order_id": "26-0097",
+  "datum": "2026-03-09",
+  "status": "open",
+  "klant_id": "K-041",
+  "regels": [
+   {
+    "artikel_id": "ART-005",
+    "aantal": 4,
+    "voorraad_op_moment_van_order": 32
+   },
+   {
+    "artikel_id": "ART-006",
+    "aantal": 1,
+    "voorraad_op_moment_van_order": 70
+   },
+   {
+    "artikel_id": "ART-003",
+    "aantal": 2,
+    "voorraad_op_moment_van_order": 181
+   }
+  ]
+ },
+ {
+  "order_id": "26-0098",
+  "datum": "2026-03-16",
+  "status": "open",
+  "klant_id": "K-014",
+  "regels": [
+   {
+    "artikel_id": "ART-006",
+    "aantal": 3,
+    "voorraad_op_moment_van_order": 70
+   }
+  ]
+ },
+ {
+  "order_id": "26-0099",
+  "datum": "2026-02-27",
+  "status": "open",
+  "klant_id": "K-009",
+  "regels": [
+   {
+    "artikel_id": "ART-002",
+    "aantal": 2,
+    "voorraad_op_moment_van_order": 3
+   },
+   {
+    "artikel_id": "ART-003",
+    "aantal": 2,
+    "voorraad_op_moment_van_order": 181
+   },
+   {
+    "artikel_id": "ART-008",
+    "aantal": 3,
+    "voorraad_op_moment_van_order": 13
+   }
+  ]
+ },
+ {
+  "order_id": "26-0100",
+  "datum": "2026-04-02",
+  "status": "open",
+  "klant_id": "K-016",
+  "regels": [
+   {
+    "artikel_id": "ART-006",
+    "aantal": 3,
+    "voorraad_op_moment_van_order": 70
+   }
+  ]
+ },
+ {
+  "order_id": "26-0101",
+  "datum": "2026-02-03",
+  "status": "open",
+  "klant_id": "K-033",
+  "regels": [
+   {
+    "artikel_id": "ART-008",
+    "aantal": 4,
+    "voorraad_op_moment_van_order": 13
+   },
+   {
+    "artikel_id": "ART-001",
+    "aantal": 2,
+    "voorraad_op_moment_van_order": 77
+   }
+  ]
+ },
+ {
+  "order_id": "26-0102",
+  "datum": "2026-02-25",
+  "status": "open",
+  "klant_id": "K-004",
+  "regels": [
+   {
+    "artikel_id": "ART-008",
+    "aantal": 2,
+    "voorraad_op_moment_van_order": 0
+   },
+   {
+    "artikel_id": "ART-003",
+    "aantal": 3,
+    "voorraad_op_moment_van_order": 181
+   },
+   {
+    "artikel_id": "ART-005",
+    "aantal": 4,
+    "voorraad_op_moment_van_order": 32
+   }
+  ]
+ },
+ {
+  "order_id": "26-0103",
+  "datum": "2026-03-03",
+  "status": "open",
+  "klant_id": "K-037",
+  "regels": [
+   {
+    "artikel_id": "ART-005",
+    "aantal": 4,
+    "voorraad_op_moment_van_order": 32
+   },
+   {
+    "artikel_id": "ART-001",
+    "aantal": 3,
+    "voorraad_op_moment_van_order": 77
+   }
+  ]
+ },
+ {
+  "order_id": "26-0104",
+  "datum": "2026-04-05",
+  "status": "open",
+  "klant_id": "K-040",
+  "regels": [
+   {
+    "artikel_id": "ART-007",
+    "aantal": 3,
+    "voorraad_op_moment_van_order": 11
+   }
+  ]
+ },
+ {
+  "order_id": "26-0105",
+  "datum": "2026-02-27",
+  "status": "open",
+  "klant_id": "K-013",
+  "regels": [
+   {
+    "artikel_id": "ART-001",
+    "aantal": 6,
+    "voorraad_op_moment_van_order": 0
+   },
+   {
+    "artikel_id": "ART-008",
+    "aantal": 5,
+    "voorraad_op_moment_van_order": 13
+   }
+  ]
+ },
+ {
+  "order_id": "26-0106",
+  "datum": "2026-04-02",
+  "status": "open",
+  "klant_id": "K-009",
+  "regels": [
+   {
+    "artikel_id": "ART-006",
+    "aantal": 3,
+    "voorraad_op_moment_van_order": 70
+   },
+   {
+    "artikel_id": "ART-002",
+    "aantal": 3,
+    "voorraad_op_moment_van_order": 3
+   },
+   {
+    "artikel_id": "ART-004",
+    "aantal": 5,
+    "voorraad_op_moment_van_order": 136
+   }
+  ]
+ },
+ {
+  "order_id": "26-0107",
+  "datum": "2026-03-26",
+  "status": "open",
+  "klant_id": "K-031",
+  "regels": [
+   {
+    "artikel_id": "ART-006",
+    "aantal": 4,
+    "voorraad_op_moment_van_order": 70
+   },
+   {
+    "artikel_id": "ART-008",
+    "aantal": 1,
+    "voorraad_op_moment_van_order": 13
+   }
+  ]
+ },
+ {
+  "order_id": "26-0108",
+  "datum": "2026-02-18",
+  "status": "open",
+  "klant_id": "K-050",
+  "regels": [
+   {
+    "artikel_id": "ART-001",
+    "aantal": 2,
+    "voorraad_op_moment_van_order": 77
+   }
+  ]
+ },
+ {
+  "order_id": "26-0109",
+  "datum": "2026-04-03",
+  "status": "open",
+  "klant_id": "K-010",
+  "regels": [
+   {
+    "artikel_id": "ART-001",
+    "aantal": 1,
+    "voorraad_op_moment_van_order": 77
+   }
+  ]
+ },
+ {
+  "order_id": "26-0110",
+  "datum": "2026-03-10",
+  "status": "open",
+  "klant_id": "K-027",
+  "regels": [
+   {
+    "artikel_id": "ART-004",
+    "aantal": 4,
+    "voorraad_op_moment_van_order": 136
+   },
+   {
+    "artikel_id": "ART-008",
+    "aantal": 1,
+    "voorraad_op_moment_van_order": 13
+   },
+   {
+    "artikel_id": "ART-005",
+    "aantal": 5,
+    "voorraad_op_moment_van_order": 32
+   }
+  ]
+ },
+ {
+  "order_id": "26-0111",
+  "datum": "2026-02-26",
+  "status": "open",
+  "klant_id": "K-031",
+  "regels": [
+   {
+    "artikel_id": "ART-003",
+    "aantal": 3,
+    "voorraad_op_moment_van_order": 181
+   },
+   {
+    "artikel_id": "ART-004",
+    "aantal": 3,
+    "voorraad_op_moment_van_order": 136
+   }
+  ]
+ },
+ {
+  "order_id": "26-0112",
+  "datum": "2026-02-05",
+  "status": "open",
+  "klant_id": "K-018",
+  "regels": [
+   {
+    "artikel_id": "ART-005",
+    "aantal": 2,
+    "voorraad_op_moment_van_order": 32
+   }
+  ]
+ },
+ {
+  "order_id": "26-0113",
+  "datum": "2026-03-16",
+  "status": "open",
+  "klant_id": "K-031",
+  "regels": [
+   {
+    "artikel_id": "ART-005",
+    "aantal": 5,
+    "voorraad_op_moment_van_order": 32
+   },
+   {
+    "artikel_id": "ART-003",
+    "aantal": 4,
+    "voorraad_op_moment_van_order": 181
+   },
+   {
+    "artikel_id": "ART-001",
+    "aantal": 2,
+    "voorraad_op_moment_van_order": 77
+   }
+  ]
+ },
+ {
+  "order_id": "26-0114",
+  "datum": "2026-02-21",
+  "status": "open",
+  "klant_id": "K-006",
+  "regels": [
+   {
+    "artikel_id": "ART-005",
+    "aantal": 2,
+    "voorraad_op_moment_van_order": 32
+   },
+   {
+    "artikel_id": "ART-006",
+    "aantal": 3,
+    "voorraad_op_moment_van_order": 70
+   }
+  ]
+ },
+ {
+  "order_id": "26-0115",
+  "datum": "2026-02-15",
+  "status": "open",
+  "klant_id": "K-007",
+  "regels": [
+   {
+    "artikel_id": "ART-004",
+    "aantal": 5,
+    "voorraad_op_moment_van_order": 136
+   },
+   {
+    "artikel_id": "ART-002",
+    "aantal": 1,
+    "voorraad_op_moment_van_order": 3
+   },
+   {
+    "artikel_id": "ART-001",
+    "aantal": 4,
+    "voorraad_op_moment_van_order": 77
+   }
+  ]
+ },
+ {
+  "order_id": "26-0116",
+  "datum": "2026-03-12",
+  "status": "open",
+  "klant_id": "K-044",
+  "regels": [
+   {
+    "artikel_id": "ART-003",
+    "aantal": 4,
+    "voorraad_op_moment_van_order": 181
+   }
+  ]
+ },
+ {
+  "order_id": "26-0117",
+  "datum": "2026-02-07",
+  "status": "open",
+  "klant_id": "K-021",
+  "regels": [
+   {
+    "artikel_id": "ART-002",
+    "aantal": 1,
+    "voorraad_op_moment_van_order": 3
+   }
+  ]
+ },
+ {
+  "order_id": "26-0118",
+  "datum": "2026-01-16",
+  "status": "open",
+  "klant_id": "K-027",
+  "regels": [
+   {
+    "artikel_id": "ART-001",
+    "aantal": 4,
+    "voorraad_op_moment_van_order": 77
+   }
+  ]
+ },
+ {
+  "order_id": "26-0119",
+  "datum": "2026-02-08",
+  "status": "open",
+  "klant_id": "K-019",
+  "regels": [
+   {
+    "artikel_id": "ART-005",
+    "aantal": 1,
+    "voorraad_op_moment_van_order": 32
+   }
+  ]
+ },
+ {
+  "order_id": "26-0120",
+  "datum": "2026-02-24",
+  "status": "open",
+  "klant_id": "K-030",
+  "regels": [
+   {
+    "artikel_id": "ART-008",
+    "aantal": 2,
+    "voorraad_op_moment_van_order": 13
+   },
+   {
+    "artikel_id": "ART-002",
+    "aantal": 2,
+    "voorraad_op_moment_van_order": 3
+   },
+   {
+    "artikel_id": "ART-005",
+    "aantal": 4,
+    "voorraad_op_moment_van_order": 32
+   }
+  ]
+ }
+]

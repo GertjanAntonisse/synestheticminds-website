@@ -1,0 +1,82 @@
+{
+ "versie": "1.0",
+ "geldig_vanaf": "2026-01-01",
+ "instructies": [
+  {
+   "id": "INS-01",
+   "titel": "Route-volgorde",
+   "omschrijving": "Pickers lopen het magazijn in vaste volgorde: rij R1 naar R4, vak V1 naar V3, laag L1 naar L3.",
+   "aannames": [
+    "Locatienummering weerspiegelt de looproute",
+    "Picklijst is gesorteerd op locatie-volgorde",
+    "Tijdscalculatie per pick is gebaseerd op deze route"
+   ],
+   "raakt": [
+    "INS-02",
+    "INS-04"
+   ]
+  },
+  {
+   "id": "INS-02",
+   "titel": "Piktijd",
+   "omschrijving": "Gemiddelde tijd per pick is tussen 60 en 120 seconden inclusief looptijd.",
+   "aannames": [
+    "Picker volgt de vaste route (INS-01)",
+    "Locaties zijn logisch gegroepeerd per productcategorie",
+    "Gangpaden zijn vrij van obstakels"
+   ],
+   "raakt": [
+    "INS-01",
+    "INS-03"
+   ]
+  },
+  {
+   "id": "INS-03",
+   "titel": "Ronde-grootte",
+   "omschrijving": "Een picker doet maximaal 15 picks per ronde voor terugkeer naar het uitgifte-punt.",
+   "aannames": [
+    "Piktijd per ronde blijft onder 20 minuten (INS-02)",
+    "Picker kan maximaal 15 artikelen tegelijk dragen"
+   ],
+   "raakt": [
+    "INS-02"
+   ]
+  },
+  {
+   "id": "INS-04",
+   "titel": "Dubbele locatiescan",
+   "omschrijving": "Elke locatie wordt gescand bij aankomst én na de pick ter bevestiging.",
+   "aannames": [
+    "Scanner is altijd beschikbaar",
+    "Locatie-barcode is leesbaar",
+    "Picker heeft beide handen vrij bij aankomst"
+   ],
+   "raakt": [
+    "INS-01"
+   ]
+  },
+  {
+   "id": "INS-05",
+   "titel": "Geen route-wissel",
+   "omschrijving": "Een picker wisselt niet van toegewezen route midden in een ronde.",
+   "aannames": [
+    "Routes zijn per medewerker vastgelegd aan het begin van de shift",
+    "Urgente orders worden via een aparte spoedprocedure afgehandeld"
+   ],
+   "raakt": [
+    "INS-01",
+    "INS-02"
+   ]
+  }
+ ],
+ "wijzigingen": [
+  {
+   "id": "WIJ-01",
+   "datum": "2026-04-01",
+   "instructie_id": "INS-01",
+   "reden": "Productiviteitsmaatregel: drukste locaties eerst om looptijd te verkorten.",
+   "oude_tekst": "Pickers lopen het magazijn in vaste volgorde: rij R1 naar R4, vak V1 naar V3, laag L1 naar L3.",
+   "nieuwe_tekst": "Pickers beginnen bij de hoogvolume-locaties (R2-V2 zone) en werken daarna de overige locaties af."
+  }
+ ]
+}

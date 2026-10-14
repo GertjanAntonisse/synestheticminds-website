@@ -1,0 +1,54 @@
+.inleiding { color: var(--muted); max-width: 720px; margin-top: 8px; }
+
+.stappen { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 24px; }
+.stap { position: relative; padding: 24px; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); }
+.stap h3 { margin: 10px 0 6px; font-size: 1.1rem; }
+.stap p { color: var(--muted); font-size: 0.95rem; }
+.nummer { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: var(--accent-bg); color: var(--accent); font-weight: 700; }
+
+.tabelWrap { overflow-x: auto; margin-top: 24px; border: 1px solid var(--line); border-radius: var(--radius); }
+.tabel { width: 100%; min-width: 860px; border-collapse: collapse; background: var(--paper); font-size: 0.95rem; }
+.tabel th, .tabel td { padding: 16px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+.tabel tr:last-child td { border-bottom: 0; }
+.tabel th { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); background: rgba(31, 41, 55, 0.02); }
+.tabel th small { display: block; margin-top: 2px; font-size: 0.72rem; letter-spacing: 0; text-transform: none; font-weight: 400; }
+.id { display: inline-block; margin-right: 8px; padding: 1px 7px; border: 1px solid var(--line); border-radius: 4px; font-size: 0.75rem; color: var(--muted); }
+.papier { margin-top: 6px; }
+.klein { margin-top: 6px; font-size: 0.82rem; color: var(--muted); }
+.procent { font-size: 1.6rem; font-weight: 700; letter-spacing: -0.01em; }
+.balk { height: 8px; margin: 6px 0; min-width: 120px; background: var(--line); border-radius: 4px; }
+.balk i { display: block; height: 100%; background: var(--accent); border-radius: 4px; }
+.bewijs summary { cursor: pointer; color: var(--accent); font-weight: 600; }
+.bewijs ul { margin: 10px 0 0; padding-left: 18px; font-size: 0.82rem; color: var(--muted); }
+.bewijs li { margin-bottom: 8px; }
+
+.grafiekTitel { margin-top: 40px; }
+.grafiek { width: 100%; height: auto; margin-top: 12px; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); }
+.band { fill: var(--accent); opacity: 0.08; }
+.raster { stroke: var(--line); stroke-width: 1; }
+.as { font-size: 12px; fill: var(--muted); }
+.markering { stroke: var(--ink); stroke-dasharray: 4 4; stroke-width: 1.2; }
+.lijn { fill: none; stroke: var(--accent); stroke-width: 2.5; stroke-linejoin: round; }
+
+.vraagKader { margin-top: 20px; padding: 24px; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); }
+.vraagVeld { width: 100%; min-height: 88px; padding: 12px 14px; font: inherit; font-size: 1rem; color: var(--ink); background: #fcfbf8; border: 1px solid var(--line); border-radius: 8px; resize: vertical; }
+.voorbeelden { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.voorbeelden button { padding: 6px 12px; font: inherit; font-size: 0.85rem; color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 999px; cursor: pointer; }
+.stuur { margin-top: 14px; padding: 12px 22px; font: inherit; font-weight: 600; color: #fff; background: var(--accent); border: 0; border-radius: 8px; cursor: pointer; }
+.stuur:disabled { opacity: 0.55; cursor: wait; }
+.melding { margin-top: 12px; font-size: 0.85rem; color: var(--muted); }
+.regel { padding: 12px 0; border-top: 1px solid var(--line); }
+.regel:first-of-type { margin-top: 12px; }
+.soort { display: inline-block; min-width: 82px; margin-right: 10px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.soort_feit { color: var(--accent); }
+.soort_onbekend, .soort_vraag { color: var(--amber); }
+.bron { margin: 8px 0 0 92px; font-size: 0.82rem; color: var(--muted); }
+.bron summary { cursor: pointer; color: var(--accent); }
+.bron pre { margin-top: 6px; padding: 10px; max-height: 220px; overflow: auto; white-space: pre-wrap; font-size: 0.75rem; background: rgba(31, 41, 55, 0.03); border: 1px solid var(--line); }
+
+.knoppen { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+
+@media (max-width: 760px) {
+  .stappen { grid-template-columns: 1fr; }
+  .bron { margin-left: 0; }
+}

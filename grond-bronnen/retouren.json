@@ -1,0 +1,182 @@
+[
+ {
+  "retour_id": "RET-2026-0001",
+  "klantlevering_id": "KLV-2026-0086",
+  "zending_id": "ZND-2026-0025",
+  "order_id": "26-0117",
+  "reden": "beschadigd"
+ },
+ {
+  "retour_id": "RET-2026-0002",
+  "klantlevering_id": "KLV-2026-0076",
+  "zending_id": "ZND-2026-0077",
+  "order_id": "26-0093",
+  "reden": "verkeerd artikel",
+  "niet_traceerbaar": true
+ },
+ {
+  "retour_id": "RET-2026-0003",
+  "klantlevering_id": "KLV-2026-0023",
+  "zending_id": "ZND-2026-0012",
+  "order_id": "26-0055",
+  "reden": "niet wat verwacht"
+ },
+ {
+  "retour_id": "RET-2026-0004",
+  "klantlevering_id": "KLV-2026-0049",
+  "zending_id": "ZND-2026-0073",
+  "order_id": "26-0033",
+  "reden": "te laat geleverd"
+ },
+ {
+  "retour_id": "RET-2026-0005",
+  "klantlevering_id": "KLV-2026-0040",
+  "zending_id": "ZND-2026-0009",
+  "order_id": "X-00021",
+  "reden": "verkeerd artikel",
+  "niet_traceerbaar": true
+ },
+ {
+  "retour_id": "RET-2026-0006",
+  "klantlevering_id": "KLV-2026-0038",
+  "zending_id": "ZND-2026-0092",
+  "order_id": "26-0115",
+  "reden": "niet wat verwacht"
+ },
+ {
+  "retour_id": "RET-2026-0007",
+  "klantlevering_id": "KLV-2026-0017",
+  "zending_id": "ZND-2026-0031",
+  "order_id": "26-0050",
+  "reden": "beschadigd"
+ },
+ {
+  "retour_id": "RET-2026-0008",
+  "klantlevering_id": "KLV-2026-0088",
+  "zending_id": "ZND-2026-0028",
+  "order_id": "26-0058",
+  "reden": "beschadigd"
+ },
+ {
+  "retour_id": "RET-2026-0009",
+  "klantlevering_id": "KLV-2026-0001",
+  "zending_id": "ZND-2026-0053",
+  "order_id": "26-0045",
+  "reden": "verkeerd artikel"
+ },
+ {
+  "retour_id": "RET-2026-0010",
+  "klantlevering_id": "KLV-2026-0074",
+  "zending_id": "ZND-2026-0099",
+  "order_id": "26-0005",
+  "reden": "niet wat verwacht"
+ },
+ {
+  "retour_id": "RET-2026-0011",
+  "klantlevering_id": "KLV-2026-0051",
+  "zending_id": "ZND-2026-0075",
+  "order_id": "26-0120",
+  "reden": "niet wat verwacht"
+ },
+ {
+  "retour_id": "RET-2026-0012",
+  "klantlevering_id": "KLV-2026-0073",
+  "zending_id": "ZND-2026-0044",
+  "order_id": "26-0059",
+  "reden": "verkeerd artikel",
+  "niet_traceerbaar": true
+ },
+ {
+  "retour_id": "RET-2026-0013",
+  "klantlevering_id": "KLV-2026-0005",
+  "zending_id": "ZND-2026-0045",
+  "order_id": "26-0015",
+  "reden": "verkeerd artikel",
+  "niet_traceerbaar": true
+ },
+ {
+  "retour_id": "RET-2026-0014",
+  "klantlevering_id": "KLV-2026-0024",
+  "zending_id": "ZND-2026-0006",
+  "order_id": "26-0067",
+  "reden": "verkeerd artikel",
+  "niet_traceerbaar": true
+ },
+ {
+  "retour_id": "RET-2026-0015",
+  "klantlevering_id": "KLV-2026-0041",
+  "zending_id": "ZND-2026-0016",
+  "order_id": "26-0052",
+  "reden": "te laat geleverd"
+ },
+ {
+  "retour_id": "RET-2026-0016",
+  "klantlevering_id": "KLV-2026-0029",
+  "zending_id": "ZND-2026-0059",
+  "order_id": "26-0040",
+  "reden": "te laat geleverd"
+ },
+ {
+  "retour_id": "RET-2026-0017",
+  "klantlevering_id": "KLV-2026-0079",
+  "zending_id": "ZND-2026-0020",
+  "order_id": "26-0082",
+  "reden": "te laat geleverd"
+ },
+ {
+  "retour_id": "RET-2026-0018",
+  "klantlevering_id": "KLV-2026-0014",
+  "zending_id": "ZND-2026-0014",
+  "order_id": "26-0030",
+  "reden": "beschadigd"
+ },
+ {
+  "retour_id": "RET-2026-0019",
+  "klantlevering_id": "KLV-2026-0064",
+  "zending_id": "ZND-2026-0076",
+  "order_id": "26-0064",
+  "reden": "te laat geleverd"
+ },
+ {
+  "retour_id": "RET-2026-0020",
+  "klantlevering_id": "KLV-2026-0019",
+  "zending_id": "ZND-2026-0063",
+  "order_id": "26-0100",
+  "reden": "te laat geleverd"
+ },
+ {
+  "retour_id": "RET-2026-0021",
+  "klantlevering_id": "KLV-2026-0043",
+  "zending_id": "ZND-2026-0017",
+  "order_id": "26-0081",
+  "reden": "te laat geleverd"
+ },
+ {
+  "retour_id": "RET-2026-0022",
+  "klantlevering_id": "KLV-2026-0010",
+  "zending_id": "ZND-2026-0001",
+  "order_id": "26-0087",
+  "reden": "niet wat verwacht"
+ },
+ {
+  "retour_id": "RET-2026-0023",
+  "klantlevering_id": "KLV-2026-0031",
+  "zending_id": "ZND-2026-0013",
+  "order_id": "26-0060",
+  "reden": "dubbele bestelling"
+ },
+ {
+  "retour_id": "RET-2026-0024",
+  "klantlevering_id": "KLV-2026-0045",
+  "zending_id": "ZND-2026-0021",
+  "order_id": "26-0085",
+  "reden": "te laat geleverd"
+ },
+ {
+  "retour_id": "RET-2026-0025",
+  "klantlevering_id": "KLV-2026-0089",
+  "zending_id": "ZND-2026-0091",
+  "order_id": "26-0061",
+  "reden": "verkeerd artikel"
+ }
+]

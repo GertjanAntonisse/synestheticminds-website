@@ -1,0 +1,42 @@
+[
+ {
+  "artikel_id": "ART-001",
+  "locatie": "R4-V3-L1",
+  "aantal": 77
+ },
+ {
+  "artikel_id": "ART-002",
+  "locatie": "R3-V1-L1",
+  "aantal": 3
+ },
+ {
+  "artikel_id": "ART-003",
+  "locatie": "R1-V3-L1",
+  "aantal": 181
+ },
+ {
+  "artikel_id": "ART-004",
+  "locatie": "R2-V2-L1",
+  "aantal": 136
+ },
+ {
+  "artikel_id": "ART-005",
+  "locatie": null,
+  "aantal": 32
+ },
+ {
+  "artikel_id": "ART-006",
+  "locatie": "R1-V3-L2",
+  "aantal": 70
+ },
+ {
+  "artikel_id": "ART-007",
+  "locatie": "R2-V1-L3",
+  "aantal": 11
+ },
+ {
+  "artikel_id": "ART-008",
+  "locatie": "R1-V2-L3",
+  "aantal": 13
+ }
+]

@@ -1,0 +1,528 @@
+{
+ "toelichting": "Samenvatting van de scanregels van de pickers in het gesimuleerde magazijn. Per instructie staat hoeveel scanregels voldoen aan wat op papier staat, voor en na de wijziging van 1 april 2026. Bij elke periode staan voorbeelden van afwijkende regels. De tijdstippen van de periode na de wijziging zijn in deze speelmap 30 dagen opgeschoven, zodat die periode begint op de wijzigingsdatum.",
+ "periodes": {
+  "A": {
+   "van": "2026-01-01",
+   "tot": "2026-03-01",
+   "scanregels": 13195
+  },
+  "B": {
+   "van": "2026-04-01",
+   "tot": "2026-05-30",
+   "scanregels": 13039
+  }
+ },
+ "wijziging": {
+  "datum": "2026-04-01",
+  "instructie": "INS-01"
+ },
+ "instructies": [
+  {
+   "instructie_id": "INS-01",
+   "titel": "Route-volgorde",
+   "op_papier": "Pickers lopen het magazijn in vaste volgorde: rij R1 naar R4, vak V1 naar V3, laag L1 naar L3.",
+   "toets": "De locatie volgt in de looproute op de vorige scan (marge van 3 posities)",
+   "periodes": {
+    "A": {
+     "scanregels": 13195,
+     "voldoen": 13195,
+     "afwijkend": 0,
+     "percentage_voldoet": 100.0,
+     "voorbeelden_afwijkend": []
+    },
+    "B": {
+     "scanregels": 13039,
+     "voldoen": 12033,
+     "afwijkend": 1006,
+     "percentage_voldoet": 92.3,
+     "voorbeelden_afwijkend": [
+      {
+       "event_id": "EVT-B-0001-04",
+       "medewerker_id": "MW-001",
+       "locatie": "R1-V1-L2",
+       "tijdstip_start": "2026-04-01T08:05:00",
+       "piktijd_seconden": 120,
+       "route_index_verwacht": 15,
+       "route_index_actueel": 1,
+       "voor_scan": true,
+       "na_scan": false,
+       "route_wissel": false,
+       "picks_in_ronde": 13,
+       "wat_viel_op": "Locatie R1-V1-L2 staat op route-positie 1, de vorige scan verwachtte positie 15"
+      },
+      {
+       "event_id": "EVT-B-0002-02",
+       "medewerker_id": "MW-001",
+       "locatie": "R1-V1-L3",
+       "tijdstip_start": "2026-04-01T08:41:00",
+       "piktijd_seconden": 124,
+       "route_index_verwacht": 10,
+       "route_index_actueel": 2,
+       "voor_scan": true,
+       "na_scan": true,
+       "route_wissel": false,
+       "picks_in_ronde": 9,
+       "wat_viel_op": "Locatie R1-V1-L3 staat op route-positie 2, de vorige scan verwachtte positie 10"
+      },
+      {
+       "event_id": "EVT-B-0003-02",
+       "medewerker_id": "MW-001",
+       "locatie": "R1-V1-L2",
+       "tijdstip_start": "2026-04-01T09:13:00",
+       "piktijd_seconden": 137,
+       "route_index_verwacht": 15,
+       "route_index_actueel": 1,
+       "voor_scan": false,
+       "na_scan": true,
+       "route_wissel": false,
+       "picks_in_ronde": 12,
+       "wat_viel_op": "Locatie R1-V1-L2 staat op route-positie 1, de vorige scan verwachtte positie 15"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "instructie_id": "INS-02",
+   "titel": "Piktijd",
+   "op_papier": "Gemiddelde tijd per pick is tussen 60 en 120 seconden inclusief looptijd.",
+   "toets": "De piktijd ligt tussen 60 en 120 seconden",
+   "periodes": {
+    "A": {
+     "scanregels": 13195,
+     "voldoen": 13195,
+     "afwijkend": 0,
+     "percentage_voldoet": 100.0,
+     "voorbeelden_afwijkend": []
+    },
+    "B": {
+     "scanregels": 13039,
+     "voldoen": 9003,
+     "afwijkend": 4036,
+     "percentage_voldoet": 69.0,
+     "voorbeelden_afwijkend": [
+      {
+       "event_id": "EVT-B-0001-01",
+       "medewerker_id": "MW-001",
+       "locatie": "R2-V1-L2",
+       "tijdstip_start": "2026-04-01T08:00:00",
+       "piktijd_seconden": 52,
+       "route_index_verwacht": 0,
+       "route_index_actueel": 10,
+       "voor_scan": true,
+       "na_scan": true,
+       "route_wissel": false,
+       "picks_in_ronde": 13,
+       "wat_viel_op": "Piktijd 52 seconden, onder de 60"
+      },
+      {
+       "event_id": "EVT-B-0001-05",
+       "medewerker_id": "MW-001",
+       "locatie": "R1-V2-L1",
+       "tijdstip_start": "2026-04-01T08:08:00",
+       "piktijd_seconden": 134,
+       "route_index_verwacht": 1,
+       "route_index_actueel": 3,
+       "voor_scan": true,
+       "na_scan": true,
+       "route_wissel": false,
+       "picks_in_ronde": 13,
+       "wat_viel_op": "Piktijd 134 seconden, boven de 120"
+      },
+      {
+       "event_id": "EVT-B-0001-10",
+       "medewerker_id": "MW-001",
+       "locatie": "R2-V3-L3",
+       "tijdstip_start": "2026-04-01T08:19:00",
+       "piktijd_seconden": 127,
+       "route_index_verwacht": 11,
+       "route_index_actueel": 17,
+       "voor_scan": true,
+       "na_scan": false,
+       "route_wissel": false,
+       "picks_in_ronde": 13,
+       "wat_viel_op": "Piktijd 127 seconden, boven de 120"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "instructie_id": "INS-03",
+   "titel": "Ronde-grootte",
+   "op_papier": "Een picker doet maximaal 15 picks per ronde voor terugkeer naar het uitgifte-punt.",
+   "toets": "De ronde heeft hoogstens 15 picks",
+   "periodes": {
+    "A": {
+     "scanregels": 13195,
+     "voldoen": 11339,
+     "afwijkend": 1856,
+     "percentage_voldoet": 85.9,
+     "voorbeelden_afwijkend": [
+      {
+       "event_id": "EVT-A-0004-01",
+       "medewerker_id": "MW-001",
+       "locatie": "R1-V2-L3",
+       "tijdstip_start": "2026-01-01T09:40:00",
+       "piktijd_seconden": 115,
+       "route_index_verwacht": 0,
+       "route_index_actueel": 5,
+       "voor_scan": true,
+       "na_scan": true,
+       "route_wissel": false,
+       "picks_in_ronde": 16,
+       "wat_viel_op": "Ronde RND-A-0004 heeft 16 picks"
+      },
+      {
+       "event_id": "EVT-A-0004-02",
+       "medewerker_id": "MW-001",
+       "locatie": "R1-V3-L3",
+       "tijdstip_start": "2026-01-01T09:42:00",
+       "piktijd_seconden": 88,
+       "route_index_verwacht": 5,
+       "route_index_actueel": 8,
+       "voor_scan": true,
+       "na_scan": true,
+       "route_wissel": false,
+       "picks_in_ronde": 16,
+       "wat_viel_op": "Ronde RND-A-0004 heeft 16 picks"
+      },
+      {
+       "event_id": "EVT-A-0004-03",
+       "medewerker_id": "MW-001",
+       "locatie": "R2-V1-L1",
+       "tijdstip_start": "2026-01-01T09:44:00",
+       "piktijd_seconden": 72,
+       "route_index_verwacht": 8,
+       "route_index_actueel": 9,
+       "voor_scan": true,
+       "na_scan": true,
+       "route_wissel": false,
+       "picks_in_ronde": 16,
+       "wat_viel_op": "Ronde RND-A-0004 heeft 16 picks"
+      }
+     ]
+    },
+    "B": {
+     "scanregels": 13039,
+     "voldoen": 11423,
+     "afwijkend": 1616,
+     "percentage_voldoet": 87.6,
+     "voorbeelden_afwijkend": [
+      {
+       "event_id": "EVT-B-0011-01",
+       "medewerker_id": "MW-003",
+       "locatie": "R2-V2-L1",
+       "tijdstip_start": "2026-04-01T08:00:00",
+       "piktijd_seconden": 70,
+       "route_index_verwacht": 0,
+       "route_index_actueel": 12,
+       "voor_scan": true,
+       "na_scan": true,
+       "route_wissel": false,
+       "picks_in_ronde": 16,
+       "wat_viel_op": "Ronde RND-B-0011 heeft 16 picks"
+      },
+      {
+       "event_id": "EVT-B-0011-02",
+       "medewerker_id": "MW-003",
+       "locatie": "R2-V3-L1",
+       "tijdstip_start": "2026-04-01T08:02:00",
+       "piktijd_seconden": 68,
+       "route_index_verwacht": 12,
+       "route_index_actueel": 15,
+       "voor_scan": true,
+       "na_scan": true,
+       "route_wissel": false,
+       "picks_in_ronde": 16,
+       "wat_viel_op": "Ronde RND-B-0011 heeft 16 picks"
+      },
+      {
+       "event_id": "EVT-B-0011-03",
+       "medewerker_id": "MW-003",
+       "locatie": "R2-V1-L2",
+       "tijdstip_start": "2026-04-01T08:04:00",
+       "piktijd_seconden": 71,
+       "route_index_verwacht": 15,
+       "route_index_actueel": 10,
+       "voor_scan": true,
+       "na_scan": false,
+       "route_wissel": false,
+       "picks_in_ronde": 16,
+       "wat_viel_op": "Ronde RND-B-0011 heeft 16 picks"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "instructie_id": "INS-04",
+   "titel": "Dubbele locatiescan",
+   "op_papier": "Elke locatie wordt gescand bij aankomst én na de pick ter bevestiging.",
+   "toets": "Bij de locatie is voor en na de pick gescand",
+   "periodes": {
+    "A": {
+     "scanregels": 13195,
+     "voldoen": 12654,
+     "afwijkend": 541,
+     "percentage_voldoet": 95.9,
+     "voorbeelden_afwijkend": [
+      {
+       "event_id": "EVT-A-0001-09",
+       "medewerker_id": "MW-001",
+       "locatie": "R3-V2-L3",
+       "tijdstip_start": "2026-01-01T08:16:00",
+       "piktijd_seconden": 95,
+       "route_index_verwacht": 21,
+       "route_index_actueel": 23,
+       "voor_scan": false,
+       "na_scan": true,
+       "route_wissel": false,
+       "picks_in_ronde": 12,
+       "wat_viel_op": "Voor-scan ontbreekt bij R3-V2-L3"
+      },
+      {
+       "event_id": "EVT-A-0003-03",
+       "medewerker_id": "MW-001",
+       "locatie": "R1-V3-L1",
+       "tijdstip_start": "2026-01-01T09:04:00",
+       "piktijd_seconden": 64,
+       "route_index_verwacht": 5,
+       "route_index_actueel": 6,
+       "voor_scan": true,
+       "na_scan": false,
+       "route_wissel": false,
+       "picks_in_ronde": 15,
+       "wat_viel_op": "Na-scan ontbreekt bij R1-V3-L1"
+      },
+      {
+       "event_id": "EVT-A-0006-02",
+       "medewerker_id": "MW-002",
+       "locatie": "R1-V1-L3",
+       "tijdstip_start": "2026-01-01T08:32:00",
+       "piktijd_seconden": 100,
+       "route_index_verwacht": 0,
+       "route_index_actueel": 2,
+       "voor_scan": false,
+       "na_scan": true,
+       "route_wissel": false,
+       "picks_in_ronde": 13,
+       "wat_viel_op": "Voor-scan ontbreekt bij R1-V1-L3"
+      }
+     ]
+    },
+    "B": {
+     "scanregels": 13039,
+     "voldoen": 10797,
+     "afwijkend": 2242,
+     "percentage_voldoet": 82.8,
+     "voorbeelden_afwijkend": [
+      {
+       "event_id": "EVT-B-0001-04",
+       "medewerker_id": "MW-001",
+       "locatie": "R1-V1-L2",
+       "tijdstip_start": "2026-04-01T08:05:00",
+       "piktijd_seconden": 120,
+       "route_index_verwacht": 15,
+       "route_index_actueel": 1,
+       "voor_scan": true,
+       "na_scan": false,
+       "route_wissel": false,
+       "picks_in_ronde": 13,
+       "wat_viel_op": "Na-scan ontbreekt bij R1-V1-L2"
+      },
+      {
+       "event_id": "EVT-B-0001-08",
+       "medewerker_id": "MW-001",
+       "locatie": "R2-V1-L1",
+       "tijdstip_start": "2026-04-01T08:15:00",
+       "piktijd_seconden": 89,
+       "route_index_verwacht": 8,
+       "route_index_actueel": 9,
+       "voor_scan": true,
+       "na_scan": false,
+       "route_wissel": false,
+       "picks_in_ronde": 13,
+       "wat_viel_op": "Na-scan ontbreekt bij R2-V1-L1"
+      },
+      {
+       "event_id": "EVT-B-0001-10",
+       "medewerker_id": "MW-001",
+       "locatie": "R2-V3-L3",
+       "tijdstip_start": "2026-04-01T08:19:00",
+       "piktijd_seconden": 127,
+       "route_index_verwacht": 11,
+       "route_index_actueel": 17,
+       "voor_scan": true,
+       "na_scan": false,
+       "route_wissel": false,
+       "picks_in_ronde": 13,
+       "wat_viel_op": "Na-scan ontbreekt bij R2-V3-L3"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "instructie_id": "INS-05",
+   "titel": "Geen route-wissel",
+   "op_papier": "Een picker wisselt niet van toegewezen route midden in een ronde.",
+   "toets": "De picker blijft binnen de ronde op dezelfde route",
+   "periodes": {
+    "A": {
+     "scanregels": 13195,
+     "voldoen": 13195,
+     "afwijkend": 0,
+     "percentage_voldoet": 100.0,
+     "voorbeelden_afwijkend": []
+    },
+    "B": {
+     "scanregels": 13039,
+     "voldoen": 12311,
+     "afwijkend": 728,
+     "percentage_voldoet": 94.4,
+     "voorbeelden_afwijkend": [
+      {
+       "event_id": "EVT-B-0004-01",
+       "medewerker_id": "MW-001",
+       "locatie": "R1-V1-L3",
+       "tijdstip_start": "2026-04-01T09:47:00",
+       "piktijd_seconden": 101,
+       "route_index_verwacht": 0,
+       "route_index_actueel": 2,
+       "voor_scan": false,
+       "na_scan": true,
+       "route_wissel": true,
+       "picks_in_ronde": 11,
+       "wat_viel_op": "Routewissel van MW-001 in ronde RND-B-0004"
+      },
+      {
+       "event_id": "EVT-B-0004-04",
+       "medewerker_id": "MW-001",
+       "locatie": "R3-V1-L2",
+       "tijdstip_start": "2026-04-01T09:54:00",
+       "piktijd_seconden": 120,
+       "route_index_verwacht": 11,
+       "route_index_actueel": 19,
+       "voor_scan": true,
+       "na_scan": true,
+       "route_wissel": true,
+       "picks_in_ronde": 11,
+       "wat_viel_op": "Routewissel van MW-001 in ronde RND-B-0004"
+      },
+      {
+       "event_id": "EVT-B-0004-07",
+       "medewerker_id": "MW-001",
+       "locatie": "R3-V3-L2",
+       "tijdstip_start": "2026-04-01T10:02:00",
+       "piktijd_seconden": 118,
+       "route_index_verwacht": 21,
+       "route_index_actueel": 25,
+       "voor_scan": true,
+       "na_scan": true,
+       "route_wissel": true,
+       "picks_in_ronde": 11,
+       "wat_viel_op": "Routewissel van MW-001 in ronde RND-B-0004"
+      }
+     ]
+    }
+   }
+  }
+ ],
+ "piktijd_per_week": [
+  {
+   "week_vanaf": "2025-12-29",
+   "gemiddelde_piktijd_seconden": 89.9,
+   "scanregels": 869
+  },
+  {
+   "week_vanaf": "2026-01-05",
+   "gemiddelde_piktijd_seconden": 89.7,
+   "scanregels": 1544
+  },
+  {
+   "week_vanaf": "2026-01-12",
+   "gemiddelde_piktijd_seconden": 90.2,
+   "scanregels": 1560
+  },
+  {
+   "week_vanaf": "2026-01-19",
+   "gemiddelde_piktijd_seconden": 89.9,
+   "scanregels": 1430
+  },
+  {
+   "week_vanaf": "2026-01-26",
+   "gemiddelde_piktijd_seconden": 90.2,
+   "scanregels": 1619
+  },
+  {
+   "week_vanaf": "2026-02-02",
+   "gemiddelde_piktijd_seconden": 89.3,
+   "scanregels": 1579
+  },
+  {
+   "week_vanaf": "2026-02-09",
+   "gemiddelde_piktijd_seconden": 90.0,
+   "scanregels": 1558
+  },
+  {
+   "week_vanaf": "2026-02-16",
+   "gemiddelde_piktijd_seconden": 89.9,
+   "scanregels": 1524
+  },
+  {
+   "week_vanaf": "2026-02-23",
+   "gemiddelde_piktijd_seconden": 90.8,
+   "scanregels": 1512
+  },
+  {
+   "week_vanaf": "2026-03-30",
+   "gemiddelde_piktijd_seconden": 98.9,
+   "scanregels": 1037
+  },
+  {
+   "week_vanaf": "2026-04-06",
+   "gemiddelde_piktijd_seconden": 97.2,
+   "scanregels": 1514
+  },
+  {
+   "week_vanaf": "2026-04-13",
+   "gemiddelde_piktijd_seconden": 98.6,
+   "scanregels": 1451
+  },
+  {
+   "week_vanaf": "2026-04-20",
+   "gemiddelde_piktijd_seconden": 99.9,
+   "scanregels": 1584
+  },
+  {
+   "week_vanaf": "2026-04-27",
+   "gemiddelde_piktijd_seconden": 98.4,
+   "scanregels": 1577
+  },
+  {
+   "week_vanaf": "2026-05-04",
+   "gemiddelde_piktijd_seconden": 99.2,
+   "scanregels": 1383
+  },
+  {
+   "week_vanaf": "2026-05-11",
+   "gemiddelde_piktijd_seconden": 100.0,
+   "scanregels": 1623
+  },
+  {
+   "week_vanaf": "2026-05-18",
+   "gemiddelde_piktijd_seconden": 98.0,
+   "scanregels": 1583
+  },
+  {
+   "week_vanaf": "2026-05-25",
+   "gemiddelde_piktijd_seconden": 98.9,
+   "scanregels": 1287
+  }
+ ],
+ "piktijd_per_periode": {
+  "A": 90.0,
+  "B": 98.8
+ }
+}
