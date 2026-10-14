@@ -201,3 +201,68 @@ order_controle = {
 json.loads((BRONNEN / "verzendcontrole.json").read_text(encoding="utf-8"))
 print(json.dumps(order_controle["totalen"], ensure_ascii=False, indent=1))
 print(f"order-controle.json {(BRONNEN / 'order-controle.json').stat().st_size/1024:.1f} kB, verzendcontrole.json {(BRONNEN / 'verzendcontrole.json').stat().st_size/1024:.1f} kB")
+
+# 6. KPI-overzicht voor orderpick, ordercontrole en de keten.
+# Elke KPI heeft de verwachting met bron, het cijfer met teller en noemer, en het bewijs.
+# Waar in de bronnen geen norm is vastgelegd, staat dat erbij en wordt er geen doel verzonnen.
+zendingen = json.load(open(BRON / "data" / "zendingen.json", encoding="utf-8"))
+retouren = json.load(open(BRON / "data" / "retouren.json", encoding="utf-8"))
+verzonden_orders = {z["order_id"] for z in zendingen}
+order_artikelen = {o["order_id"]: {r["artikel_id"] for r in o["regels"]} for o in orders}
+afwijkend_ids = {a["order_id"] for a in afwijkende_orders}
+zonder_pick_verzonden = sorted(o for o in verzonden_orders if o not in gepickt)
+
+AFSPRAKEN = {
+    "INV-L3-05": "Een gepickt artikel staat op de order.",
+    "INV-L4-04": "Een verzendbevestiging wordt alleen gegeven als alle artikelen correct zijn.",
+    "INV-L5-01": "Een retour met reden 'verkeerd artikel' is herleidbaar naar een pick.",
+}
+def kpi(kid, naam, verwachting, bron, teller, noemer, noemer_tekst, bewijs, bewijs_titel):
+    return {"id": kid, "naam": naam, "verwachting": verwachting, "bron_verwachting": bron,
+            "cijfer": {"teller": teller, "noemer": noemer, "omschrijving": noemer_tekst},
+            "bewijs_titel": bewijs_titel, "bewijs": bewijs}
+
+niet_op_order = [p for p in picks if p["artikel_id"] not in order_artikelen.get(p["order_id"], set())]
+afwijkend_per_id = {a["order_id"]: a for a in afwijkende_orders}
+def order_bewijs(oid):
+    a = afwijkend_per_id[oid]
+    b = bevestigingen.get(oid, {})
+    verschil = "; ".join(f"{art}: gevraagd {v['gevraagd']}, gepickt {v['gepickt']}" for art, v in a["verschil_per_artikel"].items())
+    return {"order_id": oid, "verschil": verschil, "controle_alle_artikelen_correct": b.get("alle_artikelen_correct"), "controle_goedgekeurd": b.get("goedgekeurd")}
+
+verzonden_afwijkend = sorted(afwijkend_ids & verzonden_orders)
+retour_orders = {r["order_id"] for r in retouren}
+retour_afwijkend = sorted(afwijkend_ids & retour_orders)
+verkeerd_artikel = [r for r in retouren if r["reden"] == "verkeerd artikel"]
+verkeerd_zonder_afwijking = [r for r in verkeerd_artikel if r["order_id"] not in afwijkend_ids]
+
+kpi_orders = {
+    "toelichting": "KPI-overzicht voor het orderpickproces, het controleproces voor het inpakken en de keten daaromheen. Elke KPI heeft een verwachting met bron, een cijfer met teller en noemer, en het bewijs. Waar geen norm is vastgelegd, staat dat erbij. De cijfers zijn berekend uit orders, picks, verzendcontroles, zendingen en retouren.",
+    "afspraken": [{"id": k, "tekst": v, "herkomst": "Eerder vastgelegde afspraak in de Invariant Design-demo"} for k, v in AFSPRAKEN.items()],
+    "orderpick_aanvulling": [
+        kpi("P6", "Gepickt artikel staat op de order", AFSPRAKEN["INV-L3-05"], "INV-L3-05", len(picks) - len(niet_op_order), len(picks), "picks",
+            [{"pick_id": p["pick_id"], "order_id": p["order_id"], "artikel_id": p["artikel_id"], "aantal": p["aantal"]} for p in niet_op_order], "De picks van een artikel dat niet op de order staat"),
+    ],
+    "ordercontrole": [
+        kpi("C1", "Goedgekeurd terwijl niet alle artikelen klopten", AFSPRAKEN["INV-L4-04"], "INV-L4-04", len(afwijkende_orders), goedgekeurd_totaal, "goedgekeurde orders met picks",
+            [order_bewijs(o) for o in sorted(afwijkend_ids)], "De orders die zijn goedgekeurd, met wat de controle zelf vastlegde"),
+        kpi("C2", "Verschil gezien door de controle", None, None, sum(1 for o in afwijkend_ids if bevestigingen.get(o, {}).get("alle_artikelen_correct") is False), len(afwijkend_ids), "orders waar gepickt is wat niet gevraagd was",
+            [order_bewijs(o) for o in sorted(afwijkend_ids)], "De orders met het verschil en de vastlegging van de controle"),
+        kpi("C3", "Verschil tegengehouden voor het inpakken", None, None, sum(1 for o in afwijkend_ids if bevestigingen.get(o, {}).get("goedgekeurd") is False), len(afwijkend_ids), "orders waar gepickt is wat niet gevraagd was",
+            [order_bewijs(o) for o in sorted(afwijkend_ids)], "Dezelfde orders: allemaal goedgekeurd"),
+    ],
+    "keten": [
+        kpi("K1", "Afwijkende orders die bij de klant kwamen", None, None, len(verzonden_afwijkend), len(afwijkend_ids), "orders waar gepickt is wat niet gevraagd was",
+            [{"order_id": o} for o in verzonden_afwijkend], "De verzonden orders met een pickafwijking"),
+        kpi("K2", "Afwijkende orders met een retour", None, None, len(retour_afwijkend), len(afwijkend_ids), "orders waar gepickt is wat niet gevraagd was",
+            [{"order_id": o, "reden_retour": ", ".join(r["reden"] for r in retouren if r["order_id"] == o)} for o in retour_afwijkend], "De orders met een pickafwijking en een retour"),
+        kpi("K3", "Retour 'verkeerd artikel' zonder pickafwijking", AFSPRAKEN["INV-L5-01"], "INV-L5-01", len(verkeerd_zonder_afwijking), len(verkeerd_artikel), "retouren met reden 'verkeerd artikel'",
+            [{"retour_id": r["retour_id"], "order_id": r["order_id"], "reden": r["reden"]} for r in verkeerd_zonder_afwijking], "De retouren waarvan de picks wel klopten met de order"),
+        kpi("K4", "Verzonden orders zonder vastgelegde pick", None, None, len(zonder_pick_verzonden), len(verzonden_orders), "verzonden orders",
+            [{"order_id": o} for o in zonder_pick_verzonden], "De verzonden orders waarvan geen pick is vastgelegd"),
+    ],
+}
+(BRONNEN / "kpi-orders.json").write_text(json.dumps(kpi_orders, ensure_ascii=False, indent=1), encoding="utf-8")
+for sectie in ("orderpick_aanvulling", "ordercontrole", "keten"):
+    for k in kpi_orders[sectie]: print(f"{k['id']}: {k['cijfer']['teller']} van {k['cijfer']['noemer']} {k['cijfer']['omschrijving']} | norm: {k['bron_verwachting']}")
+print(f"kpi-orders.json {(BRONNEN / 'kpi-orders.json').stat().st_size/1024:.1f} kB")

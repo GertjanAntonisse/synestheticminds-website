@@ -34,3 +34,7 @@ De scanregels vallen in twee periodes: A (1 januari tot en met 1 maart 2026) en 
 - Waar in het magazijn volgen de scanregels de route niet?
 
 Het is de bedoeling dat je zelf uitzoekt wat klopt. Grond laat bij elk antwoord zien op welke bron het rust.
+
+## KPI's per proces
+
+`kpi-orders.json` bevat per proces (orderpick, ordercontrole, keten) de KPI's met de verwachting en de bron daarvan, het cijfer met teller en noemer, en het bewijs. Waar in de bronnen geen norm is vastgelegd, staat dat erbij. De afspraken komen uit de Invariant Design-demo (INV-L3-05, INV-L4-04, INV-L5-01).

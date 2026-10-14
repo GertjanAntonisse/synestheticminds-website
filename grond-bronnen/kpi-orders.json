@@ -1,0 +1,392 @@
+{
+ "toelichting": "KPI-overzicht voor het orderpickproces, het controleproces voor het inpakken en de keten daaromheen. Elke KPI heeft een verwachting met bron, een cijfer met teller en noemer, en het bewijs. Waar geen norm is vastgelegd, staat dat erbij. De cijfers zijn berekend uit orders, picks, verzendcontroles, zendingen en retouren.",
+ "afspraken": [
+  {
+   "id": "INV-L3-05",
+   "tekst": "Een gepickt artikel staat op de order.",
+   "herkomst": "Eerder vastgelegde afspraak in de Invariant Design-demo"
+  },
+  {
+   "id": "INV-L4-04",
+   "tekst": "Een verzendbevestiging wordt alleen gegeven als alle artikelen correct zijn.",
+   "herkomst": "Eerder vastgelegde afspraak in de Invariant Design-demo"
+  },
+  {
+   "id": "INV-L5-01",
+   "tekst": "Een retour met reden 'verkeerd artikel' is herleidbaar naar een pick.",
+   "herkomst": "Eerder vastgelegde afspraak in de Invariant Design-demo"
+  }
+ ],
+ "orderpick_aanvulling": [
+  {
+   "id": "P6",
+   "naam": "Gepickt artikel staat op de order",
+   "verwachting": "Een gepickt artikel staat op de order.",
+   "bron_verwachting": "INV-L3-05",
+   "cijfer": {
+    "teller": 208,
+    "noemer": 215,
+    "omschrijving": "picks"
+   },
+   "bewijs_titel": "De picks van een artikel dat niet op de order staat",
+   "bewijs": [
+    {
+     "pick_id": "PCK-0002",
+     "order_id": "26-0033",
+     "artikel_id": "ART-003",
+     "aantal": 4
+    },
+    {
+     "pick_id": "PCK-0096",
+     "order_id": "X-00076",
+     "artikel_id": "ART-006",
+     "aantal": 7
+    },
+    {
+     "pick_id": "PCK-0097",
+     "order_id": "X-00076",
+     "artikel_id": "ART-006",
+     "aantal": 5
+    },
+    {
+     "pick_id": "PCK-0123",
+     "order_id": "26-0045",
+     "artikel_id": "ART-002",
+     "aantal": 4
+    },
+    {
+     "pick_id": "PCK-0136",
+     "order_id": "26-0053",
+     "artikel_id": "ART-004",
+     "aantal": 3
+    },
+    {
+     "pick_id": "PCK-0153",
+     "order_id": "26-0106",
+     "artikel_id": "ART-005",
+     "aantal": 5
+    },
+    {
+     "pick_id": "PCK-0200",
+     "order_id": "26-0061",
+     "artikel_id": "ART-004",
+     "aantal": 3
+    }
+   ]
+  }
+ ],
+ "ordercontrole": [
+  {
+   "id": "C1",
+   "naam": "Goedgekeurd terwijl niet alle artikelen klopten",
+   "verwachting": "Een verzendbevestiging wordt alleen gegeven als alle artikelen correct zijn.",
+   "bron_verwachting": "INV-L4-04",
+   "cijfer": {
+    "teller": 7,
+    "noemer": 110,
+    "omschrijving": "goedgekeurde orders met picks"
+   },
+   "bewijs_titel": "De orders die zijn goedgekeurd, met wat de controle zelf vastlegde",
+   "bewijs": [
+    {
+     "order_id": "26-0033",
+     "verschil": "ART-003: gevraagd 0, gepickt 4; ART-005: gevraagd 4, gepickt 0",
+     "controle_alle_artikelen_correct": false,
+     "controle_goedgekeurd": true
+    },
+    {
+     "order_id": "26-0045",
+     "verschil": "ART-002: gevraagd 0, gepickt 4; ART-005: gevraagd 4, gepickt 0",
+     "controle_alle_artikelen_correct": false,
+     "controle_goedgekeurd": true
+    },
+    {
+     "order_id": "26-0053",
+     "verschil": "ART-002: gevraagd 3, gepickt 0; ART-004: gevraagd 0, gepickt 3",
+     "controle_alle_artikelen_correct": false,
+     "controle_goedgekeurd": true
+    },
+    {
+     "order_id": "26-0058",
+     "verschil": "ART-002: gevraagd 1, gepickt 3; ART-004: gevraagd 2, gepickt 0",
+     "controle_alle_artikelen_correct": false,
+     "controle_goedgekeurd": true
+    },
+    {
+     "order_id": "26-0061",
+     "verschil": "ART-003: gevraagd 3, gepickt 0; ART-004: gevraagd 0, gepickt 3",
+     "controle_alle_artikelen_correct": false,
+     "controle_goedgekeurd": true
+    },
+    {
+     "order_id": "26-0106",
+     "verschil": "ART-004: gevraagd 5, gepickt 0; ART-005: gevraagd 0, gepickt 5",
+     "controle_alle_artikelen_correct": false,
+     "controle_goedgekeurd": true
+    },
+    {
+     "order_id": "X-00076",
+     "verschil": "ART-001: gevraagd 7, gepickt 0; ART-003: gevraagd 5, gepickt 0; ART-006: gevraagd 0, gepickt 12",
+     "controle_alle_artikelen_correct": false,
+     "controle_goedgekeurd": true
+    }
+   ]
+  },
+  {
+   "id": "C2",
+   "naam": "Verschil gezien door de controle",
+   "verwachting": null,
+   "bron_verwachting": null,
+   "cijfer": {
+    "teller": 7,
+    "noemer": 7,
+    "omschrijving": "orders waar gepickt is wat niet gevraagd was"
+   },
+   "bewijs_titel": "De orders met het verschil en de vastlegging van de controle",
+   "bewijs": [
+    {
+     "order_id": "26-0033",
+     "verschil": "ART-003: gevraagd 0, gepickt 4; ART-005: gevraagd 4, gepickt 0",
+     "controle_alle_artikelen_correct": false,
+     "controle_goedgekeurd": true
+    },
+    {
+     "order_id": "26-0045",
+     "verschil": "ART-002: gevraagd 0, gepickt 4; ART-005: gevraagd 4, gepickt 0",
+     "controle_alle_artikelen_correct": false,
+     "controle_goedgekeurd": true
+    },
+    {
+     "order_id": "26-0053",
+     "verschil": "ART-002: gevraagd 3, gepickt 0; ART-004: gevraagd 0, gepickt 3",
+     "controle_alle_artikelen_correct": false,
+     "controle_goedgekeurd": true
+    },
+    {
+     "order_id": "26-0058",
+     "verschil": "ART-002: gevraagd 1, gepickt 3; ART-004: gevraagd 2, gepickt 0",
+     "controle_alle_artikelen_correct": false,
+     "controle_goedgekeurd": true
+    },
+    {
+     "order_id": "26-0061",
+     "verschil": "ART-003: gevraagd 3, gepickt 0; ART-004: gevraagd 0, gepickt 3",
+     "controle_alle_artikelen_correct": false,
+     "controle_goedgekeurd": true
+    },
+    {
+     "order_id": "26-0106",
+     "verschil": "ART-004: gevraagd 5, gepickt 0; ART-005: gevraagd 0, gepickt 5",
+     "controle_alle_artikelen_correct": false,
+     "controle_goedgekeurd": true
+    },
+    {
+     "order_id": "X-00076",
+     "verschil": "ART-001: gevraagd 7, gepickt 0; ART-003: gevraagd 5, gepickt 0; ART-006: gevraagd 0, gepickt 12",
+     "controle_alle_artikelen_correct": false,
+     "controle_goedgekeurd": true
+    }
+   ]
+  },
+  {
+   "id": "C3",
+   "naam": "Verschil tegengehouden voor het inpakken",
+   "verwachting": null,
+   "bron_verwachting": null,
+   "cijfer": {
+    "teller": 0,
+    "noemer": 7,
+    "omschrijving": "orders waar gepickt is wat niet gevraagd was"
+   },
+   "bewijs_titel": "Dezelfde orders: allemaal goedgekeurd",
+   "bewijs": [
+    {
+     "order_id": "26-0033",
+     "verschil": "ART-003: gevraagd 0, gepickt 4; ART-005: gevraagd 4, gepickt 0",
+     "controle_alle_artikelen_correct": false,
+     "controle_goedgekeurd": true
+    },
+    {
+     "order_id": "26-0045",
+     "verschil": "ART-002: gevraagd 0, gepickt 4; ART-005: gevraagd 4, gepickt 0",
+     "controle_alle_artikelen_correct": false,
+     "controle_goedgekeurd": true
+    },
+    {
+     "order_id": "26-0053",
+     "verschil": "ART-002: gevraagd 3, gepickt 0; ART-004: gevraagd 0, gepickt 3",
+     "controle_alle_artikelen_correct": false,
+     "controle_goedgekeurd": true
+    },
+    {
+     "order_id": "26-0058",
+     "verschil": "ART-002: gevraagd 1, gepickt 3; ART-004: gevraagd 2, gepickt 0",
+     "controle_alle_artikelen_correct": false,
+     "controle_goedgekeurd": true
+    },
+    {
+     "order_id": "26-0061",
+     "verschil": "ART-003: gevraagd 3, gepickt 0; ART-004: gevraagd 0, gepickt 3",
+     "controle_alle_artikelen_correct": false,
+     "controle_goedgekeurd": true
+    },
+    {
+     "order_id": "26-0106",
+     "verschil": "ART-004: gevraagd 5, gepickt 0; ART-005: gevraagd 0, gepickt 5",
+     "controle_alle_artikelen_correct": false,
+     "controle_goedgekeurd": true
+    },
+    {
+     "order_id": "X-00076",
+     "verschil": "ART-001: gevraagd 7, gepickt 0; ART-003: gevraagd 5, gepickt 0; ART-006: gevraagd 0, gepickt 12",
+     "controle_alle_artikelen_correct": false,
+     "controle_goedgekeurd": true
+    }
+   ]
+  }
+ ],
+ "keten": [
+  {
+   "id": "K1",
+   "naam": "Afwijkende orders die bij de klant kwamen",
+   "verwachting": null,
+   "bron_verwachting": null,
+   "cijfer": {
+    "teller": 6,
+    "noemer": 7,
+    "omschrijving": "orders waar gepickt is wat niet gevraagd was"
+   },
+   "bewijs_titel": "De verzonden orders met een pickafwijking",
+   "bewijs": [
+    {
+     "order_id": "26-0033"
+    },
+    {
+     "order_id": "26-0045"
+    },
+    {
+     "order_id": "26-0058"
+    },
+    {
+     "order_id": "26-0061"
+    },
+    {
+     "order_id": "26-0106"
+    },
+    {
+     "order_id": "X-00076"
+    }
+   ]
+  },
+  {
+   "id": "K2",
+   "naam": "Afwijkende orders met een retour",
+   "verwachting": null,
+   "bron_verwachting": null,
+   "cijfer": {
+    "teller": 4,
+    "noemer": 7,
+    "omschrijving": "orders waar gepickt is wat niet gevraagd was"
+   },
+   "bewijs_titel": "De orders met een pickafwijking en een retour",
+   "bewijs": [
+    {
+     "order_id": "26-0033",
+     "reden_retour": "te laat geleverd"
+    },
+    {
+     "order_id": "26-0045",
+     "reden_retour": "verkeerd artikel"
+    },
+    {
+     "order_id": "26-0058",
+     "reden_retour": "beschadigd"
+    },
+    {
+     "order_id": "26-0061",
+     "reden_retour": "verkeerd artikel"
+    }
+   ]
+  },
+  {
+   "id": "K3",
+   "naam": "Retour 'verkeerd artikel' zonder pickafwijking",
+   "verwachting": "Een retour met reden 'verkeerd artikel' is herleidbaar naar een pick.",
+   "bron_verwachting": "INV-L5-01",
+   "cijfer": {
+    "teller": 5,
+    "noemer": 7,
+    "omschrijving": "retouren met reden 'verkeerd artikel'"
+   },
+   "bewijs_titel": "De retouren waarvan de picks wel klopten met de order",
+   "bewijs": [
+    {
+     "retour_id": "RET-2026-0002",
+     "order_id": "26-0093",
+     "reden": "verkeerd artikel"
+    },
+    {
+     "retour_id": "RET-2026-0005",
+     "order_id": "X-00021",
+     "reden": "verkeerd artikel"
+    },
+    {
+     "retour_id": "RET-2026-0012",
+     "order_id": "26-0059",
+     "reden": "verkeerd artikel"
+    },
+    {
+     "retour_id": "RET-2026-0013",
+     "order_id": "26-0015",
+     "reden": "verkeerd artikel"
+    },
+    {
+     "retour_id": "RET-2026-0014",
+     "order_id": "26-0067",
+     "reden": "verkeerd artikel"
+    }
+   ]
+  },
+  {
+   "id": "K4",
+   "naam": "Verzonden orders zonder vastgelegde pick",
+   "verwachting": null,
+   "bron_verwachting": null,
+   "cijfer": {
+    "teller": 9,
+    "noemer": 100,
+    "omschrijving": "verzonden orders"
+   },
+   "bewijs_titel": "De verzonden orders waarvan geen pick is vastgelegd",
+   "bewijs": [
+    {
+     "order_id": "26-0020"
+    },
+    {
+     "order_id": "26-0026"
+    },
+    {
+     "order_id": "26-0054"
+    },
+    {
+     "order_id": "26-0064"
+    },
+    {
+     "order_id": "26-0089"
+    },
+    {
+     "order_id": "26-0093"
+    },
+    {
+     "order_id": "26-0100"
+    },
+    {
+     "order_id": "26-0111"
+    },
+    {
+     "order_id": "X-00056"
+    }
+   ]
+  }
+ ]
+}

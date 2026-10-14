@@ -3,6 +3,9 @@ import Link from 'next/link';
 import { getDictionary } from '../../../lib/i18n';
 import type { Locale } from '../../../lib/i18n';
 import samenvatting from '../../../grond-bronnen/scan-samenvatting.json';
+import kpiOrders from '../../../grond-bronnen/kpi-orders.json';
+import GrondTabs from './GrondTabs';
+import GrondKpi from './GrondKpi';
 import GrondOverzicht from './GrondOverzicht';
 import GrondVraag from './GrondVraag';
 import styles from './grond.module.css';
@@ -50,10 +53,30 @@ export default async function GrondPage({ params }: { params: Promise<{ locale: 
 
       <section>
         <div className="container-wide">
-          <div className="label">{t.overviewLabel}</div>
-          <h2>{t.overviewTitle}</h2>
-          <p className={styles.inleiding}>{t.overviewP}</p>
-          <GrondOverzicht locale={locale} data={samenvatting} t={t} />
+          <div className="label">{t.dashLabel}</div>
+          <h2>{t.dashTitle}</h2>
+          <p className={styles.inleiding}>{t.dashP}</p>
+          <GrondTabs
+            tabs={[t.tabPick, t.tabControl, t.tabChain]}
+            ids={['pick', 'controle', 'keten']}
+            panelen={[
+              <div key="pick">
+                <h3 className={styles.tabPaneelTitel}>{t.overviewTitle}</h3>
+                <p className={styles.inleiding}>{t.overviewP}</p>
+                <GrondOverzicht locale={locale} data={samenvatting} t={t} />
+                <h3 className={styles.tabPaneelTitel}>{t.pickExtraTitle}</h3>
+                <GrondKpi kpis={kpiOrders.orderpick_aanvulling} t={t} locale={locale} />
+              </div>,
+              <div key="controle">
+                <p className={styles.inleiding}>{t.controlP}</p>
+                <GrondKpi kpis={kpiOrders.ordercontrole} t={t} locale={locale} />
+              </div>,
+              <div key="keten">
+                <p className={styles.inleiding}>{t.chainP}</p>
+                <GrondKpi kpis={kpiOrders.keten} t={t} locale={locale} />
+              </div>,
+            ]}
+          />
         </div>
       </section>
 
