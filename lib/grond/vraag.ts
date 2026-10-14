@@ -53,6 +53,7 @@ const UITSPLITSINGEN: { bestand: string; patroon: RegExp }[] = [
   { bestand: 'order-controle.json', patroon: /order|pick|inpak|controle|artikel|verzend|retour|klant|bestel|gevraagd|gepickt|ontbr|fout/i },
   { bestand: 'verzendcontrole.json', patroon: /controle|inpak|verzend|goedgekeurd|afgekeurd|keur|gezien|gemist/i },
   { bestand: 'signalen.json', patroon: /signaal|signalen|verklaring|oorzaak|waarom|herplan|schuiv|locatie|\bsi\b|standaard instructie|gezond verstand|vastgelegd|piktijd|cut-?off|steekproef|goedgekeurd/i },
+  { bestand: 'pickmeldingen.json', patroon: /melding|meldingen|nul|niet gevonden|niet aanwezig|te weinig|voorraad|locatie|art-00\d|artikel|picker|gevonden|aanvul/i },
   { bestand: 'kpi-afdelingen.json', patroon: /kpi|norm|afgesproken|papier|verwachting|bezetting|gepland|planning|aanwezig|ziek|verlof|personeel|medewerkers|steekproef|cut-?off|container|route|vervoerder|dhl|dpd|postnl|verzend|controle|pickregels|dagdoel/i },
   { bestand: 'afdelingen-per-week.json', patroon: /week|weken|verloop|trend|bezetting|gepland|aanwezig|ziek|verlof|steekproef|cut-?off|container|verzend|controle|onderbezet|minder mensen/i },
   { bestand: 'scan-per-medewerker.json', patroon: /medewerker|picker|persoon|personen|mensen|\bwie\b|iemand|\bmw-\d/i },

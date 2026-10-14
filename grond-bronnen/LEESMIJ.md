@@ -52,4 +52,5 @@ Deze gegevens zijn verzonnen, behalve de bezetting van het picken en het aantal 
 
 Het bouwscript is `scripts/grond/bouw-afdelingen.py`. De uitkomsten zijn ingebouwd: met één controleur is de planning van 4 minuten per order niet haalbaar, en met één verzendmedewerker komen routes en containers later. Dat laat het mechanisme zien, niet hoe vaak het in een echt bedrijf gebeurt.
 
-- `signalen.json`: per signaal wat een log laat zien, welke verklaringen mogelijk zijn, wat nodig is om te weten welke klopt, en wat een SI erover zegt. Bouwscript: `scripts/grond/bouw-signalen.py`. Eén signaal (twee pickers met een andere melding) kan met de huidige logs nog niet worden gegeven.
+- `signalen.json`: per signaal wat een log laat zien, welke verklaringen mogelijk zijn, wat nodig is om te weten welke klopt, en wat een SI erover zegt. Bouwscript: `scripts/grond/bouw-signalen.py`.
+- `pickmeldingen.json`: meldingen van pickers bij een artikel dat niet te vinden was of niet genoeg aanwezig (ART-005 en ART-002), met wat de controle vastlegde. Verzonnen en niet gekoppeld aan de 120 orders; de scans laten hier niets van zien. Bouwscript: `scripts/grond/bouw-pickmeldingen.py`.

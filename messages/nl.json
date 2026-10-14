@@ -655,6 +655,7 @@
     "sigMaybe": "Mogelijke verklaringen",
     "sigCheck": "Om te weten welke klopt",
     "sigSi": "Wat een SI hierover zegt",
+    "sigPropose": "Wat vastgelegd kan worden",
     "sigCannot": "Dit signaal kan met de huidige logs nog niet worden gegeven.",
     "tabPick": "Orderpick",
     "tabControl": "Ordercontrole",

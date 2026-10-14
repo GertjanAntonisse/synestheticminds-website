@@ -655,6 +655,7 @@
     "sigMaybe": "Possible explanations",
     "sigCheck": "To know which one holds",
     "sigSi": "What an SI says about it",
+    "sigPropose": "What could be recorded",
     "sigCannot": "This signal cannot yet be given with the current logs.",
     "tabPick": "Order picking",
     "tabControl": "Order check",

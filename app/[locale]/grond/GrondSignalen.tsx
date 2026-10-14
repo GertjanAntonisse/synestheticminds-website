@@ -3,13 +3,14 @@ import styles from './grond.module.css';
 type Signaal = {
   id: string; naam: string; ziet: string | null; kan_nog_niet?: boolean;
   cijfer: { teller: number; noemer: number; omschrijving: string } | null;
-  verklaringen: string[]; om_te_weten: string[]; si: { ids: string[]; tekst: string };
+  verklaringen: string[]; om_te_weten: string[]; si: { ids: string[]; tekst: string }; voorstel?: string;
   bewijs_titel: string; bewijs: Record<string, string | number | boolean | null>[];
 };
 
 const LABELS: Record<string, string> = {
   datum: 'Datum', pickregels_per_picker: 'Pickregels per picker', orders: 'Orders', alleen_steekproef: 'Alleen steekproef', locatie: 'Locatie', piktijd_voor: 'Piktijd voor (s)', piktijd_na: 'Piktijd na (s)',
   vervoerder: 'Vervoerder', klaar_om: 'Klaar om', cutoff: 'Cut-off', orders_naar_volgende_dag: 'Orders naar volgende dag', order_id: 'Order', verschil: 'Verschil',
+  melding_a: 'Melding A', melding_b: 'Melding B', controle: 'Controle', medewerker_id: 'Picker', gevraagd: 'Gevraagd', gepickt: 'Gepickt', pick_id: 'Pick', aantal: 'Aantal',
   controle_alle_artikelen_correct: 'Controle: alle artikelen correct', controle_goedgekeurd: 'Controle: goedgekeurd',
 };
 const waarde = (v: string | number | boolean | null) => (v === true ? 'ja' : v === false ? 'nee' : v === null ? '-' : String(v));
@@ -42,6 +43,12 @@ export default function GrondSignalen({ signalen, t, locale }: { signalen: Signa
               <p className={s.si.ids.length ? undefined : styles.geenNorm}>{s.si.tekst} {s.si.ids.map((id) => <span key={id} className={styles.id}>{id} </span>)}</p>
             </div>
           </div>
+          {s.voorstel && (
+            <div className={styles.kpiBlok}>
+              <span className={styles.kpiLabel}>{t.sigPropose}</span>
+              <p>{s.voorstel}</p>
+            </div>
+          )}
           {s.bewijs.length > 0 && (
             <details className={styles.bewijs}>
               <summary>{t.kpiEvidence}: {s.bewijs_titel}</summary>
