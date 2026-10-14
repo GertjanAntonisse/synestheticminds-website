@@ -25,16 +25,16 @@
    "periodes": {
     "A": {
      "scanregels": 13195,
-     "voldoen": 13195,
      "afwijkend": 0,
      "percentage_voldoet": 100.0,
+     "voldoen": 13195,
      "voorbeelden_afwijkend": []
     },
     "B": {
      "scanregels": 13039,
-     "voldoen": 12033,
      "afwijkend": 1006,
      "percentage_voldoet": 92.3,
+     "voldoen": 12033,
      "voorbeelden_afwijkend": [
       {
        "event_id": "EVT-B-0001-04",
@@ -90,16 +90,16 @@
    "periodes": {
     "A": {
      "scanregels": 13195,
-     "voldoen": 13195,
      "afwijkend": 0,
      "percentage_voldoet": 100.0,
+     "voldoen": 13195,
      "voorbeelden_afwijkend": []
     },
     "B": {
      "scanregels": 13039,
-     "voldoen": 9003,
      "afwijkend": 4036,
      "percentage_voldoet": 69.0,
+     "voldoen": 9003,
      "voorbeelden_afwijkend": [
       {
        "event_id": "EVT-B-0001-01",
@@ -155,9 +155,9 @@
    "periodes": {
     "A": {
      "scanregels": 13195,
-     "voldoen": 11339,
      "afwijkend": 1856,
      "percentage_voldoet": 85.9,
+     "voldoen": 11339,
      "voorbeelden_afwijkend": [
       {
        "event_id": "EVT-A-0004-01",
@@ -205,9 +205,9 @@
     },
     "B": {
      "scanregels": 13039,
-     "voldoen": 11423,
      "afwijkend": 1616,
      "percentage_voldoet": 87.6,
+     "voldoen": 11423,
      "voorbeelden_afwijkend": [
       {
        "event_id": "EVT-B-0011-01",
@@ -263,9 +263,9 @@
    "periodes": {
     "A": {
      "scanregels": 13195,
-     "voldoen": 12654,
      "afwijkend": 541,
      "percentage_voldoet": 95.9,
+     "voldoen": 12654,
      "voorbeelden_afwijkend": [
       {
        "event_id": "EVT-A-0001-09",
@@ -313,9 +313,9 @@
     },
     "B": {
      "scanregels": 13039,
-     "voldoen": 10797,
      "afwijkend": 2242,
      "percentage_voldoet": 82.8,
+     "voldoen": 10797,
      "voorbeelden_afwijkend": [
       {
        "event_id": "EVT-B-0001-04",
@@ -371,16 +371,16 @@
    "periodes": {
     "A": {
      "scanregels": 13195,
-     "voldoen": 13195,
      "afwijkend": 0,
      "percentage_voldoet": 100.0,
+     "voldoen": 13195,
      "voorbeelden_afwijkend": []
     },
     "B": {
      "scanregels": 13039,
-     "voldoen": 12311,
      "afwijkend": 728,
      "percentage_voldoet": 94.4,
+     "voldoen": 12311,
      "voorbeelden_afwijkend": [
       {
        "event_id": "EVT-B-0004-01",

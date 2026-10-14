@@ -1,4 +1,6 @@
+import fs from 'node:fs/promises';
 import path from 'node:path';
+import { retrieveEvidence } from './retrieval.mjs';
 import { answerQuestion } from './questions.mjs';
 import { MODEL_SYSTEM_PROMPT, buildModelPrompt, parseModelAnswer } from './model.mjs';
 
@@ -40,6 +42,55 @@ export function begrens(bezoeker: string): string {
   return '';
 }
 
+// Bronnen die bij elke vraag meegaan. Zonder deze twee kan een vraag over orders of picks
+// niet worden vergeleken met het werk op papier, omdat de zoekstap ze dan niet kiest.
+const KERN_BESTANDEN = ['werkinstructies.json', 'kern-overzicht.json'];
+
+// Uitsplitsingen gaan mee als de vraag erom vraagt. Ze zijn klein genoeg om heel mee te geven,
+// en een afgekapte tabel geeft een verkeerd gevoel van volledigheid.
+const UITSPLITSINGEN: { bestand: string; patroon: RegExp }[] = [
+  { bestand: 'scan-per-medewerker.json', patroon: /medewerker|picker|persoon|personen|mensen|\bwie\b|iemand|\bmw-\d/i },
+  { bestand: 'scan-per-week.json', patroon: /week|weken|verloop|trend|tijd|maand|maart|april|mei\b|januari|februari|periode|voor en na/i },
+  { bestand: 'scan-per-vak.json', patroon: /locatie|\brij\b|rijen|vak|laag|zone|\bwaar\b|plek|magazijn|hoogvolume|\br\d/i },
+];
+
+const PASSAGE_TEKENS = 7500; // buildModelPrompt kapt een passage af op 8000 tekens
+
+async function vastePassages(vraag: string) {
+  const map = path.join(process.cwd(), 'grond-bronnen');
+  const bestanden = [...KERN_BESTANDEN, ...UITSPLITSINGEN.filter(({ patroon }) => patroon.test(vraag)).map(({ bestand }) => bestand)];
+  const passages: Record<string, unknown>[] = [];
+  for (const naam of bestanden) {
+    const regels = (await fs.readFile(path.join(map, naam), 'utf8')).trim().split('\n');
+    let begin = 0;
+    while (begin < regels.length) {
+      let eind = begin;
+      let lengte = 0;
+      while (eind < regels.length && (eind === begin || lengte + regels[eind].length + 1 <= PASSAGE_TEKENS)) { lengte += regels[eind].length + 1; eind += 1; }
+      passages.push({
+        id: `kern-${passages.length + 1}`,
+        status: 'geldig',
+        source: 'local:grond-bronnen',
+        path: naam,
+        version: 'speeltuin-1',
+        startLine: begin + 1,
+        endLine: eind,
+        text: regels.slice(begin, eind).join('\n'),
+        score: 1000,
+      });
+      begin = eind;
+    }
+  }
+  return { passages, bestanden };
+}
+
+async function ophalen(args: { sources: string[]; question: string; workspaceRoot: string }) {
+  const gevonden = await retrieveEvidence(args);
+  const { passages, bestanden } = await vastePassages(args.question);
+  const rest = gevonden.evidence.filter((passage: { path: string }) => !bestanden.includes(passage.path));
+  return { ...gevonden, evidence: [...passages, ...rest] };
+}
+
 async function genereer({ question, project, evidence }: { question: string; project: unknown; evidence: unknown[] }) {
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) throw new Error('Grond is nog niet aangesloten op een model.');
@@ -63,6 +114,7 @@ export async function beantwoord(vraag: string) {
     identity: IDENTITY,
     question: vraag,
     workspaceRoot: process.cwd(),
+    retrieve: ophalen,
     generate: genereer,
     log: undefined,
   });

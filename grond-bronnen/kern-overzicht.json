@@ -1,0 +1,105 @@
+{
+ "toelichting": "Kort overzicht van het werk op papier naast de scanregels. Voor een uitsplitsing zie scan-per-medewerker.json, scan-per-week.json en scan-per-locatie.json.",
+ "wijziging": {
+  "datum": "2026-04-01",
+  "instructie": "INS-01"
+ },
+ "periodes": {
+  "A": {
+   "van": "2026-01-01",
+   "tot": "2026-03-01",
+   "scanregels": 13195
+  },
+  "B": {
+   "van": "2026-04-01",
+   "tot": "2026-05-30",
+   "scanregels": 13039
+  }
+ },
+ "gemiddelde_piktijd_seconden": {
+  "A": 90.0,
+  "B": 98.8
+ },
+ "per_instructie": [
+  {
+   "instructie_id": "INS-01",
+   "titel": "Route-volgorde",
+   "op_papier": "Pickers lopen het magazijn in vaste volgorde: rij R1 naar R4, vak V1 naar V3, laag L1 naar L3.",
+   "gemeten_als": "De locatie volgt in de looproute op de vorige scan (marge van 3 posities)",
+   "voor_wijziging": {
+    "scanregels": 13195,
+    "afwijkend": 0,
+    "percentage_voldoet": 100.0
+   },
+   "na_wijziging": {
+    "scanregels": 13039,
+    "afwijkend": 1006,
+    "percentage_voldoet": 92.3
+   }
+  },
+  {
+   "instructie_id": "INS-02",
+   "titel": "Piktijd",
+   "op_papier": "Gemiddelde tijd per pick is tussen 60 en 120 seconden inclusief looptijd.",
+   "gemeten_als": "De piktijd ligt tussen 60 en 120 seconden",
+   "voor_wijziging": {
+    "scanregels": 13195,
+    "afwijkend": 0,
+    "percentage_voldoet": 100.0
+   },
+   "na_wijziging": {
+    "scanregels": 13039,
+    "afwijkend": 4036,
+    "percentage_voldoet": 69.0
+   }
+  },
+  {
+   "instructie_id": "INS-03",
+   "titel": "Ronde-grootte",
+   "op_papier": "Een picker doet maximaal 15 picks per ronde voor terugkeer naar het uitgifte-punt.",
+   "gemeten_als": "De ronde heeft hoogstens 15 picks",
+   "voor_wijziging": {
+    "scanregels": 13195,
+    "afwijkend": 1856,
+    "percentage_voldoet": 85.9
+   },
+   "na_wijziging": {
+    "scanregels": 13039,
+    "afwijkend": 1616,
+    "percentage_voldoet": 87.6
+   }
+  },
+  {
+   "instructie_id": "INS-04",
+   "titel": "Dubbele locatiescan",
+   "op_papier": "Elke locatie wordt gescand bij aankomst én na de pick ter bevestiging.",
+   "gemeten_als": "Bij de locatie is voor en na de pick gescand",
+   "voor_wijziging": {
+    "scanregels": 13195,
+    "afwijkend": 541,
+    "percentage_voldoet": 95.9
+   },
+   "na_wijziging": {
+    "scanregels": 13039,
+    "afwijkend": 2242,
+    "percentage_voldoet": 82.8
+   }
+  },
+  {
+   "instructie_id": "INS-05",
+   "titel": "Geen route-wissel",
+   "op_papier": "Een picker wisselt niet van toegewezen route midden in een ronde.",
+   "gemeten_als": "De picker blijft binnen de ronde op dezelfde route",
+   "voor_wijziging": {
+    "scanregels": 13195,
+    "afwijkend": 0,
+    "percentage_voldoet": 100.0
+   },
+   "na_wijziging": {
+    "scanregels": 13039,
+    "afwijkend": 728,
+    "percentage_voldoet": 94.4
+   }
+  }
+ ]
+}

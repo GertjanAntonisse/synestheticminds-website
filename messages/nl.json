@@ -655,6 +655,11 @@
     "colBewijs": "Bewijs",
     "regelsVan": "{n} van {m} regels",
     "afwijkend": "{n} afwijkende regels na 1 april",
+    "showLines": "Toon de eerste 25 regels",
+    "showBusy": "Regels ophalen...",
+    "showError": "De regels konden niet worden opgehaald.",
+    "showTotal": "{n} van {m} afwijkende regels",
+    
     "geenAfwijking": "Geen afwijkende regels gevonden.",
     "gemetenAls": "Gemeten als",
     "chartTitle": "Piktijd per week",

@@ -655,6 +655,11 @@
     "colBewijs": "Evidence",
     "regelsVan": "{n} of {m} lines",
     "afwijkend": "{n} deviating lines after 1 April",
+    "showLines": "Show the first 25 lines",
+    "showBusy": "Fetching lines...",
+    "showError": "The lines could not be fetched.",
+    "showTotal": "{n} of {m} deviating lines",
+    
     "geenAfwijking": "No deviating lines found.",
     "gemetenAls": "Measured as",
     "chartTitle": "Pick time per week",

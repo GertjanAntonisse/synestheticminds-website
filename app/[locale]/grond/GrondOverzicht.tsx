@@ -1,4 +1,5 @@
 import styles from './grond.module.css';
+import GrondRegels from './GrondRegels';
 
 type Voorbeeld = { event_id: string; medewerker_id: string; tijdstip_start: string; wat_viel_op: string };
 type Periode = { scanregels: number; voldoen: number; afwijkend: number; percentage_voldoet: number; voorbeelden_afwijkend: Voorbeeld[] };
@@ -75,12 +76,7 @@ export default function GrondOverzicht({ locale, data, t }: { locale: string; da
                 <td>
                   <details className={styles.bewijs}>
                     <summary>{vul(t.afwijkend, { n: getal(r.periodes.B.afwijkend) })}</summary>
-                    <ul>
-                      {r.periodes.B.voorbeelden_afwijkend.length === 0 && <li>{t.geenAfwijking}</li>}
-                      {r.periodes.B.voorbeelden_afwijkend.map((v) => (
-                        <li key={v.event_id}><b>{v.event_id}</b> · {v.medewerker_id} · {v.tijdstip_start.replace('T', ' ')}<br />{v.wat_viel_op}</li>
-                      ))}
-                    </ul>
+                    <GrondRegels instructie={r.instructie_id} periode="B" locale={taal} t={{ show: t.showLines, busy: t.showBusy, error: t.showError, total: t.showTotal }} />
                   </details>
                 </td>
               </tr>
