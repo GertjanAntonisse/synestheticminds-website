@@ -72,3 +72,13 @@
 .kpiGetal { margin-top: 2px; font-size: 1.9rem; font-weight: 700; letter-spacing: -0.01em; }
 .kpiGetal small { font-size: 0.95rem; font-weight: 500; color: var(--muted); }
 .tabPaneelTitel { margin-top: 28px; }
+
+.strip { margin-top: 8px; }
+.stripRij { display: grid; grid-template-columns: 240px 1fr; align-items: center; gap: 12px; margin-top: 8px; }
+.stripNaam { font-size: 0.82rem; color: var(--muted); }
+.stripCellen { display: grid; grid-template-columns: repeat(120, 1fr); gap: 1px; }
+.cel { height: 18px; background: rgba(31, 41, 55, 0.07); }
+.celAan { background: var(--accent); }
+@media (max-width: 760px) {
+  .stripRij { grid-template-columns: 1fr; gap: 4px; }
+}

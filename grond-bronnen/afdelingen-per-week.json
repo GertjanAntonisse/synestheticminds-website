@@ -1,0 +1,21 @@
+{"toelichting":"Per week (maandag als begin): hoeveel dagen controle of verzending minder mensen had dan gepland, hoeveel orders alleen een steekproef kregen en hoeveel containers na de cut-off klaar waren. Verzonnen voor de speeltuin.",
+"per_week":[
+{"week_vanaf":"2025-12-29","dagen":4,"periode":"A","controle_onderbezet":1,"verzending_onderbezet":1,"orders":465,"alleen_steekproef":55,"gemist":2,"orders_naar_volgende_dag":22},
+{"week_vanaf":"2026-01-05","dagen":7,"periode":"A","controle_onderbezet":1,"verzending_onderbezet":1,"orders":752,"alleen_steekproef":9,"gemist":2,"orders_naar_volgende_dag":25},
+{"week_vanaf":"2026-01-12","dagen":7,"periode":"A","controle_onderbezet":2,"verzending_onderbezet":0,"orders":867,"alleen_steekproef":59,"gemist":0,"orders_naar_volgende_dag":0},
+{"week_vanaf":"2026-01-19","dagen":7,"periode":"A","controle_onderbezet":2,"verzending_onderbezet":1,"orders":733,"alleen_steekproef":56,"gemist":1,"orders_naar_volgende_dag":10},
+{"week_vanaf":"2026-01-26","dagen":7,"periode":"A","controle_onderbezet":2,"verzending_onderbezet":0,"orders":795,"alleen_steekproef":69,"gemist":0,"orders_naar_volgende_dag":0},
+{"week_vanaf":"2026-02-02","dagen":7,"periode":"A","controle_onderbezet":1,"verzending_onderbezet":0,"orders":903,"alleen_steekproef":50,"gemist":0,"orders_naar_volgende_dag":0},
+{"week_vanaf":"2026-02-09","dagen":7,"periode":"A","controle_onderbezet":3,"verzending_onderbezet":0,"orders":922,"alleen_steekproef":163,"gemist":0,"orders_naar_volgende_dag":0},
+{"week_vanaf":"2026-02-16","dagen":7,"periode":"A","controle_onderbezet":2,"verzending_onderbezet":1,"orders":838,"alleen_steekproef":84,"gemist":2,"orders_naar_volgende_dag":40},
+{"week_vanaf":"2026-02-23","dagen":7,"periode":"A","controle_onderbezet":1,"verzending_onderbezet":0,"orders":860,"alleen_steekproef":34,"gemist":1,"orders_naar_volgende_dag":11},
+{"week_vanaf":"2026-03-30","dagen":5,"periode":"B","controle_onderbezet":0,"verzending_onderbezet":1,"orders":609,"alleen_steekproef":0,"gemist":3,"orders_naar_volgende_dag":40},
+{"week_vanaf":"2026-04-06","dagen":7,"periode":"B","controle_onderbezet":0,"verzending_onderbezet":0,"orders":832,"alleen_steekproef":0,"gemist":0,"orders_naar_volgende_dag":0},
+{"week_vanaf":"2026-04-13","dagen":7,"periode":"B","controle_onderbezet":1,"verzending_onderbezet":0,"orders":851,"alleen_steekproef":64,"gemist":0,"orders_naar_volgende_dag":0},
+{"week_vanaf":"2026-04-20","dagen":7,"periode":"B","controle_onderbezet":2,"verzending_onderbezet":1,"orders":836,"alleen_steekproef":63,"gemist":3,"orders_naar_volgende_dag":55},
+{"week_vanaf":"2026-04-27","dagen":7,"periode":"B","controle_onderbezet":1,"verzending_onderbezet":1,"orders":855,"alleen_steekproef":40,"gemist":3,"orders_naar_volgende_dag":34},
+{"week_vanaf":"2026-05-04","dagen":7,"periode":"B","controle_onderbezet":0,"verzending_onderbezet":1,"orders":862,"alleen_steekproef":0,"gemist":3,"orders_naar_volgende_dag":40},
+{"week_vanaf":"2026-05-11","dagen":7,"periode":"B","controle_onderbezet":1,"verzending_onderbezet":1,"orders":878,"alleen_steekproef":33,"gemist":2,"orders_naar_volgende_dag":26},
+{"week_vanaf":"2026-05-18","dagen":7,"periode":"B","controle_onderbezet":2,"verzending_onderbezet":2,"orders":838,"alleen_steekproef":72,"gemist":5,"orders_naar_volgende_dag":86},
+{"week_vanaf":"2026-05-25","dagen":6,"periode":"B","controle_onderbezet":3,"verzending_onderbezet":1,"orders":662,"alleen_steekproef":98,"gemist":2,"orders_naar_volgende_dag":27}
+]}

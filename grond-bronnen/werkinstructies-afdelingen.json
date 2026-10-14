@@ -1,0 +1,85 @@
+{
+ "versie": "1.0",
+ "geldig_vanaf": "2026-01-01",
+ "toelichting": "Aanvulling op werkinstructies.json: wat op papier staat voor bezetting, ordercontrole en verzending in het gesimuleerde magazijn. Verzonnen voor de speeltuin.",
+ "instructies": [
+  {
+   "id": "INS-06",
+   "titel": "Bezetting per afdeling",
+   "omschrijving": "De dagplanning gaat uit van 5 pickers, 2 controleurs en 2 verzendmedewerkers per dag.",
+   "aannames": [
+    "Het werk van een dag past bij de geplande bezetting",
+    "Uitval wordt binnen de afdeling opgevangen",
+    "Het aantal orders per dag blijft binnen 90 tot 150"
+   ],
+   "raakt": [
+    "INS-08",
+    "INS-09",
+    "INS-11"
+   ]
+  },
+  {
+   "id": "INS-07",
+   "titel": "Volledige ordercontrole",
+   "omschrijving": "Elke order wordt voor het inpakken regel voor regel gecontroleerd. Een order met een verschil gaat niet door naar het inpakken.",
+   "aannames": [
+    "De controleur heeft per order de tijd voor alle regels (INS-08)",
+    "Een verschil is zichtbaar bij het scannen"
+   ],
+   "raakt": [
+    "INS-08"
+   ]
+  },
+  {
+   "id": "INS-08",
+   "titel": "Controletijd",
+   "omschrijving": "De planning rekent op 4 minuten per order, dus 84 orders per controleur per dag.",
+   "aannames": [
+    "Er zijn twee controleurs (INS-06)",
+    "Een order heeft gemiddeld twee regels"
+   ],
+   "raakt": [
+    "INS-06",
+    "INS-07"
+   ]
+  },
+  {
+   "id": "INS-09",
+   "titel": "Routes en containers",
+   "omschrijving": "De routeindeling en de containers per vervoerder zijn om 15:00 vastgesteld.",
+   "aannames": [
+    "De orders van de dag zijn dan gecontroleerd",
+    "Er zijn twee verzendmedewerkers (INS-06)"
+   ],
+   "raakt": [
+    "INS-06",
+    "INS-10"
+   ]
+  },
+  {
+   "id": "INS-10",
+   "titel": "Cut-off vervoerder",
+   "omschrijving": "Elke container is klaar voor de cut-off van de vervoerder: DHL 16:00, DPD 16:30, PostNL 17:00. Wat later komt, gaat de volgende dag mee.",
+   "aannames": [
+    "Routes zijn om 15:00 vastgesteld (INS-09)",
+    "De vervoerder houdt de cut-off aan"
+   ],
+   "raakt": [
+    "INS-09"
+   ]
+  },
+  {
+   "id": "INS-11",
+   "titel": "Dagdoel pickregels",
+   "omschrijving": "Een picker haalt per dag minstens 45 pickregels.",
+   "aannames": [
+    "Er zijn vijf pickers (INS-06)",
+    "De piktijd blijft tussen 60 en 120 seconden (INS-02)"
+   ],
+   "raakt": [
+    "INS-02",
+    "INS-06"
+   ]
+  }
+ ]
+}

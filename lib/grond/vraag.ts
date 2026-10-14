@@ -17,7 +17,7 @@ const PROJECT = {
   id: 'speeltuin',
   name: 'Speeltuin: gesimuleerd magazijn voor kleding en schoenen',
   goal: 'Laat bezoekers ervaren hoe Grond het werk op papier naast het vastgelegde werk legt, op gesimuleerde gegevens.',
-  boundaries: 'Alle gegevens zijn gesimuleerd. Alleen de bronnen in deze speeltuin worden gebruikt.',
+  boundaries: 'Alle gegevens zijn gesimuleerd. Alleen de bronnen in deze speeltuin worden gebruikt. Het dagwerk van de ordercontrole en de verzending (controle-log, verzend-log, bezetting van controle en verzending) is niet gekoppeld aan de 120 orders. Leg dus geen verband tussen een bepaalde order, zoals de goedgekeurde orders met een verschil, en de bezetting of het dagwerk van een bepaalde dag. Een norm op papier is wat de bronnen noemen; zeg niet dat een afwijking de bedoeling is.',
   ownerLogin: '',
   participants: [],
   githubRepositories: [],
@@ -44,7 +44,7 @@ export function begrens(bezoeker: string): string {
 
 // Bronnen die bij elke vraag meegaan. Zonder deze twee kan een vraag over orders of picks
 // niet worden vergeleken met het werk op papier, omdat de zoekstap ze dan niet kiest.
-const KERN_BESTANDEN = ['werkinstructies.json', 'kern-overzicht.json'];
+const KERN_BESTANDEN = ['werkinstructies.json', 'werkinstructies-afdelingen.json', 'kern-overzicht.json'];
 
 // Uitsplitsingen gaan mee als de vraag erom vraagt. Ze zijn klein genoeg om heel mee te geven,
 // en een afgekapte tabel geeft een verkeerd gevoel van volledigheid.
@@ -52,9 +52,15 @@ const UITSPLITSINGEN: { bestand: string; patroon: RegExp }[] = [
   { bestand: 'kpi-orders.json', patroon: /kpi|afspraak|afgesproken|norm|keten|retour|klant|verzonden|verzend|controle|goedgekeurd|dashboard|papier|verwachting/i },
   { bestand: 'order-controle.json', patroon: /order|pick|inpak|controle|artikel|verzend|retour|klant|bestel|gevraagd|gepickt|ontbr|fout/i },
   { bestand: 'verzendcontrole.json', patroon: /controle|inpak|verzend|goedgekeurd|afgekeurd|keur|gezien|gemist/i },
+  { bestand: 'kpi-afdelingen.json', patroon: /kpi|norm|afgesproken|papier|verwachting|bezetting|gepland|planning|aanwezig|ziek|verlof|personeel|medewerkers|steekproef|cut-?off|container|route|vervoerder|dhl|dpd|postnl|verzend|controle|pickregels|dagdoel/i },
+  { bestand: 'afdelingen-per-week.json', patroon: /week|weken|verloop|trend|bezetting|gepland|aanwezig|ziek|verlof|steekproef|cut-?off|container|verzend|controle|onderbezet|minder mensen/i },
   { bestand: 'scan-per-medewerker.json', patroon: /medewerker|picker|persoon|personen|mensen|\bwie\b|iemand|\bmw-\d/i },
   { bestand: 'scan-per-week.json', patroon: /week|weken|verloop|trend|tijd|maand|maart|april|mei\b|januari|februari|periode|voor en na/i },
   { bestand: 'scan-per-vak.json', patroon: /locatie|\brij\b|rijen|vak|laag|zone|\bwaar\b|plek|magazijn|hoogvolume|\br\d/i },
+  // De dagbestanden zijn groot. Ze gaan alleen mee als de vraag over een bepaalde datum gaat; de weekoverzichten en het bewijs bij de KPI's dekken de rest.
+  { bestand: 'bezetting.json', patroon: /\b2026-\d\d-\d\d\b|\b\d{1,2} (januari|februari|maart|april|mei)\b|\b\d{1,2}-\d{1,2}-2026\b/i },
+  { bestand: 'controle-log.json', patroon: /\b2026-\d\d-\d\d\b|\b\d{1,2} (januari|februari|maart|april|mei)\b|\b\d{1,2}-\d{1,2}-2026\b/i },
+  { bestand: 'verzend-log.json', patroon: /\b2026-\d\d-\d\d\b|\b\d{1,2} (januari|februari|maart|april|mei)\b|\b\d{1,2}-\d{1,2}-2026\b/i },
 ];
 
 const PASSAGE_TEKENS = 7500; // buildModelPrompt kapt een passage af op 8000 tekens

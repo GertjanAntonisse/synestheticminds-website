@@ -38,3 +38,16 @@ Het is de bedoeling dat je zelf uitzoekt wat klopt. Grond laat bij elk antwoord 
 ## KPI's per proces
 
 `kpi-orders.json` bevat per proces (orderpick, ordercontrole, keten) de KPI's met de verwachting en de bron daarvan, het cijfer met teller en noemer, en het bewijs. Waar in de bronnen geen norm is vastgelegd, staat dat erbij. De afspraken komen uit de Invariant Design-demo (INV-L3-05, INV-L4-04, INV-L5-01).
+
+## Bezetting, ordercontrole en verzending
+
+Deze gegevens zijn verzonnen, behalve de bezetting van het picken en het aantal pickregels per dag: die komen uit de scanregels. Het dagwerk van de controle en de verzending is niet gekoppeld aan de 120 orders, omdat die geen dagindeling hebben die bij de scanregels past. Elke dag is een werkdag, 120 dagen in totaal.
+
+- `werkinstructies-afdelingen.json`: wat op papier staat voor bezetting (INS-06), volledige ordercontrole (INS-07), controletijd (INS-08), routes en containers (INS-09), de cut-off van de vervoerder (INS-10) en het dagdoel pickregels (INS-11).
+- `bezetting.json`: per dag en afdeling hoeveel mensen er gepland en aanwezig waren, met ziek of verlof, zonder namen.
+- `controle-log.json`: per dag de orders, de aanwezige controleurs, hoeveel orders volledig en hoeveel alleen met een steekproef zijn gecontroleerd, en de tijd per order.
+- `verzend-log.json`: per dag en vervoerder de orders, wanneer routes en container klaar waren en hoeveel orders een dag later meegingen.
+- `afdelingen-per-week.json`: dezelfde gegevens per week.
+- `kpi-afdelingen.json`: de KPI's met verwachting, cijfer en bewijs.
+
+Het bouwscript is `scripts/grond/bouw-afdelingen.py`. De uitkomsten zijn ingebouwd: met één controleur is de planning van 4 minuten per order niet haalbaar, en met één verzendmedewerker komen routes en containers later. Dat laat het mechanisme zien, niet hoe vaak het in een echt bedrijf gebeurt.

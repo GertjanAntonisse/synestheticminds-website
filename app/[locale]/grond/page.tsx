@@ -4,9 +4,11 @@ import { getDictionary } from '../../../lib/i18n';
 import type { Locale } from '../../../lib/i18n';
 import samenvatting from '../../../grond-bronnen/scan-samenvatting.json';
 import kpiOrders from '../../../grond-bronnen/kpi-orders.json';
+import kpiAfdelingen from '../../../grond-bronnen/kpi-afdelingen.json';
 import GrondTabs from './GrondTabs';
 import GrondKpi from './GrondKpi';
 import GrondOverzicht from './GrondOverzicht';
+import GrondBezetting from './GrondBezetting';
 import GrondVraag from './GrondVraag';
 import styles from './grond.module.css';
 
@@ -57,23 +59,35 @@ export default async function GrondPage({ params }: { params: Promise<{ locale: 
           <h2>{t.dashTitle}</h2>
           <p className={styles.inleiding}>{t.dashP}</p>
           <GrondTabs
-            tabs={[t.tabPick, t.tabControl, t.tabChain]}
-            ids={['pick', 'controle', 'keten']}
+            tabs={[t.tabPick, t.tabControl, t.tabShip, t.tabChain, t.tabStaff]}
+            ids={['pick', 'controle', 'verzending', 'keten', 'bezetting']}
             panelen={[
               <div key="pick">
                 <h3 className={styles.tabPaneelTitel}>{t.overviewTitle}</h3>
                 <p className={styles.inleiding}>{t.overviewP}</p>
                 <GrondOverzicht locale={locale} data={samenvatting} t={t} />
                 <h3 className={styles.tabPaneelTitel}>{t.pickExtraTitle}</h3>
-                <GrondKpi kpis={kpiOrders.orderpick_aanvulling} t={t} locale={locale} />
+                <GrondKpi kpis={[...kpiOrders.orderpick_aanvulling, ...kpiAfdelingen.orderpick_aanvulling]} t={t} locale={locale} />
               </div>,
               <div key="controle">
                 <p className={styles.inleiding}>{t.controlP}</p>
                 <GrondKpi kpis={kpiOrders.ordercontrole} t={t} locale={locale} />
+                <h3 className={styles.tabPaneelTitel}>{t.controlExtraTitle}</h3>
+                <GrondKpi kpis={kpiAfdelingen.ordercontrole_aanvulling} t={t} locale={locale} />
+              </div>,
+              <div key="verzending">
+                <p className={styles.inleiding}>{t.shipP}</p>
+                <GrondKpi kpis={kpiAfdelingen.verzending} t={t} locale={locale} />
               </div>,
               <div key="keten">
                 <p className={styles.inleiding}>{t.chainP}</p>
                 <GrondKpi kpis={kpiOrders.keten} t={t} locale={locale} />
+              </div>,
+              <div key="bezetting">
+                <p className={styles.inleiding}>{t.staffP}</p>
+                <GrondBezetting t={t} />
+                <h3 className={styles.tabPaneelTitel}>{t.staffKpiTitle}</h3>
+                <GrondKpi kpis={kpiAfdelingen.bezetting} t={t} locale={locale} />
               </div>,
             ]}
           />
