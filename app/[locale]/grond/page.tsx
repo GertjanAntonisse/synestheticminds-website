@@ -5,10 +5,12 @@ import type { Locale } from '../../../lib/i18n';
 import samenvatting from '../../../grond-bronnen/scan-samenvatting.json';
 import kpiOrders from '../../../grond-bronnen/kpi-orders.json';
 import kpiAfdelingen from '../../../grond-bronnen/kpi-afdelingen.json';
+import signalen from '../../../grond-bronnen/signalen.json';
 import GrondTabs from './GrondTabs';
 import GrondKpi from './GrondKpi';
 import GrondOverzicht from './GrondOverzicht';
 import GrondBezetting from './GrondBezetting';
+import GrondSignalen from './GrondSignalen';
 import GrondVraag from './GrondVraag';
 import styles from './grond.module.css';
 
@@ -59,9 +61,13 @@ export default async function GrondPage({ params }: { params: Promise<{ locale: 
           <h2>{t.dashTitle}</h2>
           <p className={styles.inleiding}>{t.dashP}</p>
           <GrondTabs
-            tabs={[t.tabPick, t.tabControl, t.tabShip, t.tabChain, t.tabStaff]}
-            ids={['pick', 'controle', 'verzending', 'keten', 'bezetting']}
+            tabs={[t.tabSignals, t.tabPick, t.tabControl, t.tabShip, t.tabChain, t.tabStaff]}
+            ids={['signalen', 'pick', 'controle', 'verzending', 'keten', 'bezetting']}
             panelen={[
+              <div key="signalen">
+                <p className={styles.inleiding}>{t.sigP}</p>
+                <GrondSignalen signalen={signalen.signalen} t={t} locale={locale} />
+              </div>,
               <div key="pick">
                 <h3 className={styles.tabPaneelTitel}>{t.overviewTitle}</h3>
                 <p className={styles.inleiding}>{t.overviewP}</p>
