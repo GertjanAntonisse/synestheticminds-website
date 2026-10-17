@@ -55,6 +55,62 @@
   transform: translateY(-1px);
 }
 
+.phoneRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.phoneLink {
+  color: var(--ink);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.phoneLink:hover {
+  color: var(--accent);
+}
+
+.whatsappIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  background: #128c7e;
+  color: #fff;
+  border-radius: 8px;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.whatsappIcon:hover {
+  background: #0b6b60;
+  transform: translateY(-1px);
+}
+
+.whatsappButton {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 22px;
+  margin: 12px 0 0 0;
+  background: #128c7e;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.whatsappButton:hover {
+  background: #0b6b60;
+  transform: translateY(-1px);
+}
+
 /* ---- Expect list ---- */
 .expectList {
   display: flex;
